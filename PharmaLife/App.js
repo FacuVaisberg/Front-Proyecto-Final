@@ -3,7 +3,7 @@ import Index from './Index';
 
 export default function App() {
   return (
-    <View style={{flex: 1}}>
+    <View style={styles.view}>
      <Index/>
     </View>
   );
@@ -16,4 +16,9 @@ const styles = StyleSheet.create({
   innerText: {
     color: 'red',
   },
+  view: {
+    flex: 1,
+    backgroundColor:"#668557", 
+  },
 });
+

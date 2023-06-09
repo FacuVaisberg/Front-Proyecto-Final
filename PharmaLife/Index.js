@@ -1,13 +1,14 @@
 import { StyleSheet, Text, View, Image } from 'react-native';
-import { Button, ButtonProps, FlatList, textAlign } from 'react-native';
+import { Button, ButtonProps, FlatList, textAlig,fontfamily } from 'react-native';
 
 import React from 'react';
 
 const Index = () => {
   return (
+    <View style={styles.view}>
     <View style={styles.container}>
       <Text style={styles.baseText}>Bienvenidos a PharmaLife.</Text>
-      <View style={styles.ImgProp}><Image
+      <View style={styles.container2} ><Image
         style={styles.PharmaLifeLogo}
         source={require('./PharmaLifeLogo.png')}
       /></View>
@@ -15,31 +16,42 @@ const Index = () => {
       <Button title="Registrarse" position= "absolute" style={styles.Button} color="#99D87D"></Button></View>
 
 
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  view: {
+    backgroundColor:"#668557", 
+  },
   container: {
     flex: 1,
     //alignItems:'center',
     height: 24,
     width: 211,
     left: 110,
-    top: 323,
-
-
+    top: 323
   },
   ImgProp:{
-    height: 107,
-    width: 122,
-    left: 154,
-    top: 358,
+    flex: 1,
+    alignItems:'center',
+    verticalAlign:"center"
+    //height: 24,
+    //width: 211,
+    //left: 110,
+    //top: 323
+
     
   },
   baseText: {
-    fontWeight: 'bold',
     textAlign:'center',
+    color:"white",
+    fontfamily: 'Jacques Francois',
+    fontweight: 400,
+    fontsize: 18,
+    lineheight: 24,
+    
   },
   input: {
     height: 40,
@@ -54,10 +66,23 @@ const styles = StyleSheet.create({
   top: 592,
   },
   PharmaLifeLogo: {
+    justifyContent: 'center',
+    alignItems: 'center',
     width: 122,
     height: 140,
-  }
-  
+    //resizeMode: 'contain',
+  },
+  container2: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    width: 195,
+    height: 132.189946785,
+    textAlign: 'center',
+  },
 });
+  
+
 export default Index;
 

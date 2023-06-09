@@ -1,0 +1,3 @@
+/*
+https://reactnative.dev/docs/textinput
+*/

@@ -1,7 +1,8 @@
-import { StyleSheet, Text, View, Image } from 'react-native';
-import { Button, ButtonProps, FlatList, textAlig,fontfamily } from 'react-native';
-
 import React from 'react';
+
+import { StyleSheet, Text, View, Image } from 'react-native';
+import { Button, ButtonProps, FlatList, textAlig,fontfamily, TouchableOpacity } from 'react-native';
+
 
 const Index = () => {
   return (
@@ -10,12 +11,14 @@ const Index = () => {
       <Text style={styles.baseText}>Bienvenidos a PharmaLife.</Text>
       <View style={styles.container2} ><Image
         style={styles.PharmaLifeLogo}
-        source={require('./PharmaLifeLogo.png')}
+        source={require('./LogoPharmaLife.png')}
       /></View>
-      <View><Button title="Iniciar Sesion" position= "absolute" style={styles.Button} color="#99D87D"></Button>
-      <Button title="Registrarse" position= "absolute" style={styles.Button} color="#99D87D"></Button></View>
-
-
+      <View><TouchableOpacity  style={styles.button}>
+      <Text style={styles.buttonText}>Iniciar Sesion</Text>
+    </TouchableOpacity></View>
+    <View><TouchableOpacity  style={styles.button}>
+      <Text style={styles.buttonText}>Registrarse</Text>
+    </TouchableOpacity></View>
       </View>
     </View>
   );
@@ -27,6 +30,7 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
+    
     //alignItems:'center',
     height: 24,
     width: 211,
@@ -46,8 +50,9 @@ const styles = StyleSheet.create({
   },
   baseText: {
     textAlign:'center',
+    marginBottom: 30,
     color:"white",
-    fontfamily: 'Jacques Francois',
+    fontFamily: 'Jacques Francois',
     fontweight: 400,
     fontsize: 18,
     lineheight: 24,
@@ -59,15 +64,26 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
   },
-  Button: {
-  width: 154,
-  height: 41,
-  left: 143,
-  top: 592,
+  button: {
+    borderRadius: 15, // Ajusta este valor para cambiar el nivel de redondez del botón
+    backgroundColor: '#99D87D',
+    marginTop: 20,
+    padding: 10,
+    alignItems: 'center',
   },
+  buttonText: {
+    color: '#2C4521',
+    fontFamily: 'Uber Move',
+    fontSize: 16,
+    fontweight: 500,
+    fontsize: 15,
+    fontStyle:"normal",
+    lineHeight: 18
+  },  
   PharmaLifeLogo: {
     justifyContent: 'center',
     alignItems: 'center',
+    marginBottom: 30,
     width: 122,
     height: 140,
     //resizeMode: 'contain',

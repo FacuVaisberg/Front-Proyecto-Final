@@ -70,6 +70,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
     padding: 10,
     alignItems: 'center',
+    shadowRadius:15
   },
   buttonText: {
     color: '#2C4521',
@@ -86,6 +87,7 @@ const styles = StyleSheet.create({
     marginBottom: 30,
     width: 122,
     height: 140,
+    shadowRadius:15
     //resizeMode: 'contain',
   },
   container2: {

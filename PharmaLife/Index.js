@@ -1,24 +1,31 @@
 import React from 'react';
-
-import { StyleSheet, Text, View, Image } from 'react-native';
-import { Button, ButtonProps, FlatList, textAlig,fontfamily, TouchableOpacity } from 'react-native';
-
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 
 const Index = () => {
   return (
     <View style={styles.view}>
-    <View style={styles.container}>
-      <Text style={styles.baseText}>Bienvenidos a PharmaLife.</Text>
-      <View style={styles.container2} ><Image
-        style={styles.PharmaLifeLogo}
-        source={require('./LogoPharmaLife.png')}
-      /></View>
-      <View><TouchableOpacity  style={styles.button}>
-      <Text style={styles.buttonText}>Iniciar Sesion</Text>
-    </TouchableOpacity></View>
-    <View><TouchableOpacity  style={styles.button}>
-      <Text style={styles.buttonText}>Registrarse</Text>
-    </TouchableOpacity></View>
+      <View style={styles.container}>
+        <Text style={styles.baseText}>
+          Bienvenidos a Pharma
+          <Text style={styles.LetraDeColor}>L</Text>
+          ife.
+        </Text>
+        <View style={styles.container2}>
+          <Image
+            style={styles.PharmaLifeLogo}
+            source={require('./LogoPharmaLife.png')}
+          />
+        </View>
+        <View>
+          <TouchableOpacity style={styles.button}>
+            <Text style={styles.buttonText}>Iniciar Sesion</Text>
+          </TouchableOpacity>
+        </View>
+        <View>
+          <TouchableOpacity style={styles.button}>
+            <Text style={styles.buttonText}>Registrarse</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   );
@@ -26,37 +33,28 @@ const Index = () => {
 
 const styles = StyleSheet.create({
   view: {
-    backgroundColor:"#668557", 
+    backgroundColor: "#668557",
   },
   container: {
     flex: 1,
-    
-    //alignItems:'center',
     height: 24,
     width: 211,
     left: 110,
     top: 323
   },
-  ImgProp:{
+  ImgProp: {
     flex: 1,
-    alignItems:'center',
-    verticalAlign:"center"
-    //height: 24,
-    //width: 211,
-    //left: 110,
-    //top: 323
-
-    
+    alignItems: 'center',
+    verticalAlign: "center"
   },
   baseText: {
-    textAlign:'center',
+    textAlign: 'center',
     marginBottom: 30,
-    color:"white",
+    color: "white",
     fontFamily: 'Jacques Francois',
     fontweight: 400,
     fontsize: 18,
     lineheight: 24,
-    
   },
   input: {
     height: 40,
@@ -65,30 +63,31 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   button: {
-    borderRadius: 15, // Ajusta este valor para cambiar el nivel de redondez del botón
+    borderRadius: 15,
     backgroundColor: '#99D87D',
     marginTop: 20,
     padding: 10,
     alignItems: 'center',
-    shadowRadius:15
+    shadowRadius: 15,
+    shadowColor: '#2C4521',
+    shadowOpacity: 0.6,
+    elevation: 5,
   },
   buttonText: {
     color: '#2C4521',
-    fontFamily: 'Uber Move',
+    fontFamily: 'assets/fonts/UberMoveMedium.otf', //con el .otf funciona por ahora pero no esta bueno que este
     fontSize: 16,
-    fontweight: 500,
-    fontsize: 15,
-    fontStyle:"normal",
-    lineHeight: 18
-  },  
+    fontWeight: '500',
+    fontStyle: "normal",
+    lineHeight: 18,
+  },
   PharmaLifeLogo: {
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 30,
     width: 122,
     height: 140,
-    shadowRadius:15
-    //resizeMode: 'contain',
+    shadowRadius: 15
   },
   container2: {
     display: 'flex',
@@ -99,8 +98,9 @@ const styles = StyleSheet.create({
     height: 132.189946785,
     textAlign: 'center',
   },
+  LetraDeColor: {
+    color: '#99D87D',
+  },
 });
-  
 
 export default Index;
-

@@ -10,7 +10,8 @@ const Tabs = () => {
   return (
     <NavigationContainer>
         <Tab.Navigator screenOptions={{headerShown: false}}>
-            <Tab.Screen name="HomeMenu" component={IndexStackScreen}/>
+            <Tab.Screen name="HomeMenu" component={IndexStackScreen} options={{tabBarStyle:{ display: "none"},
+}}/>
             {/* <Tab.Screen name="settingss" component={SettingsStackScreen}/> */}
         </Tab.Navigator>
     </NavigationContainer>

@@ -16,8 +16,9 @@ const styles = StyleSheet.create({
         marginTop: 10,
         paddingHorizontal: 30, // Cambia el tamaño del botón de forma horizontal
         paddingVertical: 10, // Cambia el tamaño del botón de forma vertical
-        margin:0,
+        margin:80,
         shadowRadius: 15,
+        marginBottom:10,
         shadowColor: '#2C4521',
         shadowOpacity: 0.6,
         elevation: 5,

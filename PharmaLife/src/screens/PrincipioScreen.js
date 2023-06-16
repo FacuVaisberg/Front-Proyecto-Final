@@ -9,7 +9,6 @@ const PrincipioScreen = () => {
     const navigation =useNavigation();
     return (
       <View style={styles.view}>
-        <View style={styles.container}>
           <Text style={styles.baseText}>
             Bienvenidos a Pharma
             <Text style={styles.LetraDeColor}>L</Text>
@@ -23,7 +22,6 @@ const PrincipioScreen = () => {
           </View>
           <Button title="Iniciar sesion" onPress={() => navigation.navigate("LogIn")} />
           <Button title="Registrarse" onPress={() => navigation.navigate("Registrarse")}/>
-          </View>
         </View>
       
     );
@@ -31,13 +29,11 @@ const PrincipioScreen = () => {
 const styles = StyleSheet.create({
     view: {
       backgroundColor: "#668557",
-    },
-    container: {
       flex: 1,
-      height: 24,
-      width: 250,
-      left: 110,
-      top: 323
+      height: "auto",
+      width: "auto",
+      /* left: 110, */
+    /*   top: 323 */
     },
     ImgProp: {
       flex: 1,
@@ -46,6 +42,7 @@ const styles = StyleSheet.create({
     },
     baseText: {
       textAlign: 'center',
+      marginTop: 180,
       marginBottom: 30,
       color: "white",
       fontFamily: 'Jacques Francois',
@@ -72,8 +69,8 @@ const styles = StyleSheet.create({
       flexDirection: 'column',
       justifyContent: 'space-around',
       alignItems: 'center',
-      width: 195,
-      height: 132.189946785,
+      width: "center",
+      height: 150.189946785,
       textAlign: 'center',
     },
     LetraDeColor: {

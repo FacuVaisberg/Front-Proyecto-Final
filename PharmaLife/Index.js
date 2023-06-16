@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import Button from "./Button.js";
 import { useNavigation } from '@react-navigation/native';
@@ -81,4 +81,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Index;
+export default Index; */

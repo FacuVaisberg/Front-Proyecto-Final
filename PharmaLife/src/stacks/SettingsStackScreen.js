@@ -9,7 +9,7 @@ const SettingsStackScreen = () => {
   return (
     <SettingsStack.Navigator>
     <SettingsStack.Screen name="SettingsScreen1" component={SettingsScreen1}/>
-    <SettingsStack.Screen name="SettingsScreen2" component={SettingsScreen2}/>
+    {/* <SettingsStack.Screen name="SettingsScreen2" component={SettingsScreen2}/> */}
 </SettingsStack.Navigator>
   )
 }

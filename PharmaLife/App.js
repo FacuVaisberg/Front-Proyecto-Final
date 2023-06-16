@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native';
-import Index from './Index';
+import Index from './src/Screens/Index';
 import Button from './Button';
 
 export default function App() {
@@ -40,4 +40,3 @@ const styles = StyleSheet.create({
     shadowRadius: 15,
   }
 });
-

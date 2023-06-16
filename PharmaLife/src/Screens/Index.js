@@ -14,7 +14,7 @@ const Index = () => {
         <View style={styles.container2}>
           <Image
             style={styles.PharmaLifeLogo}
-            source={require('./LogoPharmaLife.png')}
+            source={require('/src/img/LogoPharmaLife.png')}
           />
         </View>
         <Button onPress={() => console.log('Iniciar sesion')} title="Iniciar sesion"/>
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     color: "white",
     fontFamily: 'Jacques Francois',
     fontweight: 400,
-    fontsize: 24,
+    fontSize: 16,
     lineheight: 24,
   },
   input: {

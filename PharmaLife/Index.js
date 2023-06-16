@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import Button from "./Button.js";
 
 const Index = () => {
   return (
@@ -16,18 +17,11 @@ const Index = () => {
             source={require('./LogoPharmaLife.png')}
           />
         </View>
-        <View>
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>Iniciar Sesion</Text>
-          </TouchableOpacity>
-        </View>
-        <View>
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>Registrarse</Text>
-          </TouchableOpacity>
+        <Button onPress={() => console.log('Iniciar sesion')} title="Iniciar sesion"/>
+        <Button onPress={() => console.log('Registrarse')} title="Registrarse"/>
         </View>
       </View>
-    </View>
+    
   );
 }
 
@@ -53,7 +47,7 @@ const styles = StyleSheet.create({
     color: "white",
     fontFamily: 'Jacques Francois',
     fontweight: 400,
-    fontsize: 18,
+    fontsize: 24,
     lineheight: 24,
   },
   input: {
@@ -61,25 +55,6 @@ const styles = StyleSheet.create({
     margin: 12,
     borderWidth: 1,
     padding: 10,
-  },
-  button: {
-    borderRadius: 15,
-    backgroundColor: '#99D87D',
-    marginTop: 20,
-    padding: 10,
-    alignItems: 'center',
-    shadowRadius: 15,
-    shadowColor: '#2C4521',
-    shadowOpacity: 0.6,
-    elevation: 5,
-  },
-  buttonText: {
-    color: '#2C4521',
-    fontFamily: 'assets/fonts/UberMoveMedium.otf', //con el .otf funciona por ahora pero no esta bueno que este
-    fontSize: 16,
-    fontWeight: '500',
-    fontStyle: "normal",
-    lineHeight: 18,
   },
   PharmaLifeLogo: {
     justifyContent: 'center',

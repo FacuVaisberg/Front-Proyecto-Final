@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native';
-import Index from './src/Screens/Index';
+import Index from './src/screens/IndexScreen';
 import Button from './Button';
 
 export default function App() {

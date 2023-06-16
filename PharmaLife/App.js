@@ -1,19 +1,10 @@
 import { StyleSheet, Text, View } from 'react-native';
-import Index from './src/screens/IndexScreen';
+import Index from './Index';
 import Button from './Button';
+import Tabs from './src/Tabs';
 
 export default function App() {
-  return (
-    <View style={styles.view}>
-      
-     <Index/>
-     {/* <View style={styles.viewConMargin} >
-     <Button style={styles.viewDivBoton}/>
-     <Button style={styles.viewDivBoton}/>
-     </View> */}
-     
-    </View>
-  );
+  return <Tabs/>;
 }
 
 const styles = StyleSheet.create({

@@ -1,8 +1,8 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
-import {SettingsScreen1} from "../screens/SettingsScreen1";
-import {SettingsScreen2} from "../screens/SettingsScreen2";
+import SettingsScreen1 from "../screens/SettingsScreen1";
+import SettingsScreen2 from "../screens/SettingsScreen2";
 
 const SettingsStackScreen = () => {
     const SettingsStack = createNativeStackNavigator();

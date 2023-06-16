@@ -1,8 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
-import Button from "../../Button.js";
+import Button from "./Button.js";
+import { useNavigation } from '@react-navigation/native';
+import LogInScreen from './src/screens/LogInScreen.js';
 
 const Index = () => {
+  const navigation =useNavigation();
   return (
     <View style={styles.view}>
       <View style={styles.container}>
@@ -17,7 +20,7 @@ const Index = () => {
             source={require('/src/img/LogoPharmaLife.png')}
           />
         </View>
-        <Button onPress={() => console.log('Iniciar sesion')} title="Iniciar sesion"/>
+        <Button onPress={() => navigation.navigate(LogIn)} title="Iniciar sesion"/>
         <Button onPress={() => console.log('Registrarse')} title="Registrarse"/>
         </View>
       </View>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import SemiCircle from './SemiCircle'; // Importa el componente SemiCircle
+import SemiCircle from '../../SemiCircle';
 
 const LogInScreen = () => {
   const [email, setEmail] = useState('');
@@ -14,7 +14,6 @@ const LogInScreen = () => {
     // Realizar acciones de inicio de sesión, como enviar datos al servidor
     // Aquí puedes agregar la lógica para validar el correo electrónico y la contraseña
 
-    // Navegar a otra pantalla (por ejemplo, Registrarse.js)
     navigation.navigate('Medico', { email, password });
   };
 
@@ -24,7 +23,7 @@ const LogInScreen = () => {
 
   return (
     <View style={styles.view}>
-      <SemiCircle style={styles.semiCircle}/> {/* Agrega el componente SemiCircle */}
+      <SemiCircle style={styles.semiCircle}/>
       <View style={styles.container}>
         <Text style={styles.baseText}>Ingresa tu cuenta</Text>
 

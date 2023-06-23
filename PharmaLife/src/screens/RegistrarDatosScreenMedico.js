@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
   },
   baseText: {
     textAlign: 'center',
-    marginTop: 180,
+    marginTop: 125,
     marginBottom: 30,
     color: '#668557',
     fontFamily: 'Crimson Text',

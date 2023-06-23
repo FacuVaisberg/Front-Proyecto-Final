@@ -1,43 +1,68 @@
-import { View, Text } from "react-native";
-import React, { useState } from "react";
-import CargarTodo from "../../Funciones";
-import { Medicamento } from "../components/Medicamento";
+import React from 'react';
+import { View, Text, StyleSheet,box } from 'react-native';
+import LogoSinSlogan from "../img/LogoSinSlogan.png";
 
 const HomeMedico = () => {
-  const [medicamentos, setMedicamentos] = useState([]);
-
-  const handleClick = async () => {
-    const medicamentos = await CargarTodo();
-    console.log(medicamentos);
-    setMedicamentos(medicamentos);
-  };
-
   return (
-    <View>
-      <Text>HomeMedico</Text>
-      <button onClick={handleClick}>Cargar Todo</button>
-      {medicamentos &&
-        medicamentos.map((item) => {
-          return <Medicamento key={item.IdMedicamentos} medicamento={item} />;
-        })}
-    </View>
-  );
-};
+    <>
+       <Text style={styles.titulo}> Hola, Puto</Text> 
+            <View style={styles.box}/>
+            <View style={styles.box1}/>
+            <View style={styles.box2}/>
+            <View style={styles.box3}/>
+       
+            </>
+        );
+    };
 
+const styles = StyleSheet.create({
+  
+  box: {
+    backgroundColor: "#79AD60",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    width: "100%",
+    border: 0,
+    position: "fixed",
+    height: 279,
+    width: 187,
+    borderRadius:20,
+    top:114,
+    marginLeft:23,
+},
+box1: {
+  backgroundColor: "#79AD60",
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "center",
+  width: "100%",
+  border: 0,
+  height: 279,
+  width: 187,
+  borderRadius:20,
+  marginLeft:219,
+  marginRight:24,
+  position: "fixed",
+  top:182,
+},
+titulo:{
+  top:49,
+  color: "#000000",
+fontFamily: "Jacques Francois-Regular", 
+fontSize: 25,
+fontWeight: 400,
+left: 0,
+letterSpacing: 0,
+lineHeight: "normal",
+position: "fixed",
+textAlign: "center",
+height: 33,
+width: 175,
+
+}
+
+  
+  },
+)
 export default HomeMedico;
-
-/*
-
-
-<div class="col-4">
-              <div class="colorCard card border-success mb-3 cardPokemon" style="max-width: 20rem;">
-                <div class="card-header bg-colorCard headCard  ">{item.IdMedicamentos}. {item.NombreMedicamento} </div>
-                    <div class="card-body text-success card-group">
-                    </div>
-                    <div class="card-footer bg-transparent border-success"> 
-                      <button class="btn boton" onclick="Borrar(${item.IdMedicamentos})">Eliminar Pizzeta</button>
-                    </div>
-                  </div>
-                  </div>
-
-                  */

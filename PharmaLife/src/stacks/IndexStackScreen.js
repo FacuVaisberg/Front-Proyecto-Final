@@ -12,7 +12,7 @@ import RegistrarDatosScreenMedico from '../screens/RegistrarDatosScreenMedico';
 const IndexStackScreen = () => {
     const IndexStack= createNativeStackNavigator();
   return (
-    <IndexStack.Navigator>
+    <IndexStack.Navigator screenOptions={{headerShown: false}}>
         <IndexStack.Screen name="Principio" component={PrincipioScreen}/>
         <IndexStack.Screen name="LogIn" component={LogInScreen}/>
         <IndexStack.Screen name="Registrarse" component={RegistrarseScreen}/>

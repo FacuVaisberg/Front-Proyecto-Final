@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
-import CardRegistro from '../../CardRegistro';
+import CardRegistro from '../components/CardRegistro';
 import { useNavigation } from '@react-navigation/native';
 
 
@@ -12,9 +12,9 @@ const RegistrarseScreen = () => {
             ¿Cual es tu rol en la aplicación?
           </Text>
           <View style={styles.conteiner}>
-            <CardRegistro title={"Accede como medico para poder mejorar la experiencia ed sus clientes."}/>
-            <CardRegistro title={"Accede como usuario para poder disfrutar de las funcionalidades."}/>
-            <CardRegistro title={"Accede como farmacia para poder agilizar y potenciar las ventas."}/>
+          <TouchableOpacity onPress={() => navigation.navigate("RegistrarDatosMedico")}><CardRegistro title={"Accede como medico para poder mejorar la experiencia ed sus clientes."} /></TouchableOpacity>
+          <TouchableOpacity  onPress={() => navigation.navigate("RegistrarDatos")}><CardRegistro title={"Accede como usuario para poder disfrutar de las funcionalidades."}/></TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate("RegistrarDatos")}><CardRegistro title={"Accede como farmacia para poder agilizar y potenciar las ventas."}  /></TouchableOpacity>
           </View>
           <Text style={styles.baseText2}>
             ¿Ya tenes una cuenta?

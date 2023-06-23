@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native';
 import Index from './Index';
-import Button from './Button';
+import Button from './src/components/Button';
 import Tabs from './src/Tabs';
 
 export default function App() {

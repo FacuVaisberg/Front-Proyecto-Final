@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
-import Button from "../../Button.js";
+import Button from "../components/Button.js";
 import { useNavigation } from '@react-navigation/native';
 import RegistrarseScreen from '../screens/RegistrarseScreen.js';
 import Index from '../../Index'

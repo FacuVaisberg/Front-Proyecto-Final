@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import SemiCircle from '../../SemiCircle';
-
+import SemiCircle from "../components/SemiCircle";
 const LogInScreen = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');

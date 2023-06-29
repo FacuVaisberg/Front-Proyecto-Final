@@ -148,20 +148,20 @@ position: "fixed",
 textAlign: "center",
 height: 33,
 width: 175,
-marginLeft:23,
+marginLeft:22,
 },
 titulo:{
-  top:127,
-  color: "#ffffff",
+  top:49,
+  color: "#000000",
   fontFamily: "Jacques Francois-Regular",
-  fontSize: 14,
+  fontSize: 25,
+  marginLeft:22,
   fontWeight: 400,
-  left: 0,
   letterSpacing: 0,
   lineHeight: "normal",
   position: "fixed",
   textAlign: "center",
-  width: 104,
+/*   width: 104, */
 
 }
 

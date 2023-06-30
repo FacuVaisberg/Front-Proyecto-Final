@@ -1,10 +1,13 @@
 import React, {useState} from 'react';
-import { View, Text, StyleSheet, Image,TextInput,Form } from 'react-native';
+import { View, Text, StyleSheet, Image,TextInput,Form, onClick} from 'react-native';
+import AgregarReceta from "../../Funciones"
+import DropDownPicker from 'react-native-dropdown-picker';
+import axios from 'axios';
 
 const AgregarRecetaScreen = () => {
-    const [dni, setDni] = useState('');
-    const [medicamento, setMedicamento] = useState('');
-    const [fechaVencimiento, setFechaVencimiento] = useState('');
+    const [Dni, setDni] = useState('');
+    const [NombreMedicamento, setMedicamento] = useState('');
+    const [FechaVencimiento, setFechaVencimiento] = useState('');
   return (
     <>
     <View style={styles.box}>
@@ -14,14 +17,18 @@ const AgregarRecetaScreen = () => {
 <View style={styles.minibox}>
 <form>
   <div className="form-group">
-    <TextInput style={styles.input} placeholder= {"Escribir..."} value={dni} onChangeText={setDni}></TextInput>
+    <Text style={styles.text}>Numero de documento del paciente</Text>
+    <TextInput style={styles.input} placeholder= {"Escribir..."} value={Dni} onChangeText={setDni}></TextInput>
       </div>
   <div className="form-group">
-    <TextInput style={styles.input1} placeholder= {"Escribir..."} value={medicamento} onChangeText={setMedicamento}></TextInput>
+  <Text style={styles.text1}>Numero de documento del paciente</Text>
+    <TextInput style={styles.input1} placeholder= {"Escribir..."} value={NombreMedicamento} onChangeText={setMedicamento}></TextInput>
   </div>
   <div className="form-group">
-    <TextInput style={styles.input2} placeholder= {"Escribir..."} value={fechaVencimiento} onChangeText={setFechaVencimiento}></TextInput>
+  <Text style={styles.text2}>Numero de documento del paciente</Text>
+    <TextInput style={styles.input2} placeholder= {"Escribir..."} value={FechaVencimiento} onChangeText={setFechaVencimiento}></TextInput>
   </div>
+  <button type="submit" style={styles.boton} onClick={()=>AgregarReceta({Dni, NombreMedicamento, FechaVencimiento})}>Subir Receta</button>
   </form>
   </View>
     </View>
@@ -40,6 +47,81 @@ const styles = StyleSheet.create({
         position: "fixed",
         textAlign: "center",
         top: 49, 
+    },
+    boton:{
+        backgroundColor:"#36C05D",
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+            width: 100,
+            textAlign:"center",
+            borderRadius: 20,
+            height: 59.4,
+            overflow: "hidden", 
+            width: 168.63,
+            height: 67,
+            left: 131,
+            alignItems: 'center',
+            position: "fixed",
+            top: 688,  
+            color: "#ffffff",
+            fontFamily: "Jacques Francois-Regular",
+            fontSize: 20,
+            fontWeight: 400,
+            lineHeight: "normal",     
+               
+    },
+    text:{
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "left",
+        width: "100%",
+        border: 0,
+        height: 16,
+        color: "#d3d3d3",
+        fontFamily: "Jacques Francois-Regular",
+        fontSize: 15,
+        fontWeight: 400,
+        left: 56,
+        lineHeight: "normal",
+        position: "fixed",
+        top: 247,
+        width: 300,
+  
+    },
+    text1:{
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "left",
+        width: "100%",
+        border: 0,
+        height: 16,
+        width: 300,
+        color: "#d3d3d3",
+        fontFamily: "Jacques Francois-Regular",
+        fontSize: 15,
+        left: 56,
+        lineHeight: "normal",
+        position: "fixed",
+        top: 309,
+        
+    },
+    text2:{
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "left   ",
+        width: "100%",
+        border: 0,
+        height: 16,
+        color: "#d3d3d3",
+        fontFamily: "Jacques Francois-Regular",
+        fontSize: 15,
+        fontWeight: 400,
+        left: 56,
+        lineHeight: "normal",
+        position: "fixed",
+        top: 371,
+        width: 300,
     },
     box: {
             backgroundColor: "#79AD60",
@@ -62,32 +144,14 @@ const styles = StyleSheet.create({
             flexDirection: "row",
             justifyContent: "center",
             width: "100%",
-    borderRadius:7,
-    left:56,
-            height: 38,
+            borderRadius:7,
+            left:56,
+            height: 42,
             width: 312,
-            height: 38,
             position: "fixed",
             top: 263,
-            placeholder:{
-                    display: "flex",
-                    flexDirection: "row",
-                    justifyContent: "center",
-                    width: "100%",
-                    border: 0,
-                    height: 25,
-                    width: 197,
-                    color: "#ffffff",
-                    fontFamily: "Jacques Francois-Regular",
-                    fontSize: 20,
-                    fontWeight: 400,
-                    left: 0,
-                    lineHeight: "normal",
-                    position: "fixed",
-                    top: 0,
-                    width: 197,
-                  }
-            },
+            marginBottom: 24,
+                  },
             input1:{
                 backgroundColor:"#79AD60",
                  display: "flex",
@@ -95,30 +159,12 @@ const styles = StyleSheet.create({
                  justifyContent: "center",
                  width: "100%",
          borderRadius:7,
-         left:56,
-                 height: 38,
+         left:56,   
                  width: 312,
-                 height: 38,
+                 height: 42,
                  position: "fixed",
                  top: 325,
-                 placeholder:{
-                         display: "flex",
-                         flexDirection: "row",
-                         justifyContent: "center",
-                         width: "100%",
-                         border: 0,
-                         height: 25,
-                         width: 197,
-                         color: "#ffffff",
-                         fontFamily: "Jacques Francois-Regular",
-                         fontSize: 20,
-                         fontWeight: 400,
-                         left: 0,
-                         lineHeight: "normal",
-                         position: "fixed",
-                         top: 0,
-                         width: 197,
-                       }
+                 marginBottom: 24,
                  },
                  input2:{
                     backgroundColor:"#79AD60",
@@ -128,29 +174,11 @@ const styles = StyleSheet.create({
                      width: "100%",
              borderRadius:7,
              left:56,
-                     height: 38,
                      width: 312,
-                     height: 38,
+                     height: 42,
                      position: "fixed",
                      top: 387,
-                     placeholder:{
-                             display: "flex",
-                             flexDirection: "row",
-                             justifyContent: "center",
-                             width: "100%",
-                             border: 0,
-                             height: 25,
-                             width: 197,
-                             color: "#ffffff",
-                             fontFamily: "Jacques Francois-Regular",
-                             fontSize: 20,
-                             fontWeight: 400,
-                             left: 0,
-                             lineHeight: "normal",
-                             position: "fixed",
-                             top: 0,
-                             width: 197,
-                           }
+                     marginBottom: 24,
                      },
 
           minibox: {

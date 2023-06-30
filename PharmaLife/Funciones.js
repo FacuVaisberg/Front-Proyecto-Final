@@ -6,4 +6,12 @@ async function CargarTodo() {
   const data = await response.data; 
   return data;
 }
-export default CargarTodo;
+
+
+async function AgregarReceta() {
+  let url = "http://localhost:3000/api/receta/";
+  const response = await axios.post(url);
+  const data = await response.data; 
+  return data;
+}
+export default AgregarReceta && CargarTodo;

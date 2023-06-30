@@ -2,22 +2,29 @@ import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 import LogoSinSlogan from "../img/LogoSinSlogan.png";
 import masMedico from "../img/masMedico.png"
+import Button from "../components/Button.js";
+import { useNavigation } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
+import { TouchableOpacity } from 'react-native';
 
 const HomeMedico = () => {
+  const navigation =useNavigation();
   return (
     <>
        <Text style={styles.titulo}> Hola, (nombre)</Text> 
             <View style={styles.box}>
               <Text style={styles.tituloAgregarReceta}> Agregar Receta</Text>
-              <View style={styles.miniBox}>
-                <Image style={styles.imgMas} source={require('../img/masMedico.png')}>
-
-                </Image>
+              <View style={styles.miniBox} >
+              <TouchableOpacity onPress={() => navigation.navigate("AgregarReceta")}>
+                <Image style={styles.imgMas}  source={require('../img/masMedico.png')} >
+                </Image>  
+                </TouchableOpacity>
               </View>
             </View>
             <View style={styles.box1}>
             </View>
             <View style={styles.box2}>
+            <Text style={styles.tituloAgregarReceta1}> Datos personales</Text>
               <View style={styles.miniBox1}>
               </View>
             </View>
@@ -163,6 +170,21 @@ titulo:{
   textAlign: "center",
 /*   width: 104, */
 
+},
+tituloAgregarReceta1:{
+  top:430,
+  color: "#FFFFFF",
+fontFamily: "Jacques Francois-Regular", 
+fontSize: 14,
+fontWeight: 400,
+left: 0,
+letterSpacing: 0,
+lineHeight: "normal",
+position: "fixed",
+textAlign: "center",
+height: 33,
+width: 175,
+marginLeft:22,
 }
 
   

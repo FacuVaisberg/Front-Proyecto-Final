@@ -7,6 +7,7 @@ import PrincipioScreen from '../screens/PrincipioScreen';
 import LogInScreen from '../screens/LogInScreen';
 import HomeMedico from '../screens/HomeMedico';
 import RegistrarDatosScreenMedico from '../screens/RegistrarDatosScreenMedico';
+import AgregarRecetaScreen from '../screens/AgregarRecetaScreen';
 
 
 const IndexStackScreen = () => {
@@ -18,6 +19,7 @@ const IndexStackScreen = () => {
         <IndexStack.Screen name="Registrarse" component={RegistrarseScreen}/>
         <IndexStack.Screen name="RegistrarDatosMedico" component={RegistrarDatosScreenMedico}/>
         <IndexStack.Screen name="Medico" component={HomeMedico}/>
+        <IndexStack.Screen name="AgregarReceta" component={AgregarRecetaScreen}/>
     </IndexStack.Navigator>
   )
 }

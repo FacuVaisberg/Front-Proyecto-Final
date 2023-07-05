@@ -21,8 +21,10 @@ const HomeMedico = () => {
                 </TouchableOpacity>
               </View>
             </View>
-            <View style={styles.box1}>
+            <TouchableOpacity onPress={() => navigation.navigate("RecetasSubidas")}>
+            <View style={styles.box1} >
             </View>
+            </TouchableOpacity>
             <View style={styles.box2}>
             <Text style={styles.tituloAgregarReceta1}> Datos personales</Text>
               <View style={styles.miniBox1}>

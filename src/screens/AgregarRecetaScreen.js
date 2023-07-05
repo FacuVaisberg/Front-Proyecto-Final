@@ -1,13 +1,15 @@
 import React, {useState} from 'react';
-import { View, Text, StyleSheet, Image,TextInput,Form, onClick} from 'react-native';
+import { View, Text, StyleSheet, Image,TextInput,Form, onClick, Alert, TouchableOpacity, text} from 'react-native';
 import AgregarReceta from "../../Funciones"
 import DropDownPicker from 'react-native-dropdown-picker';
 import axios from 'axios';
+import { Button } from 'react-native-web';
 
 const AgregarRecetaScreen = () => {
     const [Dni, setDni] = useState('');
     const [NombreMedicamento, setMedicamento] = useState('');
     const [FechaVencimiento, setFechaVencimiento] = useState('');
+
   return (
     <>
     <View style={styles.box}>
@@ -28,7 +30,12 @@ const AgregarRecetaScreen = () => {
   <Text style={styles.text2}>Numero de documento del paciente</Text>
     <TextInput style={styles.input2} placeholder= {"Escribir..."} value={FechaVencimiento} onChangeText={setFechaVencimiento}></TextInput>
   </div>
-  <button type="submit" style={styles.boton} onClick={()=>AgregarReceta({Dni, NombreMedicamento, FechaVencimiento})}>Subir Receta</button>
+  <TouchableOpacity onPress={()=>Alert.alert('titulo', 'contenido del alerta', [{text: 'OK', onPress:()=>console.log('ok')}, {text: 'no', style:'destructive'},{text: 'cancel', style:'cancel'}])}>
+    <View>
+    <Image style={styles.boton}  source={require('../img/masMedico.png')}></Image>
+    </View>
+  </TouchableOpacity>
+  {/* <button style={styles.boton} onClick={<Text>hola</Text>/* ()=>AgregarReceta({Dni, NombreMedicamento, FechaVencimiento}) */}
   </form>
   </View>
     </View>

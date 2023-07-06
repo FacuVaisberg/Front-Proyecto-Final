@@ -11,3 +11,5 @@
     npm i axios
 
     npm i react-redux
+
+npm i expo

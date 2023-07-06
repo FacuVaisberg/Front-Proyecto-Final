@@ -10,6 +10,18 @@ const AgregarRecetaScreen = () => {
     const [NombreMedicamento, setMedicamento] = useState('');
     const [FechaVencimiento, setFechaVencimiento] = useState('');
 
+    const handleAgregarReceta = () => {
+      // Aquí puedes hacer lo que necesites al agregar la receta
+      console.log('Receta agregada:', Dni, NombreMedicamento, FechaVencimiento);
+  
+      // Ejemplo de alerta
+      alert('Título', 'Contenido del alerta', [
+        { text: 'OK', onPress: () => console.log('OK') },
+        { text: 'No', style: 'destructive' },
+        { text: 'Cancelar', style: 'cancel' },
+      ]);
+    };
+
   return (
     <>
     <View style={styles.box}>
@@ -30,7 +42,7 @@ const AgregarRecetaScreen = () => {
   <Text style={styles.text2}>Numero de documento del paciente</Text>
     <TextInput style={styles.input2} placeholder= {"Escribir..."} value={FechaVencimiento} onChangeText={setFechaVencimiento}></TextInput>
   </div>
-  <TouchableOpacity onPress={()=>Alert.alert('titulo', 'contenido del alerta', [{text: 'OK', onPress:()=>console.log('ok')}, {text: 'no', style:'destructive'},{text: 'cancel', style:'cancel'}])}>
+  <TouchableOpacity onPress={()=>handleAgregarReceta()}>
     <View>
     <Image style={styles.boton}  source={require('../img/masMedico.png')}></Image>
     </View>

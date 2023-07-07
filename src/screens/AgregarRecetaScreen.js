@@ -15,7 +15,7 @@ const AgregarRecetaScreen = () => {
       console.log('Receta agregada:', Dni, NombreMedicamento, FechaVencimiento);
   
       // Ejemplo de alerta
-      alert('Título', 'Contenido del alerta', [
+      alert('Receta Agregada con exito!!', 'Contenido del alerta', [
         { text: 'OK', onPress: () => console.log('OK') },
         { text: 'No', style: 'destructive' },
         { text: 'Cancelar', style: 'cancel' },
@@ -44,7 +44,7 @@ const AgregarRecetaScreen = () => {
   </div>
   <TouchableOpacity onPress={()=>handleAgregarReceta()}>
     <View>
-    <Image style={styles.boton}  source={require('../img/masMedico.png')}></Image>
+    <Text style={styles.boton}> Subir Receta</Text>
     </View>
   </TouchableOpacity>
   {/* <button style={styles.boton} onClick={<Text>hola</Text>/* ()=>AgregarReceta({Dni, NombreMedicamento, FechaVencimiento}) */}
@@ -88,6 +88,15 @@ const styles = StyleSheet.create({
             fontSize: 20,
             fontWeight: 400,
             lineHeight: "normal",     
+            shadowColor: "#000",
+shadowOffset: {
+	width: 0,
+	height: 12,
+},
+shadowOpacity: 0.58,
+shadowRadius: 16.00,
+
+elevation: 24,
                
     },
     text:{

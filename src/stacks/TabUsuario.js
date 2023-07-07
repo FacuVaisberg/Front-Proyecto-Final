@@ -1,12 +1,12 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const SettingsScreen1 = () => {
+const TabUsuario = () => {
   return (
     <View>
-      <Text>SettingsScreen1</Text>
+      <Text>TabUsuario</Text>
     </View>
   )
 }
 
-export default SettingsScreen1
+export default TabUsuario

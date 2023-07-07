@@ -8,6 +8,8 @@
 
     npm install @react-navigation/native-stack
 
+    npm install @react-navigation/stack
+
     npm i axios
 
     npm i react-redux

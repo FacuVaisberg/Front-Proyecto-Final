@@ -32,7 +32,7 @@ const AgregarRecetaScreen = () => {
     </View>
   </TouchableOpacity>
     <View style={styles.box}>
-              <Text style={styles.tituloAgregarReceta}> Agregar Receta</Text>
+              <Text style={styles.tituloAgregarReceta}>Agregar Receta</Text>
     </View>
     <View style={styles.box}>
 <View style={styles.minibox}>

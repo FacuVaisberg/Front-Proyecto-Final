@@ -81,6 +81,7 @@ const styles = StyleSheet.create({
   input: {
     flex: 1,
     paddingVertical: 7,
+    height:"100%"
   },
   showPasswordButton: {
     paddingHorizontal: 10,

@@ -4,11 +4,13 @@ import AgregarReceta from "../../Funciones"
 import DropDownPicker from 'react-native-dropdown-picker';
 import axios from 'axios';
 import { Button } from 'react-native-web';
+import { useNavigation } from '@react-navigation/native';
 
 const AgregarRecetaScreen = () => {
     const [Dni, setDni] = useState('');
     const [NombreMedicamento, setMedicamento] = useState('');
     const [FechaVencimiento, setFechaVencimiento] = useState('');
+    const navigation =useNavigation();
 
     const handleAgregarReceta = () => {
       // Aquí puedes hacer lo que necesites al agregar la receta
@@ -24,6 +26,11 @@ const AgregarRecetaScreen = () => {
 
   return (
     <>
+    <TouchableOpacity  style={styles.Back} onPress={() => navigation.navigate("Medico")}>
+    <View>
+    <Image style={styles.Back}  source={require('../img/volver.png')} />
+    </View>
+  </TouchableOpacity>
     <View style={styles.box}>
               <Text style={styles.tituloAgregarReceta}> Agregar Receta</Text>
     </View>
@@ -35,11 +42,11 @@ const AgregarRecetaScreen = () => {
     <TextInput style={styles.input} placeholder= {"Escribir..."} value={Dni} onChangeText={setDni}></TextInput>
       </div>
   <div className="form-group">
-  <Text style={styles.text1}>Numero de documento del paciente</Text>
+  <Text style={styles.text1}>Medicamento</Text>
     <TextInput style={styles.input1} placeholder= {"Escribir..."} value={NombreMedicamento} onChangeText={setMedicamento}></TextInput>
   </div>
   <div className="form-group">
-  <Text style={styles.text2}>Numero de documento del paciente</Text>
+  <Text style={styles.text2}>Fecha de vencimiento</Text>
     <TextInput style={styles.input2} placeholder= {"Escribir..."} value={FechaVencimiento} onChangeText={setFechaVencimiento}></TextInput>
   </div>
   <TouchableOpacity onPress={()=>handleAgregarReceta()}>
@@ -67,6 +74,13 @@ const styles = StyleSheet.create({
         textAlign: "center",
         top: 49, 
     },
+    Back: {
+      color:"#7CB164",
+  width:30,
+  height:30,
+  top: 10,
+  left:16,
+  },
     boton:{
         backgroundColor:"#36C05D",
             display: "flex",

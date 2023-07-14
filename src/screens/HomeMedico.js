@@ -1,8 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 import LogoSinSlogan from "../img/LogoSinSlogan.png";
-import masMedico from "../img/masMedico.png"
-import Button from "../components/Button.js";
+import masMedico from "../img/masMedico.png";
 import { useNavigation } from '@react-navigation/native';
 import { NavigationContainer } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native';
@@ -16,24 +15,32 @@ const HomeMedico = () => {
               <Text style={styles.tituloAgregarReceta}> Agregar Receta</Text>
               <View style={styles.miniBox} >
               <TouchableOpacity onPress={() => navigation.navigate("AgregarReceta")}>
-                <Image style={styles.imgMas}  source={require('../img/masMedico.png')} >
-                </Image>  
+                <Image style={styles.imgMas}  source={require('../img/masMedico.png')}></Image>  
                 </TouchableOpacity>
               </View>
             </View>
-            <TouchableOpacity onPress={() => navigation.navigate("RecetasSubidas")}>
+            <TouchableOpacity onPress={() => navigation.navigate("MisPacientes")}>
             <View style={styles.box1} >
-            </View>
+                <Text style={styles.tituloMisPacientes}> Mis Pacientes</Text>
+                <View style={styles.miniBox1}>
+                  <Text style={styles.subtext}>Ultimos Pacientes:</Text>
+              </View>
+              </View>
             </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate("DatosPersonales")}>
             <View style={styles.box2}>
-            <Text style={styles.tituloAgregarReceta1}> Datos personales</Text>
-              <View style={styles.miniBox1}>
+            <Text style={styles.tituloDatosPersonales}> Datos personales</Text>
+              <View style={styles.miniBox2}>
               </View>
             </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate("RecetasSubidas")}>
             <View style={styles.box3}>
+            <Text style={styles.tituloRecetasSubidas}> Recetas Subidas</Text>
               <View style={styles.miniBox3}>
               </View>
             </View>
+            </TouchableOpacity>
             </>
         );
     };
@@ -124,10 +131,39 @@ miniBox1: {
   width: 177,
   left: 0,
   position: "fixed",
-  top: 449,
-  marginLeft:27.5,
+  top: 222,
+  marginLeft:224,
   borderRadius:20,
-
+},
+miniBox2: {
+  backgroundColor: "#668557",
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "center",
+  width: "100%",
+  border: 0,
+  height: 234,
+  width: 177,
+  left: 0,
+  position: "fixed",
+  top: 449,
+  marginLeft:28,
+  borderRadius:20,
+},
+miniBox3: {
+  backgroundColor: "#668557",
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "center",
+  width: "100%",
+  border: 0,
+  height: 234,
+  width: 177,
+  left: 0,
+  position: "fixed",
+  top: 524,
+  marginLeft:224,
+  borderRadius:20,
 },
 imgMas:{
   backgroundColor: "#668557",
@@ -159,6 +195,21 @@ height: 33,
 width: 175,
 marginLeft:22,
 },
+tituloRecetasSubidas:{
+  top:502,
+  color: "#FFFFFF",
+fontFamily: "Jacques Francois-Regular", 
+fontSize: 14,
+fontWeight: 400,
+left: 180,
+letterSpacing: 0,
+lineHeight: "normal",
+position: "fixed",
+textAlign: "center",
+height: 33,
+width: 175,
+marginLeft:22,
+},
 titulo:{
   top:49,
   color: "#000000",
@@ -173,7 +224,22 @@ titulo:{
 /*   width: 104, */
 
 },
-tituloAgregarReceta1:{
+tituloMisPacientes:{
+  top:200,
+  color: "#FFFFFF",
+fontFamily: "Jacques Francois-Regular", 
+fontSize: 14,
+fontWeight: 400,
+left: 180,
+letterSpacing: 0,
+lineHeight: "normal",
+position: "fixed",
+textAlign: "center",
+height: 33,
+width: 175,
+marginLeft:22,
+},
+tituloDatosPersonales:{
   top:430,
   color: "#FFFFFF",
 fontFamily: "Jacques Francois-Regular", 
@@ -187,9 +253,23 @@ textAlign: "center",
 height: 33,
 width: 175,
 marginLeft:22,
+},
+subtext:{
+  top:229,
+  color: "#FFFFFF",
+fontFamily: "Jacques Francois-Regular", 
+fontSize: 7,
+fontWeight: 400,
+left: 0,
+letterSpacing: 0,
+lineHeight: "normal",
+position: "fixed",
+textAlign: "center",
+height: 9,
+width: 61,
+marginLeft:228,
 }
 
-  
   },
 )
 export default HomeMedico;

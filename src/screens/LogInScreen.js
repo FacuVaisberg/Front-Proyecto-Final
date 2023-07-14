@@ -126,6 +126,8 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '500',
     fontStyle: 'normal',
+    justifyContent:'center',
+    alignContent:'center',
     lineHeight: 18,
   },
   semiCircle: {

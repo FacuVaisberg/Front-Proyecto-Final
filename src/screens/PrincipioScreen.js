@@ -5,6 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 import RegistrarseScreen from '../screens/RegistrarseScreen.js';
 import Index from '../../Index'
 
+
 const PrincipioScreen = () => {
     const navigation =useNavigation();
     return (
@@ -17,7 +18,7 @@ const PrincipioScreen = () => {
           <View style={styles.container2}>
             <Image
               style={styles.PharmaLifeLogo}
-              source={require('/src/img/LogoPharmaLife.png')}
+              source={require('../img/LogoPharmaLife.png')}
             />
           </View>
           <Button title="Iniciar sesion" onPress={() => navigation.navigate("LogIn")} />
@@ -46,7 +47,6 @@ const styles = StyleSheet.create({
       marginBottom: 30,
       color: "white",
       fontFamily: 'Jacques Francois',
-      fontweight: 400,
       fontSize: 16,
       lineheight: 24,
     },
@@ -69,7 +69,6 @@ const styles = StyleSheet.create({
       flexDirection: 'column',
       justifyContent: 'space-around',
       alignItems: 'center',
-      width: "center",
       height: 150.189946785,
       textAlign: 'center',
     },

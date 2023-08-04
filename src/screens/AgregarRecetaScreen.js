@@ -67,10 +67,9 @@ const styles = StyleSheet.create({
         color: "#000000",
         fontFamily: "Jacques Francois-Regular",
         fontSize: 25,
-        fontWeight: 400,
         left: 23,
-        lineHeight: "normal",
-        position: "fixed",
+        /*lineHeight: "normal",*/
+        /* position: "fixed", */
         textAlign: "center",
         top: 49, 
     },
@@ -95,20 +94,19 @@ const styles = StyleSheet.create({
             height: 67,
             left: 131,
             alignItems: 'center',
-            position: "fixed",
+           /*  position: "fixed", */
             top: 688,  
             color: "#ffffff",
             fontFamily: "Jacques Francois-Regular",
             fontSize: 20,
-            fontWeight: 400,
-            lineHeight: "normal",     
+            /*lineHeight: "normal",*/     
             shadowColor: "#000",
 shadowOffset: {
 	width: 0,
 	height: 12,
 },
-shadowOpacity: 0.58,
-shadowRadius: 16.00,
+/* shadowOpacity: 0.58,
+shadowRadius: 16.00, */
 
 elevation: 24,
                
@@ -123,10 +121,10 @@ elevation: 24,
         color: "#d3d3d3",
         fontFamily: "Jacques Francois-Regular",
         fontSize: 15,
-        fontWeight: 400,
+       
         left: 56,
-        lineHeight: "normal",
-        position: "fixed",
+        /*lineHeight: "normal",*/
+        /* position: "fixed", */
         top: 247,
         width: 300,
   
@@ -143,8 +141,8 @@ elevation: 24,
         fontFamily: "Jacques Francois-Regular",
         fontSize: 15,
         left: 56,
-        lineHeight: "normal",
-        position: "fixed",
+        /*lineHeight: "normal",*/
+        /* position: "fixed", */
         top: 309,
         
     },
@@ -158,10 +156,9 @@ elevation: 24,
         color: "#d3d3d3",
         fontFamily: "Jacques Francois-Regular",
         fontSize: 15,
-        fontWeight: 400,
         left: 56,
-        lineHeight: "normal",
-        position: "fixed",
+        /*lineHeight: "normal",*/
+        /* position: "fixed", */
         top: 371,
         width: 300,
     },
@@ -176,7 +173,7 @@ elevation: 24,
             width: 386,
             height: 642,
             left: 23,
-            position: "fixed",
+            /* position: "fixed", */
             top: 114.1,
             width: 386,
           },
@@ -190,7 +187,7 @@ elevation: 24,
             left:56,
             height: 42,
             width: 312,
-            position: "fixed",
+            /* position: "fixed", */
             top: 263,
             marginBottom: 24,
                   },
@@ -204,7 +201,7 @@ elevation: 24,
          left:56,   
                  width: 312,
                  height: 42,
-                 position: "fixed",
+                /*  position: "fixed", */
                  top: 325,
                  marginBottom: 24,
                  },
@@ -218,7 +215,7 @@ elevation: 24,
              left:56,
                      width: 312,
                      height: 42,
-                     position: "fixed",
+                     /* position: "fixed", */
                      top: 387,
                      marginBottom: 24,
                      },
@@ -234,7 +231,7 @@ elevation: 24,
                 height: 538,
                 left: 33.32,
                 borderRadius:20,
-                position: "fixed",
+                /* position: "fixed", */
                 top: 201.52,
                 width: 365,               
     }

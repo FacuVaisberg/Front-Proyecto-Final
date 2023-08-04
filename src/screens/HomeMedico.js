@@ -54,12 +54,12 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     width: "100%",
     border: 0,
-    position: "fixed",
-    height: 279,
-    width: 187,
+    /* position: "fixed", */
+    height: "30%",
+    width: "40%",
     borderRadius:20,
-    top:114,
-    marginLeft:23,
+    top:"12%",
+    marginLeft:"8%",
 },
 box1: {
   backgroundColor: "#79AD60",
@@ -73,7 +73,7 @@ box1: {
   borderRadius:20,
   marginLeft:219,
   marginRight:24,
-  position: "fixed",
+  /* position: "fixed", */
   top:182,
 },
 box2: {
@@ -83,7 +83,7 @@ box2: {
     justifyContent: "center",
     width: "100%",
     border: 0,
-    position: "fixed",
+    /* position: "fixed", */
     height: 279,
     width: 187,
     borderRadius:20,
@@ -102,7 +102,7 @@ box3: {
   borderRadius:20,
   marginLeft:219,
   marginRight:24,
-  position: "fixed",
+ /*  position: "fixed", */
   top:484,
 },
 miniBox: {
@@ -115,7 +115,7 @@ miniBox: {
   height: 234,
   width: 177,
   left: 0,
-  position: "fixed",
+  /* position: "fixed", */
   top: 154,
   marginLeft:27.5,
   borderRadius:20,
@@ -130,7 +130,7 @@ miniBox1: {
   height: 234,
   width: 177,
   left: 0,
-  position: "fixed",
+  /* position: "fixed", */
   top: 222,
   marginLeft:224,
   borderRadius:20,
@@ -145,7 +145,7 @@ miniBox2: {
   height: 234,
   width: 177,
   left: 0,
-  position: "fixed",
+  /* position: "fixed", */
   top: 449,
   marginLeft:28,
   borderRadius:20,
@@ -160,7 +160,7 @@ miniBox3: {
   height: 234,
   width: 177,
   left: 0,
-  position: "fixed",
+ /*  position: "fixed", */
   top: 524,
   marginLeft:224,
   borderRadius:20,
@@ -175,7 +175,7 @@ imgMas:{
   height: 20,
   width: 20,
   left: 0,
-  position: "fixed",
+ /*  position: "fixed", */
   top: 261,
   marginLeft:107,
   borderRadius:20,
@@ -185,11 +185,10 @@ tituloAgregarReceta:{
   color: "#FFFFFF",
 fontFamily: "Jacques Francois-Regular", 
 fontSize: 14,
-fontWeight: 400,
 left: 0,
 letterSpacing: 0,
-lineHeight: "normal",
-position: "fixed",
+/*lineHeight: "normal",*/
+/* position: "fixed", */
 textAlign: "center",
 height: 33,
 width: 175,
@@ -200,11 +199,10 @@ tituloRecetasSubidas:{
   color: "#FFFFFF",
 fontFamily: "Jacques Francois-Regular", 
 fontSize: 14,
-fontWeight: 400,
 left: 180,
 letterSpacing: 0,
-lineHeight: "normal",
-position: "fixed",
+/*lineHeight: "normal",*/
+/* position: "fixed", */
 textAlign: "center",
 height: 33,
 width: 175,
@@ -216,10 +214,9 @@ titulo:{
   fontFamily: "Jacques Francois-Regular",
   fontSize: 25,
   marginLeft:22,
-  fontWeight: 400,
   letterSpacing: 0,
-  lineHeight: "normal",
-  position: "fixed",
+  /*lineHeight: "normal",*/
+  /* position: "fixed", */
   textAlign: "center",
 /*   width: 104, */
 
@@ -229,11 +226,10 @@ tituloMisPacientes:{
   color: "#FFFFFF",
 fontFamily: "Jacques Francois-Regular", 
 fontSize: 14,
-fontWeight: 400,
 left: 180,
 letterSpacing: 0,
-lineHeight: "normal",
-position: "fixed",
+/*lineHeight: "normal",*/
+/* position: "fixed", */
 textAlign: "center",
 height: 33,
 width: 175,
@@ -244,11 +240,10 @@ tituloDatosPersonales:{
   color: "#FFFFFF",
 fontFamily: "Jacques Francois-Regular", 
 fontSize: 14,
-fontWeight: 400,
 left: 0,
 letterSpacing: 0,
-lineHeight: "normal",
-position: "fixed",
+/*lineHeight: "normal",*/
+/* position: "fixed", */
 textAlign: "center",
 height: 33,
 width: 175,
@@ -259,11 +254,10 @@ subtext:{
   color: "#FFFFFF",
 fontFamily: "Jacques Francois-Regular", 
 fontSize: 7,
-fontWeight: 400,
 left: 0,
 letterSpacing: 0,
-lineHeight: "normal",
-position: "fixed",
+/*lineHeight: "normal",*/
+/* position: "fixed", */
 textAlign: "center",
 height: 9,
 width: 61,

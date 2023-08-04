@@ -69,7 +69,6 @@ const styles = StyleSheet.create({
     marginBottom: 30,
     color: '#668557',
     fontFamily: 'Crimson Text',
-    fontWeight: 'bold',
     fontSize: 25,
     lineHeight: 24,
   },
@@ -103,7 +102,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     shadowRadius: 15,
     shadowColor: '#2C4521',
-    shadowOpacity: 0.6,
+    /* shadowOpacity: 0.6, */
     elevation: 5,
   },
   buttonChico: {
@@ -117,21 +116,20 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     shadowRadius: 15,
     shadowColor: '#2C4521',
-    shadowOpacity: 0.6,
+    /* shadowOpacity: 0.6, */
     elevation: 5,
   },
   buttonText: {
     color: '#2C4521',
     fontFamily: 'assets/fonts/UberMoveMedium.otf',
     fontSize: 16,
-    fontWeight: '500',
     fontStyle: 'normal',
     justifyContent:'center',
     alignContent:'center',
     lineHeight: 18,
   },
   semiCircle: {
-    position: 'absolute',
+    /* position: 'absolute', */
     top: 0,
     left: 0,
   },

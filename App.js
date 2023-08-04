@@ -14,7 +14,6 @@ export default function App() {
 
 const styles = StyleSheet.create({
   baseText: {
-    fontWeight: 'bold',
   },
   innerText: {
     color: 'red',

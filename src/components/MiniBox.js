@@ -17,7 +17,6 @@ const styles = StyleSheet.create({
         border: 0,
         height: 234,
         width: 177,
-        position: "fixed",
         borderRadius:20,
     }
 })

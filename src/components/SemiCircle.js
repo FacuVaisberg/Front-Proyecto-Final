@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     height: 100,
     borderTopLeftRadius: 100,
     borderTopRightRadius: 100,
-    opacity:'70%'
+  /*   opacity:'70%' */
   },
 });
 

@@ -39,10 +39,9 @@ const styles = StyleSheet.create({
     color: "#000000",
     fontFamily: "Jacques Francois-Regular",
     fontSize: 25,
-    fontWeight: 400,
     left: 121,
     letterSpacing: 0,
-    position: "fixed",
+  /*   position: "fixed", */
     textAlign: "center",
     top: 34,
   },
@@ -57,8 +56,7 @@ const styles = StyleSheet.create({
     fontFamily: "Jacques Francois",
     fontSize: 16,
     fontStyle: "normal",
-    fontWeight: 400,
-    lineHeight: "normal",
+    /*lineHeight: "normal",*/
   },
   textMiniBox2: {
     display: "flex",
@@ -70,8 +68,7 @@ const styles = StyleSheet.create({
     fontFamily: "Jacques Francois",
     fontSize: 16,
     fontStyle: "normal",
-    fontWeight: 400,
-    lineHeight: "normal",
+    /*lineHeight: "normal",*/
     marginTop: 10, // Modificar el valor aquí para ajustar el espaciado
   },
   box: {
@@ -85,7 +82,7 @@ const styles = StyleSheet.create({
     width: 358,
     height: 613,
     left: 36,
-    position: "fixed",
+/*     position: "fixed" */
     top: 172,
     borderRadius: 20,
   },
@@ -99,7 +96,7 @@ const styles = StyleSheet.create({
     height: 80,
     width: 312,
     left: 60,
-    position: "fixed",
+   /*  position: "fixed", */
     marginTop: 20,
     width: 312,
     borderRadius: 10,

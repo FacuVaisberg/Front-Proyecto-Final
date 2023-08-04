@@ -60,7 +60,6 @@ const styles = StyleSheet.create({
     marginBottom: 30,
     color: '#668557',
     fontFamily: 'Crimson Text',
-    fontWeight: 'bold',
     fontSize: 25,
     lineHeight: 24,
   },
@@ -96,7 +95,7 @@ const styles = StyleSheet.create({
     paddingVertical: 1,
     shadowRadius: 5,
     shadowColor: '#2C4521',
-    shadowOpacity: 0.6,
+    /* shadowOpacity: 0.6, */
     elevation: 5,
     margin:30
   },
@@ -109,7 +108,7 @@ const styles = StyleSheet.create({
     paddingVertical: 1,
     shadowRadius: 5,
     shadowColor: '#2C4521',
-    shadowOpacity: 0.6,
+/*     shadowOpacity: 0.6, */
     elevation: 5,
     margin:30
   },
@@ -124,14 +123,13 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     shadowRadius: 15,
     shadowColor: '#2C4521',
-    shadowOpacity: 0.6,
+    /* shadowOpacity: 0.6, */
     elevation: 5,
   },
   buttonText: {
     color: '#2C4521',
     fontFamily: 'assets/fonts/UberMoveMedium.otf',
     fontSize: 16,
-    fontWeight: '500',
     fontStyle: 'normal',
     lineHeight: 18,
   },

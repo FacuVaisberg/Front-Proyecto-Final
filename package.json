@@ -25,7 +25,7 @@
     "react-native-screens": "~3.20.0",
     "react-native-web": "~0.18.11",
     "react-navigation-stack": "^2.10.4",
-    "react-redux": "^8.1.1"
+    "react-redux": "^8.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"

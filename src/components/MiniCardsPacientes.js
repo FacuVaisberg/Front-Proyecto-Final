@@ -22,7 +22,6 @@ const styles = StyleSheet.create({
       textAlign: 'center',
       color: "#ffffff",
       fontFamily: 'Crimson Text',
-      fontWeight:"bold",
       fontSize: 20,
       lineheight: 24,
     }

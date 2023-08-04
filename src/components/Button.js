@@ -20,14 +20,12 @@ const styles = StyleSheet.create({
         shadowRadius: 15,
         marginBottom:10,
         shadowColor: '#2C4521',
-        shadowOpacity: 0.6,
+        /* shadowOpacity: 0.6, */
         elevation: 5,
     },
     buttonText: {
         color: '#2C4521',
-        fontFamily: 'assets/fonts/UberMoveMedium.otf', //con el .otf funciona por ahora pero no esta bueno que este
         fontSize: 16,
-        fontWeight: '500',
         fontStyle: "normal",
         lineHeight: 18,
     },

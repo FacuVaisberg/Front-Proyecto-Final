@@ -50,11 +50,9 @@ const styles = StyleSheet.create({
   box: {
     backgroundColor: "#79AD60",
     display: "flex",
-    flexDirection: "row",
     justifyContent: "center",
-    width: "100%",
     border: 0,
-    /* position: "fixed", */
+    /* position: "fixed ", */
     height: "30%",
     width: "40%",
     borderRadius:20,
@@ -107,17 +105,12 @@ box3: {
 },
 miniBox: {
   backgroundColor: "#668557",
-  display: "flex",
   flexDirection: "row",
   justifyContent: "center",
-  width: "100%",
-  border: 0,
-  height: 234,
-  width: 177,
-  left: 0,
-  /* position: "fixed", */
-  top: 154,
-  marginLeft:27.5,
+  height: "83.87%",
+  width: "94.65%",
+/*   top: "14.33%", */
+  marginLeft:"2.67%",
   borderRadius:20,
 },
 miniBox1: {
@@ -181,23 +174,23 @@ imgMas:{
   borderRadius:20,
 },
 tituloAgregarReceta:{
-  top:127,
-  color: "#FFFFFF",
-fontFamily: "Jacques Francois-Regular", 
+  top:"5.22%",
+  color: "#000000",
+/*fontFamily: "Jacques Francois-Regular",* 
 fontSize: 14,
 left: 0,
 letterSpacing: 0,
 /*lineHeight: "normal",*/
 /* position: "fixed", */
-textAlign: "center",
-height: 33,
-width: 175,
-marginLeft:22,
+textAlign: "5.2%",
+height: "6.09%",
+width: "55.6%",
+marginLeft:"9.6%",
 },
 tituloRecetasSubidas:{
   top:502,
   color: "#FFFFFF",
-fontFamily: "Jacques Francois-Regular", 
+/*fontFamily: "Jacques Francois-Regular",* 
 fontSize: 14,
 left: 180,
 letterSpacing: 0,
@@ -211,7 +204,7 @@ marginLeft:22,
 titulo:{
   top:49,
   color: "#000000",
-  fontFamily: "Jacques Francois-Regular",
+  /*fontFamily: "Jacques Francois-Regular",*
   fontSize: 25,
   marginLeft:22,
   letterSpacing: 0,
@@ -224,7 +217,7 @@ titulo:{
 tituloMisPacientes:{
   top:200,
   color: "#FFFFFF",
-fontFamily: "Jacques Francois-Regular", 
+/*fontFamily: "Jacques Francois-Regular",* 
 fontSize: 14,
 left: 180,
 letterSpacing: 0,
@@ -238,7 +231,7 @@ marginLeft:22,
 tituloDatosPersonales:{
   top:430,
   color: "#FFFFFF",
-fontFamily: "Jacques Francois-Regular", 
+/*fontFamily: "Jacques Francois-Regular",* 
 fontSize: 14,
 left: 0,
 letterSpacing: 0,
@@ -252,7 +245,7 @@ marginLeft:22,
 subtext:{
   top:229,
   color: "#FFFFFF",
-fontFamily: "Jacques Francois-Regular", 
+/*fontFamily: "Jacques Francois-Regular",* 
 fontSize: 7,
 left: 0,
 letterSpacing: 0,

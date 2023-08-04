@@ -65,7 +65,7 @@ const AgregarRecetaScreen = () => {
 const styles = StyleSheet.create({      
       tituloAgregarReceta: {
         color: "#000000",
-        fontFamily: "Jacques Francois-Regular",
+        /*fontFamily: "Jacques Francois-Regular",*
         fontSize: 25,
         left: 23,
         /*lineHeight: "normal",*/
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
            /*  position: "fixed", */
             top: 688,  
             color: "#ffffff",
-            fontFamily: "Jacques Francois-Regular",
+            /*fontFamily: "Jacques Francois-Regular",*
             fontSize: 20,
             /*lineHeight: "normal",*/     
             shadowColor: "#000",
@@ -119,7 +119,7 @@ elevation: 24,
         border: 0,
         height: 16,
         color: "#d3d3d3",
-        fontFamily: "Jacques Francois-Regular",
+        /*fontFamily: "Jacques Francois-Regular",*
         fontSize: 15,
        
         left: 56,
@@ -138,7 +138,7 @@ elevation: 24,
         height: 16,
         width: 300,
         color: "#d3d3d3",
-        fontFamily: "Jacques Francois-Regular",
+        /*fontFamily: "Jacques Francois-Regular",*
         fontSize: 15,
         left: 56,
         /*lineHeight: "normal",*/
@@ -154,7 +154,7 @@ elevation: 24,
         border: 0,
         height: 16,
         color: "#d3d3d3",
-        fontFamily: "Jacques Francois-Regular",
+        /*fontFamily: "Jacques Francois-Regular",*
         fontSize: 15,
         left: 56,
         /*lineHeight: "normal",*/

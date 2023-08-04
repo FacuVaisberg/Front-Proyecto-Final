@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     height: 33,
     width: 187,
     color: "#000000",
-    fontFamily: "Jacques Francois-Regular",
+    /*fontFamily: "Jacques Francois-Regular",*
     fontSize: 25,
     left: 121,
     letterSpacing: 0,

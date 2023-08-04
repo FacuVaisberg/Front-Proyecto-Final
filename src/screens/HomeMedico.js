@@ -14,8 +14,8 @@ const HomeMedico = () => {
             <View style={styles.box}>
               <Text style={styles.tituloAgregarReceta}> Agregar Receta</Text>
               <View style={styles.miniBox} >
-              <TouchableOpacity onPress={() => navigation.navigate("AgregarReceta")}>
-                <Image style={styles.imgMas}  source={require('../img/masMedico.png')}></Image>  
+              <TouchableOpacity style={styles.imgMas} onPress={() => navigation.navigate("AgregarReceta")}>
+                <Image source={require('../img/masMedico.png')}></Image>  
                 </TouchableOpacity>
               </View>
             </View>
@@ -109,7 +109,7 @@ miniBox: {
   justifyContent: "center",
   height: "83.87%",
   width: "94.65%",
-/*   top: "14.33%", */
+ top: "3.33%", 
   marginLeft:"2.67%",
   borderRadius:20,
 },
@@ -163,28 +163,33 @@ imgMas:{
   display: "flex",
   flexDirection: "row",
   justifyContent: "center",
+  top: "45%",
+  height: "11.29%",
+  width: "8%",
+},
+boton:
+{
+  backgroundColor: "#668557",
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "center",
+  top: "50%",
+  height: "11.29%",
   width: "100%",
-  border: 0,
-  height: 20,
-  width: 20,
-  left: 0,
- /*  position: "fixed", */
-  top: 261,
-  marginLeft:107,
-  borderRadius:20,
+  marginLeft: "61.9%",
 },
 tituloAgregarReceta:{
-  top:"5.22%",
-  color: "#000000",
+  top:"0%",
+  color: "#ffffff",
 /*fontFamily: "Jacques Francois-Regular",* 
 fontSize: 14,
 left: 0,
 letterSpacing: 0,
 /*lineHeight: "normal",*/
 /* position: "fixed", */
-textAlign: "5.2%",
-height: "6.09%",
-width: "55.6%",
+textAlign: "auto",
+height: "auto",
+width: "auto",
 marginLeft:"9.6%",
 },
 tituloRecetasSubidas:{

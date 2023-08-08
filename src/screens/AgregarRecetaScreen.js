@@ -1,16 +1,5 @@
 import React, { useState } from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  Image,
-  TextInput,
-  Form,
-  onClick,
-  Alert,
-  TouchableOpacity,
-} from "react-native";
-import AgregarReceta from "../../Funciones";
+import { View, Text, StyleSheet, Image, TextInput, Form, onClick, Alert, TouchableOpacity} from "react-native";
 import DropDownPicker from "react-native-dropdown-picker";
 import axios from "axios";
 import { Button } from "react-native-web";

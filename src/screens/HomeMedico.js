@@ -62,17 +62,14 @@ const styles = StyleSheet.create({
 box1: {
   backgroundColor: "#79AD60",
   display: "flex",
-  flexDirection: "row",
   justifyContent: "center",
-  width: "100%",
   border: 0,
-  height: 279,
-  width: 187,
+  /* position: "fixed ", */
+  height: "30%",
+  width: "40%",
   borderRadius:20,
-  marginLeft:219,
-  marginRight:24,
-  /* position: "fixed", */
-  top:182,
+  left:'50.93%',
+  top:'19.52%',
 },
 box2: {
   backgroundColor: "#79AD60",
@@ -220,18 +217,18 @@ titulo:{
 
 },
 tituloMisPacientes:{
-  top:200,
-  color: "#FFFFFF",
+  top:"0%",
+  color: "#ffffff",
 /*fontFamily: "Jacques Francois-Regular",* 
 fontSize: 14,
-left: 180,
+left: 0,
 letterSpacing: 0,
 /*lineHeight: "normal",*/
 /* position: "fixed", */
-textAlign: "center",
-height: 33,
-width: 175,
-marginLeft:22,
+textAlign: "auto",
+height: "auto",
+width: "auto",
+left:"10.16%",
 },
 tituloDatosPersonales:{
   top:430,

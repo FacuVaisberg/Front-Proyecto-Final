@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     height: "20%",
     marginLeft: 13,
     shadowColor: "#FFFFFF",
-    fontFamily: "Jacques Francois",
+    /* fontFamily: "Jacques Francois", */
     fontSize: 16,
     fontStyle: "normal",
     /*lineHeight: "normal",*/
@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     color: "#ffffff",
     marginLeft: 13,
     shadowColor: "#FFFFFF",
-    fontFamily: "Jacques Francois",
+/*     fontFamily: "Jacques Francois", */
     fontSize: 16,
     fontStyle: "normal",
     /*lineHeight: "normal",*/

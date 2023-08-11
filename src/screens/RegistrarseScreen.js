@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     marginTop: 60,
     marginBottom: 30,
     color: "#2C4521",
-    fontFamily: 'Crimson Text',
+    /*fontFamily: 'Crimson Text',*/
     fontSize: 25,
     lineheight: 24,
   },
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     margin: 15,
     alignItems: 'center',
     color: "#2C4521",
-    fontFamily: 'Crimson Text',
+    /*fontFamily: 'Crimson Text',*/
     fontSize: 12,
   },
   conteiner:{

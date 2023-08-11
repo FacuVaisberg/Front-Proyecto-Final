@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     marginTop: 125,
     marginBottom: 30,
     color: '#668557',
-    fontFamily: 'Crimson Text',
+    /*fontFamily: 'Crimson Text',*/
     fontSize: 25,
     lineHeight: 24,
   },
@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: '#2C4521',
-    fontFamily: 'assets/fonts/UberMoveMedium.otf',
+/*     fontFamily: 'assets/fonts/UberMoveMedium.otf', */
     fontSize: 16,
     fontStyle: 'normal',
     lineHeight: 18,

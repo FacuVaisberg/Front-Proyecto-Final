@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   buttonText:{
     textAlign: 'center',
     color: "#ffffff",
-    fontFamily: 'Crimson Text',
+    /*fontFamily: 'Crimson Text',*/
     fontSize: 20,
     lineheight: 24,
   }

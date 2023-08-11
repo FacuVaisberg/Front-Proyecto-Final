@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 30,
     color: "white",
-    fontFamily: 'Jacques Francois',
+
     fontSize: 16,
     lineheight: 24,
   },

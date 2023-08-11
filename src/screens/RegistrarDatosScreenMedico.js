@@ -51,7 +51,6 @@ const styles = StyleSheet.create({
   view: {
     backgroundColor: '#EFEFEF',
     flex: 1,
-    justifyContent: 'top',
     alignItems: 'center',
   },
   baseText: {
@@ -61,7 +60,7 @@ const styles = StyleSheet.create({
     color: '#668557',
     /*fontFamily: 'Crimson Text',*/
     fontSize: 25,
-    lineHeight: 24,
+    /* lineHeight: 24, */
   },
   container: {
     height: '100%',
@@ -131,7 +130,7 @@ const styles = StyleSheet.create({
 /*     fontFamily: 'assets/fonts/UberMoveMedium.otf', */
     fontSize: 16,
     fontStyle: 'normal',
-    lineHeight: 18,
+    /* lineHeight: 18, */
   },
 })
 

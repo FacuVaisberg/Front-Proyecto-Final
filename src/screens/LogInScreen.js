@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
     color: '#668557',
     /*fontFamily: 'Crimson Text',*/
     fontSize: 25,
-    lineHeight: 24,
+  /*   lineHeight: 24, */
   },
   container: {
     height: '100%',
@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
     fontStyle: 'normal',
     justifyContent:'center',
     alignContent:'center',
-    lineHeight: 18,
+  /*   lineHeight: 18, */
   },
   semiCircle: {
     /* position: 'absolute', */

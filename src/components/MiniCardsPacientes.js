@@ -22,10 +22,9 @@ const styles = StyleSheet.create({
       textAlign: 'center',
       color: "#ffffff",
       /*fontFamily: 'Crimson Text',*/
-      fontSize: 20,
-      lineheight: 24,
-    }
+  
+  /*   }
   });
 
 
-export default MiniCardsPacientes */
+export default MiniCardsPacientes */ 

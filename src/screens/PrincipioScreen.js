@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
       color: "white",
      /*  fontFamily: 'Jacques Francois', */
       fontSize: 16,
-      lineheight: 24,
+      /* lineheight: 24, */
     },
     input: {
       height: 40,

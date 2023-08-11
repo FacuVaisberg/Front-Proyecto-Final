@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     color: "#ffffff",
     /*fontFamily: 'Crimson Text',*/
     fontSize: 20,
-    lineheight: 24,
+    /* lineheight: 24, */
   }
 });
 

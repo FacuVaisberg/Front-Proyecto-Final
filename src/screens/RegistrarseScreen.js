@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     color: "#2C4521",
     /*fontFamily: 'Crimson Text',*/
     fontSize: 25,
-    lineheight: 24,
+    /* lineheight: 24, */
   },
   baseText2: {
     textAlign: 'right',

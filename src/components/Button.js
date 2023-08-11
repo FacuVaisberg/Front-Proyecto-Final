@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
         color: '#2C4521',
         fontSize: 16,
         fontStyle: "normal",
-        lineHeight: 18,
+        /* lineHeight: 18, */
     },
   });
 

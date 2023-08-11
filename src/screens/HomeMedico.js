@@ -9,44 +9,50 @@ import { TouchableOpacity } from 'react-native';
 const HomeMedico = () => {
   const navigation =useNavigation();
   return (
-    <>
-       <Text style={styles.titulo}> Hola, (nombre)</Text> 
-            <View style={styles.box}>
-              <Text style={styles.tituloAgregarReceta}> Agregar Receta</Text>
-              <View style={styles.miniBox} >
-              <TouchableOpacity style={styles.imgMas} onPress={() => navigation.navigate("AgregarReceta")}>
-                <Image source={require('../img/masMedico.png')}></Image>  
-                </TouchableOpacity>
-              </View>
-            </View>
-            <TouchableOpacity onPress={() => navigation.navigate("MisPacientes")}>
-            <View style={styles.box1} >
-                <Text style={styles.tituloMisPacientes}> Mis Pacientes</Text>
-                <View style={styles.miniBox1}>
-                  <Text style={styles.subtext}>Ultimos Pacientes:</Text>
-              </View>
-              </View>
+  <>
+    <View style={styles.container}>
+      <Text style={styles.titulo}> Hola, (nombre)</Text> 
+      <View style={styles.box}>
+        <Text style={styles.tituloAgregarReceta}> Agregar Receta</Text>
+        <View style={styles.miniBox} >
+          <TouchableOpacity style={styles.imgMas} onPress={() => navigation.navigate("AgregarReceta")}>
+            <Image source={require('../img/masMedico.png')}></Image>  
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate("DatosPersonales")}>
-            <View style={styles.box2}>
-            <Text style={styles.tituloDatosPersonales}> Datos personales</Text>
-              <View style={styles.miniBox2}>
-              </View>
+        </View>
+      </View>
+      <TouchableOpacity onPress={() => navigation.navigate("MisPacientes")}>
+        <View style={styles.box1} >
+          <Text style={styles.tituloMisPacientes}> Mis Pacientes</Text>
+          <View style={styles.miniBox1}>
+            <Text style={styles.subtext}>Ultimos Pacientes:</Text>
+          </View>
+        </View>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate("DatosPersonales")}>
+        <View style={styles.box2}>
+          <Text style={styles.tituloDatosPersonales}> Datos personales</Text>
+            <View style={styles.miniBox2}>
+          </View>
+        </View>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate("RecetasSubidas")}>
+        <View style={styles.box3}>
+          <Text style={styles.tituloRecetasSubidas}> Recetas Subidas</Text>
+            <View style={styles.miniBox3}>
+
             </View>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate("RecetasSubidas")}>
-            <View style={styles.box3}>
-            <Text style={styles.tituloRecetasSubidas}> Recetas Subidas</Text>
-              <View style={styles.miniBox3}>
-              </View>
-            </View>
-            </TouchableOpacity>
-            </>
-        );
-    };
+        </View>
+      </TouchableOpacity>
+    </View>
+  </>
+  );
+};
 
 const styles = StyleSheet.create({
-  
+  container: {
+    height: '100%',
+    width: '100%',
+  },
   box: {
     backgroundColor: "#79AD60",
     display: "flex",
@@ -69,36 +75,33 @@ box1: {
   width: "40%",
   borderRadius:20,
   left:'50.93%',
-  top:'19.52%',
+  top:"19.52%"
 },
 box2: {
   backgroundColor: "#79AD60",
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
-    width: "100%",
     border: 0,
     /* position: "fixed", */
-    height: 279,
-    width: 187,
+    height: "30%",
+    width: "40%",
     borderRadius:20,
-    top:411,
     marginLeft:23,
+    top:"44.09%"
 },
 box3: {
   backgroundColor: "#79AD60",
   display: "flex",
   flexDirection: "row",
   justifyContent: "center",
-  width: "100%",
   border: 0,
-  height: 279,
-  width: 187,
+  height: "30%",
+  width: "40%",
+  left:'50.93%',
+  top:'51.93%',
   borderRadius:20,
-  marginLeft:219,
-  marginRight:24,
  /*  position: "fixed", */
-  top:484,
 },
 miniBox: {
   backgroundColor: "#668557",
@@ -117,8 +120,8 @@ miniBox1: {
   justifyContent: "center",
   width: "100%",
   border: 0,
-  height: 234,
-  width: 177,
+  height: "29.93%",
+  width: "43.48%",
   left: 0,
   /* position: "fixed", */
   top: 222,
@@ -204,20 +207,17 @@ width: 175,
 marginLeft:22,
 },
 titulo:{
-  top:49,
+  top:"5.25%",
   color: "#000000",
-  /*fontFamily: "Jacques Francois-Regular",*
+  left:"4.18%",
+  /* fontFamily: "Jacques Francois-Regular", */
   fontSize: 25,
-  marginLeft:22,
-  letterSpacing: 0,
   /*lineHeight: "normal",*/
   /* position: "fixed", */
-  textAlign: "center",
-/*   width: 104, */
 
 },
 tituloMisPacientes:{
-  top:"0%",
+  top:"6.45%",
   color: "#ffffff",
 /*fontFamily: "Jacques Francois-Regular",* 
 fontSize: 14,

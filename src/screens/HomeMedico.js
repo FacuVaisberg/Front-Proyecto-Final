@@ -66,10 +66,12 @@ const styles = StyleSheet.create({
   leftColumn: {
     flex: 1,
     paddingRight:10,
+    height:"100%",
   },
   rightColumn: {
     flex: 1,
     paddingLeft:10,
+    height:"100%",
   },
   box: {
     backgroundColor: "#79AD60",
@@ -202,6 +204,7 @@ letterSpacing: 0,
 textAlign: "center",
 },
 titulo:{
+  width:"100%",
   top:"5.25%",
   color: "#000000",
   left:"4.18%",

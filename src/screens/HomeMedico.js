@@ -3,104 +3,114 @@ import { View, Text, StyleSheet, Image } from 'react-native';
 import LogoSinSlogan from "../img/LogoSinSlogan.png";
 import masMedico from "../img/masMedico.png";
 import { useNavigation } from '@react-navigation/native';
-import { NavigationContainer } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native';
 
 const HomeMedico = () => {
-  const navigation =useNavigation();
+  const navigation = useNavigation();
   return (
-  <>
     <View style={styles.container}>
-      <Text style={styles.titulo}> Hola, (nombre)</Text> 
-      <View style={styles.box}>
-        <Text style={styles.tituloAgregarReceta}> Agregar Receta</Text>
-        <View style={styles.miniBox} >
-          <TouchableOpacity style={styles.imgMas} onPress={() => navigation.navigate("AgregarReceta")}>
-            <Image source={require('../img/masMedico.png')}></Image>  
-            </TouchableOpacity>
+      <View style={styles.column}>
+        <View style={styles.leftColumn}>
+          <Text style={styles.titulo}> Hola, (nombre)</Text>
+          <View style={styles.box}>
+            <Text style={styles.tituloAgregarReceta}> Agregar Receta</Text>
+            <View style={styles.miniBox}>
+              <TouchableOpacity style={styles.imgMas} onPress={() => navigation.navigate("AgregarReceta")}>
+                <Image source={require('../img/masMedico.png')}></Image>  
+              </TouchableOpacity>
+            </View>
+          </View>
+          <TouchableOpacity onPress={() => navigation.navigate("DatosPersonales")}>
+            <View style={styles.box2}>
+              <Text style={styles.tituloDatosPersonales}> Datos personales</Text>
+              <View style={styles.miniBox2}>
+                {/* Contenido de miniBox2 */}
+              </View>
+            </View>
+          </TouchableOpacity>
         </View>
       </View>
-      <TouchableOpacity onPress={() => navigation.navigate("MisPacientes")}>
-        <View style={styles.box1} >
-          <Text style={styles.tituloMisPacientes}> Mis Pacientes</Text>
-          <View style={styles.miniBox1}>
-            <Text style={styles.subtext}>Ultimos Pacientes:</Text>
-          </View>
-        </View>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate("DatosPersonales")}>
-        <View style={styles.box2}>
-          <Text style={styles.tituloDatosPersonales}> Datos personales</Text>
-            <View style={styles.miniBox2}>
-          </View>
-        </View>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate("RecetasSubidas")}>
-        <View style={styles.box3}>
-          <Text style={styles.tituloRecetasSubidas}> Recetas Subidas</Text>
-            <View style={styles.miniBox3}>
-
+      <View style={styles.column}>
+        <View style={styles.rightColumn}>
+          <TouchableOpacity onPress={() => navigation.navigate("MisPacientes")}>
+            <View style={styles.box1}>
+              <Text style={styles.tituloMisPacientes}> Mis Pacientes</Text>
+              <View style={styles.miniBox1}>
+                <Text style={styles.subtext}>Ultimos Pacientes:</Text>
+              </View>
             </View>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate("RecetasSubidas")}>
+            <View style={styles.box3}>
+              <Text style={styles.tituloRecetasSubidas}> Recetas Subidas</Text>
+              <View style={styles.miniBox3}>
+                {/* Contenido de miniBox3 */}
+              </View>
+            </View>
+          </TouchableOpacity>
         </View>
-      </TouchableOpacity>
+      </View>
     </View>
-  </>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
+    flexDirection: 'row',
     height: '100%',
     width: '100%',
   },
+  column: {
+    flex: 1,
+  },
+  leftColumn: {
+    flex: 1,
+    paddingRight:10,
+  },
+  rightColumn: {
+    flex: 1,
+    paddingLeft:10,
+  },
   box: {
     backgroundColor: "#79AD60",
-    display: "flex",
     justifyContent: "center",
-    border: 0,
-    /* position: "fixed ", */
+    alignItems: "center",
     height: "30%",
-    width: "40%",
-    borderRadius:20,
-    top:"12%",
-    marginLeft:"8%",
+    width: "86.97%",
+    borderRadius: 20,
+    top:"12.23%",
+    left:"10.69%",
 },
 box1: {
   backgroundColor: "#79AD60",
-  display: "flex",
   justifyContent: "center",
-  border: 0,
-  /* position: "fixed ", */
+  alignItems: "center",
   height: "30%",
-  width: "40%",
-  borderRadius:20,
-  left:'50.93%',
-  top:"19.52%"
+  width: "86.97%",
+  borderRadius: 20,
+  top:"19.52%",
+  right:"10.69%",
 },
 box2: {
   backgroundColor: "#79AD60",
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    border: 0,
-    /* position: "fixed", */
-    height: "30%",
-    width: "40%",
-    borderRadius:20,
-    marginLeft:23,
-    top:"44.09%"
+  justifyContent: "center",
+  alignItems: "center",
+  height: "30%",
+  width: "86.97%",
+  borderRadius: 20,
+  top:"44.09%",
+  left:"10.69%",
 },
 box3: {
   backgroundColor: "#79AD60",
-  display: "flex",
-  flexDirection: "row",
   justifyContent: "center",
-  border: 0,
+  alignItems: "center",
   height: "30%",
-  width: "40%",
-  left:'50.93%',
+  width: "86.97%",
+  borderRadius: 20,
   top:'51.93%',
-  borderRadius:20,
+  right:"10.69%",
+
  /*  position: "fixed", */
 },
 miniBox: {
@@ -109,7 +119,7 @@ miniBox: {
   justifyContent: "center",
   height: "83.87%",
   width: "94.65%",
- top: "3.33%", 
+  top: "3.33%", 
   marginLeft:"2.67%",
   borderRadius:20,
 },
@@ -118,14 +128,11 @@ miniBox1: {
   display: "flex",
   flexDirection: "row",
   justifyContent: "center",
-  width: "100%",
   border: 0,
-  height: "29.93%",
-  width: "43.48%",
-  left: 0,
+  height: "83.87%",
+  width: "94.65%",
+  marginLeft:"2.67%",
   /* position: "fixed", */
-  top: 222,
-  marginLeft:224,
   borderRadius:20,
 },
 miniBox2: {
@@ -133,13 +140,11 @@ miniBox2: {
   display: "flex",
   flexDirection: "row",
   justifyContent: "center",
-  width: "100%",
   border: 0,
-  height: 234,
-  width: 177,
-  left: 0,
+  height: "83.87%",
+  width: "94.65%",
+  marginLeft:"2.67%",
   /* position: "fixed", */
-  top: 449,
   marginLeft:28,
   borderRadius:20,
 },
@@ -148,14 +153,11 @@ miniBox3: {
   display: "flex",
   flexDirection: "row",
   justifyContent: "center",
-  width: "100%",
   border: 0,
-  height: 234,
-  width: 177,
-  left: 0,
+  height: "83.87%",
+  width: "94.65%",
+  marginLeft:"2.67%",
  /*  position: "fixed", */
-  top: 524,
-  marginLeft:224,
   borderRadius:20,
 },
 imgMas:{
@@ -179,22 +181,18 @@ boton:
   marginLeft: "61.9%",
 },
 tituloAgregarReceta:{
-  top:"0%",
-  color: "#ffffff",
-/*fontFamily: "Jacques Francois-Regular",* 
-fontSize: 14,
-left: 0,
-letterSpacing: 0,
+color: "#ffffff",
+/* fontFamily: "Jacques Francois-Regular", */
+/* fontSize: 14, */
+/* left: 0, */
+/* letterSpacing: 0, */
 /*lineHeight: "normal",*/
 /* position: "fixed", */
-textAlign: "auto",
 height: "auto",
 width: "auto",
-marginLeft:"9.6%",
 },
 tituloRecetasSubidas:{
-  top:502,
-  color: "#FFFFFF",
+color: "#FFFFFF",
 /*fontFamily: "Jacques Francois-Regular",* 
 fontSize: 14,
 left: 180,
@@ -202,9 +200,6 @@ letterSpacing: 0,
 /*lineHeight: "normal",*/
 /* position: "fixed", */
 textAlign: "center",
-height: 33,
-width: 175,
-marginLeft:22,
 },
 titulo:{
   top:"5.25%",
@@ -217,8 +212,7 @@ titulo:{
 
 },
 tituloMisPacientes:{
-  top:"6.45%",
-  color: "#ffffff",
+color: "#ffffff",
 /*fontFamily: "Jacques Francois-Regular",* 
 fontSize: 14,
 left: 0,
@@ -226,13 +220,9 @@ letterSpacing: 0,
 /*lineHeight: "normal",*/
 /* position: "fixed", */
 textAlign: "auto",
-height: "auto",
-width: "auto",
-left:"10.16%",
 },
 tituloDatosPersonales:{
-  top:430,
-  color: "#FFFFFF",
+color: "#FFFFFF",
 /*fontFamily: "Jacques Francois-Regular",* 
 fontSize: 14,
 left: 0,
@@ -240,12 +230,8 @@ letterSpacing: 0,
 /*lineHeight: "normal",*/
 /* position: "fixed", */
 textAlign: "center",
-height: 33,
-width: 175,
-marginLeft:22,
 },
 subtext:{
-  top:229,
   color: "#FFFFFF",
 /*fontFamily: "Jacques Francois-Regular",* 
 fontSize: 7,
@@ -254,11 +240,9 @@ letterSpacing: 0,
 /*lineHeight: "normal",*/
 /* position: "fixed", */
 textAlign: "center",
-height: 9,
-width: 61,
-marginLeft:228,
+
 }
 
-  },
+},
 )
 export default HomeMedico;

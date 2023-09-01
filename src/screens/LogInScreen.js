@@ -14,12 +14,6 @@ const LogInScreen = () => {
   const [showPassword, setShowPassword] = useState(false);
   const navigation = useNavigation();
 
-  const handleLogin = () => {
-    // Realizar acciones de inicio de sesión, como enviar datos al servidor
-    // Aquí puedes agregar la lógica para validar el correo electrónico y la contraseña
-
-    
-  };
   const validarUsuario =async () =>{
     try{
       let objeto = {

@@ -3,9 +3,14 @@ import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-nativ
 import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import SemiCircle from "../components/SemiCircle";
+import ValidarLogin from "../../ValidarLogin"
+import Api from '../../Api';
+import axios from 'axios';
+import { Alert } from 'react-native';
+
 const LogInScreen = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [mail, setMail] = useState('');
+  const [contraseña, setContraseña] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const navigation = useNavigation();
 
@@ -13,13 +18,35 @@ const LogInScreen = () => {
     // Realizar acciones de inicio de sesión, como enviar datos al servidor
     // Aquí puedes agregar la lógica para validar el correo electrónico y la contraseña
 
-    navigation.navigate('Medico', { email, password });
+    
   };
+  const validarUsuario =async () =>{
+    try{
+      let objeto = {
+        Mail: mail,
+        Contraseña: contraseña,
+      }
+      console.log(objeto)
+      console.log(Api.ApiLogin)
+      const response = await axios.post(Api.ApiLogin, objeto);
+      console.log(response.data)
+      if (contraseña=='hola') {
+        navigation.navigate('Medico', { mail, contraseña });
+      }else{
+        console.log('aaaaaaaaaaa')
+      }
+      
+
+    }
+    catch(error){
+      console.log(error)
+    }
+  }
 
   const toggleShowPassword = () => {
     setShowPassword(!showPassword);
   };
-
+   /*  BackURl="http://localhost:3000/api/usuario/" */
   return (
     <View style={styles.view}>
       <SemiCircle style={styles.semiCircle}/>
@@ -30,8 +57,8 @@ const LogInScreen = () => {
           <TextInput
             style={styles.input}
             placeholder="Mail:"
-            value={email}
-            onChangeText={setEmail}
+            value={mail}
+            onChangeText={setMail}
           />
         </View>
 
@@ -39,8 +66,8 @@ const LogInScreen = () => {
           <TextInput
             style={styles.input}
             placeholder="Contraseña:"
-            value={password}
-            onChangeText={setPassword}
+            value={contraseña}
+            onChangeText={setContraseña}
             secureTextEntry={!showPassword}
           />
           <TouchableOpacity style={styles.showPasswordButton} onPress={toggleShowPassword}>
@@ -48,7 +75,7 @@ const LogInScreen = () => {
           </TouchableOpacity>
         </View>
 
-        <TouchableOpacity style={styles.buttonChico} onPress={handleLogin}>
+        <TouchableOpacity style={styles.buttonChico} onPress={validarUsuario} >
           <Text style={styles.buttonText}>Iniciar sesión</Text>
         </TouchableOpacity>
       </View>

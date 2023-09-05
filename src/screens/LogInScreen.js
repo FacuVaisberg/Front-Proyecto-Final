@@ -20,7 +20,7 @@ const LogInScreen = () => {
         Mail: mail,
         Contraseña: contraseña,
       }
-      console.log(objeto)
+   /*    console.log(objeto)
       console.log(Api.ApiLogin)
       const response = await axios.post(Api.ApiLogin, objeto);
       console.log(response.data)
@@ -28,7 +28,7 @@ const LogInScreen = () => {
         navigation.navigate('Medico', { mail, contraseña });
       }else{
         console.log('aaaaaaaaaaa')
-      }
+      } */
       
 
     }

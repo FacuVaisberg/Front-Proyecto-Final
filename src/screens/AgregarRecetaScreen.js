@@ -2,18 +2,18 @@ import React, { useState } from "react";
 import { View, Text, StyleSheet, Image, TextInput, Form, onClick, Alert, TouchableOpacity} from "react-native";
 import DropDownPicker from "react-native-dropdown-picker";
 import axios from "axios";
-import { Button } from "react-native-web";
 import { useNavigation } from "@react-navigation/native";
+import { Button } from "../components/Button";
 
 const AgregarRecetaScreen = () => {
-  const [Dni, setDni] = useState("");
+  const [dni, setDni] = useState("");
   const [NombreMedicamento, setMedicamento] = useState("");
-  const [FechaVencimiento, setFechaVencimiento] = useState("");
+  const [fechaVencimiento, setFechaVencimiento] = useState("");
   const navigation = useNavigation();
 
   const handleAgregarReceta = () => {
     // Aquí puedes hacer lo que necesites al agregar la receta
-    console.log("Receta agregada:", Dni, NombreMedicamento, FechaVencimiento);
+    console.log("Receta agregada:", dni, NombreMedicamento, fechaVencimiento);
 
     // Ejemplo de alerta
     alert("Receta Agregada con exito!!", "Contenido del alerta", [
@@ -22,6 +22,23 @@ const AgregarRecetaScreen = () => {
       { text: "Cancelar", style: "cancel" },
     ]);
   };
+
+  const AgregarReceta = async () =>{
+    try{
+      let objeto = {
+        FechaVencimiento: fechaVencimiento,
+        Dni: dni,
+      }
+        console.log(objeto)
+      console.log(Api.ApiLogin)
+      const response = await axios.post(Api.ApiLogin, objeto);
+      console.log(response.data)
+      Alert.alert("receta agregada con exito")
+  }
+  catch(error){
+    console.log(error)
+  }
+}
 
   return (
     <>
@@ -35,7 +52,7 @@ const AgregarRecetaScreen = () => {
         <View style={styles.minibox}>
           <View style={"form-group"}>
             <Text style={styles.text}>Numero de documento del paciente</Text>
-            <TextInput style={styles.input} placeholder={"Escribir..."} value={Dni} onChangeText={setDni}></TextInput>
+            <TextInput style={styles.input} placeholder={"Escribir..."} value={dni} onChangeText={setDni}></TextInput>
           </View>
           <View style={"form-group"}>
             <Text style={styles.text1}>Medicamento</Text>
@@ -43,18 +60,19 @@ const AgregarRecetaScreen = () => {
           </View>
           <View style={"form-group"}>
             <Text style={styles.text2}>Fecha de vencimiento</Text>
-            <TextInput style={styles.input2} placeholder={"Escribir..."} value={FechaVencimiento} onChangeText={setFechaVencimiento}></TextInput>
+            <TextInput style={styles.input2} placeholder={"Escribir..."} value={fechaVencimiento} onChangeText={setFechaVencimiento}></TextInput>
           </View>
-          <TouchableOpacity onPress={() => handleAgregarReceta()}>
-            <View>
-              <Text style={styles.boton}> Subir Receta</Text>
-            </View>
-          </TouchableOpacity>
-          {/* <button style={styles.boton} onClick={<Text>hola</Text>/* ()=>AgregarReceta({Dni, NombreMedicamento, FechaVencimiento}) */}
+          <View>
+            <TouchableOpacity style={styles.boton}></TouchableOpacity>
+          </View>
+          
+          
+           
         </View>
       </View>
     </>
   );
+  
 };
 const styles = StyleSheet.create({
   tituloAgregarReceta: {
@@ -67,7 +85,7 @@ const styles = StyleSheet.create({
     top: "5.25%",
   },
   Back: {
-    color: "#7CB164",
+    /* color: "#7CB164", */
     width: 30,
     height: 30,
     top: "2.57%",
@@ -78,28 +96,29 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     border: 0,
-    height: 16,
+    height: "100%",
     color: "#d3d3d3",
     /*fontFamily: "Jacques Francois-Regular",*
         fontSize: 15,
         /*lineHeight: "normal",*/
     /* position: "fixed", */
-    top: "8.44%",
-    width: 195,
-    left:"6.20%",
+    top: "13.44%",
+    width: "100%",
+    left:"65.20%",
   },
+  
   text1: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
-    width: 195,
+    width: "100%",
     border: 0,
-    height: 16,
-    left:"6.20%",
-    top: "20%",
+    height: "100%",
+    left:"25.20%",
+    top: "40%",
     color: "#d3d3d3",
     /* fontFamily: "Jacques Francois-Regular", */
-        fontSize: 15,
+        fontSize: 20,
         /* center: 56, */
         /*lineHeight: "normal",*/
     /* position: "fixed", */
@@ -109,15 +128,14 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     width: "100%",
-    border: 0,
-    height: 16,
-    left:"6.20%",
+    height: "100%",
+    left:"-31%",
     color: "#d3d3d3",
     /* fontFamily: "Jacques Francois-Regular", */
-        fontSize: 15,
+        fontSize: 20,
         /*lineHeight: "normal",*/
     /* position: "fixed", */
-    top: "31.5%",
+    top: "80%",
   },
   box: {
     backgroundColor: "#79AD60",
@@ -133,30 +151,25 @@ const styles = StyleSheet.create({
   },
   input: {
     backgroundColor: "#79AD60",
-    display: "flex",
     flexDirection: "row",
     justifyContent: "center",
-    width: "100%",
+    width: "130%",
     borderRadius: 7,
-    left: 56,
-    height: 42,
-    width: 312,
-    /* position: "fixed", */
-    top: 263,
+    top: "-220%",
+    left:"65%",
+    height:40,
     marginBottom: 24,
   },
   input1: {
     backgroundColor: "#79AD60",
-    display: "flex",
     flexDirection: "row",
     justifyContent: "center",
-    width: "100%",
     borderRadius: 7,
-    left: 56,
+    left: "25%",
     width: 312,
-    height: 42,
+    height: 40,
     /*  position: "fixed", */
-    top: 325,
+    top: "-120%",
     marginBottom: 24,
   },
   input2: {
@@ -166,11 +179,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     width: "100%",
     borderRadius: 7,
-    left: 56,
+    left: "-32%",
     width: 312,
     height: 42,
     /* position: "fixed", */
-    top: 387,
+    top: "-85%",
     marginBottom: 24,
   },
 
@@ -181,8 +194,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     width: "83.87%",
     height: "94.6%",
-    left: "2.67%",
-    top:"13.62%",
+    left: "1.70%",
+    top:"3.75%",
     borderRadius: 20,
   },
   boton: {
@@ -190,27 +203,14 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
-    width: 100,
     textAlign: "center",
     borderRadius: 20,
-    height: 59.4,
-    overflow: "hidden",
     width: 168.63,
     height: 67,
     left: 131,
     alignItems: "center",
     /*  position: "fixed", */
-    top: 688,
-    color: "#ffffff",
-    /*fontFamily: "Jacques Francois-Regular",*
-            fontSize: 20,
-            /*lineHeight: "normal",*/
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 12,
-    },
-    elevation: 24,
+    top: 400,
   },
 });
 export default AgregarRecetaScreen;

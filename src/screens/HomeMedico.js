@@ -14,11 +14,9 @@ const HomeMedico = () => {
           <Text style={styles.titulo}> Hola, (nombre)</Text>
           <View style={styles.box}>
             <Text style={styles.tituloAgregarReceta}> Agregar Receta</Text>
-            <View style={styles.miniBox}>
-              <TouchableOpacity style={styles.imgMas} onPress={() => navigation.navigate("AgregarReceta")}>
-                <Image source={require('../img/masMedico.png')}></Image>  
-              </TouchableOpacity>
-            </View>
+            <TouchableOpacity style={styles.miniBox} onPress={() => navigation.navigate("AgregarReceta")}>
+                <Image source={masMedico} style={styles.imgMas}></Image>  
+            </TouchableOpacity>
           </View>
           <TouchableOpacity onPress={() => navigation.navigate("DatosPersonales")}>
             <View style={styles.box2}>
@@ -160,15 +158,12 @@ const styles = StyleSheet.create({
   },
   imgMas:{
     backgroundColor: "#668557",
-    display: "flex",
-    flexDirection: "row",
     justifyContent: "center",
-    top: "45%",
-    height: "11.29%",
-    width: "8%",
+    top: "50%",
+    height: "10%",
   },
   tituloAgregarReceta:{
-    color: "#ffffff",
+    color: "#ffffff"
     /* fontFamily: "Jacques Francois-Regular", */
     /* fontSize: 14, */
     /* left: 0, */

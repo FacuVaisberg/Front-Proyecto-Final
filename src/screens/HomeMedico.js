@@ -163,7 +163,7 @@ const styles = StyleSheet.create({
     height: "10%",
   },
   tituloAgregarReceta:{
-    color: "#ffffff"
+    color: "#ffffff",
     /* fontFamily: "Jacques Francois-Regular", */
     /* fontSize: 14, */
     /* left: 0, */

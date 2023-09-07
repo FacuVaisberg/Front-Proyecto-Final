@@ -20,15 +20,15 @@ const LogInScreen = () => {
         Mail: mail,
         Contraseña: contraseña,
       }
-   /*    console.log(objeto)
+      /* console.log(objeto)
       console.log(Api.ApiLogin)
       const response = await axios.post(Api.ApiLogin, objeto);
-      console.log(response.data)
-      if (contraseña=='hola') {
+      console.log(response.data)*/
+      if ((mail== "naiman@gmail.com" && contraseña=="melman123")|| (mail== "golonbek@gmail.com" && contraseña=="golo06")|| (mail== "vaisberg@gmail.com" && contraseña=="facu06")|| (mail== "lazzari@gmail.com" && contraseña=="uenche123")|| (mail== "avola@gmail.com" && contraseña=="tone06")|| (mail== "israel@gmail.com" && contraseña=="isra05")){
         navigation.navigate('Medico', { mail, contraseña });
       }else{
-        console.log('aaaaaaaaaaa')
-      } */
+        Alert.alert('los datos son erroneos, intente de nuevo')
+      } 
       
 
     }

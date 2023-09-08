@@ -19,8 +19,10 @@ const RecetasSubidasScreen = () => {
       </View>
       <View style={styles.box}>
         <View style={styles.minibox}>
-          <Text style={styles.textMiniBox}>Remedio: Ibuprofeno</Text>
-          <Text style={styles.textMiniBox2}>Nombre del paciente: Carlos</Text>
+          <Text style={styles.textMiniBox}>Remedio: Ibuprofeno.
+        
+          Nombre del paciente: Carlos</Text>
+          
         </View>
       </View>
     </>
@@ -32,8 +34,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
-    width: "100%",
-    border: 0,
+    width: "auto%",
     height: "auto",
     width: "auto",
     color: "#000000",
@@ -51,7 +52,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     color: "#ffffff",
     height: "auto",
-    marginLeft: "30%",
+    marginLeft: "5%",
     shadowColor: "#FFFFFF",
     /* fontFamily: "Jacques Francois", */
     fontSize: 18,
@@ -63,9 +64,9 @@ const styles = StyleSheet.create({
     color: "#ffffff",
     shadowColor: "#FFFFFF",
 /*     fontFamily: "Jacques Francois", */
-    fontSize: 18,
     fontStyle: "normal",
-    /*lineHeight: "normal",*/
+    marginTop:"10%"    /*lineHeight: "normal",*/
+    
 
   },
   box: {
@@ -74,7 +75,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     width: "100%",
-    border: 0,
     height: 613,
     width: 358,
     height: 613,
@@ -89,7 +89,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     width: "100%",
-    border: 0,
     height: "15%",
     width: 312,
    /*  position: "fixed", */

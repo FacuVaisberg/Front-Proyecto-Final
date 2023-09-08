@@ -40,9 +40,11 @@ const AgregarRecetaScreen = () => {
       console.log(objeto)
       const response = await axios.post(Api.ApiAgregarReceta, objeto);
       console.log(response);
-    
+      Alert.alert("receta agregada con exito");
+    /*
+      axios.post(Api.ApiAgregarReceta, objeto).
         then((response) => {
-          Alert.alert("receta agregada con exito")  ;
+            ;
           console.log(response);
           console.log(response.data)
         })
@@ -55,7 +57,7 @@ const AgregarRecetaScreen = () => {
             console.error('Error:', error.message);
           }
       });
-      
+      */
       
       
     }

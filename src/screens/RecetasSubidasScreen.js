@@ -34,42 +34,39 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     width: "100%",
     border: 0,
-    height: 33,
-    width: 187,
+    height: "auto",
+    width: "auto",
     color: "#000000",
+    fontSize:25,
     /*fontFamily: "Jacques Francois-Regular",*
     fontSize: 25,
     left: 121,
     letterSpacing: 0,
   /*   position: "fixed", */
     textAlign: "center",
-    top: 34,
+    marginTop:"10%"
   },
   textMiniBox: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "left",
+
+    justifyContent: "center",
     color: "#ffffff",
-    height: "20%",
-    marginLeft: 13,
+    height: "auto",
+    marginLeft: "30%",
     shadowColor: "#FFFFFF",
     /* fontFamily: "Jacques Francois", */
-    fontSize: 16,
+    fontSize: 18,
     fontStyle: "normal",
     /*lineHeight: "normal",*/
   },
   textMiniBox2: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "left",
+    justifyContent:"center",
     color: "#ffffff",
-    marginLeft: 13,
     shadowColor: "#FFFFFF",
 /*     fontFamily: "Jacques Francois", */
-    fontSize: 16,
+    fontSize: 18,
     fontStyle: "normal",
     /*lineHeight: "normal",*/
-    marginTop: 10, // Modificar el valor aquí para ajustar el espaciado
+
   },
   box: {
     backgroundColor: "#79AD60",
@@ -83,7 +80,7 @@ const styles = StyleSheet.create({
     height: 613,
     left: 36,
 /*     position: "fixed" */
-    top: 172,
+    top: "20%",
     borderRadius: 20,
   },
   minibox: {
@@ -93,12 +90,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     width: "100%",
     border: 0,
-    height: 80,
+    height: "15%",
     width: 312,
-    left: 60,
    /*  position: "fixed", */
-    marginTop: 20,
-    width: 312,
+    marginTop: "5%",
+
     borderRadius: 10,
   },
 });

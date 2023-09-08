@@ -14,4 +14,4 @@
 
     npm i react-redux
 
-npm i expo
+    npm i expo

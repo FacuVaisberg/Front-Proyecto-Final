@@ -1,11 +1,16 @@
     import { View, Text } from 'react-native'
     import React from 'react'
     
+    //const ROOT_DOMAIN = 'http://A-PHZ2-CIDI-010:3000/';
+    const ROOT_DOMAIN = 'http://10.152.2.106:3000/';
+    //const ROOT_DOMAIN = 'http://9b-wzc.anonymous.front-proyecto-final.exp.direct:3000/'
+    
     const Api = {
-        ApiLogin:'http://localhost:3000/login/',
-        ApiUsuarioGetAll:'http://A-PHZ2-CIDI-022/api/usuario/',
-        ApiAgregarReceta:'A-PHZ2-CIDI-022/api/receta/5',
-        ApiGetAllReceta:'A-PHZ2-CIDI-022/api/receta/',
+        ApiLogin:           ROOT_DOMAIN + 'login/',
+        ApiUsuarioGetAll:   ROOT_DOMAIN + 'api/usuario/',
+        /* ApiAgregarReceta:   ROOT_DOMAIN + 'api/receta/', */
+        ApiAgregarReceta: 'localhost:3000/api/receta/',
+        ApiGetAllReceta:    ROOT_DOMAIN + 'api/receta/',
     }
     export default Api
    

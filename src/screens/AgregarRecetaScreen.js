@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Image, TextInput, Form, onClick, Alert, Touchab
 import DropDownPicker from "react-native-dropdown-picker";
 import axios from "axios";
 import { useNavigation } from "@react-navigation/native";
+import Api from "../../Api";
 import { Button } from "../components/Button";
 
 const AgregarRecetaScreen = () => {
@@ -24,16 +25,39 @@ const AgregarRecetaScreen = () => {
   };
 
   const AgregarReceta = async () =>{
+    console.log('AgregarReceta')
     try{
       let objeto = {
-        FechaVencimiento: fechaVencimiento,
-        Dni: dni,
+              "IdMedicamento": 2,
+              "IdMedico": 2,
+              "IdPaciente": 2,
+              "IdFarmacia": 2,
+              "FechaCreacion": "2018-10-10T00:00:00.000Z",
+              "FechaVencimiento": "2013-07-07T00:00:00.000Z",
+              "Estado": false,
+              "Observaciones": "hola"
       }
       console.log(objeto)
-      console.log(Api.ApiLogin)
-      const response = await axios.post(Api.ApiLogin, objeto);
-      console.log(response.data)
-      Alert.alert("receta agregada con exito")
+      const response = await axios.post(Api.ApiAgregarReceta, objeto);
+      console.log(response);
+    
+        then((response) => {
+          Alert.alert("receta agregada con exito")  ;
+          console.log(response);
+          console.log(response.data)
+        })
+        .catch((error) => {
+          if (error.response) {
+            console.error('Server Error:', error.response.status);
+          } else if (error.request) {
+            console.error('Network Error:', error.request);
+          } else {
+            console.error('Error:', error.message);
+          }
+      });
+      
+      
+      
     }
     catch(error){
       console.log(error)
@@ -61,7 +85,7 @@ const AgregarRecetaScreen = () => {
               <TextInput style={styles.input} placeholder={"Escribir 2..."} value={fechaVencimiento} onChangeText={setFechaVencimiento}></TextInput>
             </View>
             <View>
-              <TouchableOpacity style={styles.boton} onPress={handleAgregarReceta}>
+              <TouchableOpacity style={styles.boton} onPress={AgregarReceta}>
                 <Text style={{ color: "white", fontSize: 20,}}>Subir Receta</Text>
               </TouchableOpacity>
             </View>

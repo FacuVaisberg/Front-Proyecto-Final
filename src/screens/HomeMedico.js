@@ -15,7 +15,7 @@ const HomeMedico = () => {
           <View style={styles.box}>
             <Text style={styles.tituloAgregarReceta}> Agregar Receta</Text>
             <TouchableOpacity style={styles.miniBox} onPress={() => navigation.navigate("AgregarReceta")}>
-                <Image source={masMedico} style={styles.imgMas}></Image>  
+                <Image source={masMedico} style={styles.imgMas}></Image>
             </TouchableOpacity>
           </View>
           <TouchableOpacity onPress={() => navigation.navigate("DatosPersonales")}>
@@ -30,14 +30,14 @@ const HomeMedico = () => {
       </View>
       <View style={styles.column}>
         <View style={styles.rightColumn}>
-          <TouchableOpacity onPress={() => navigation.navigate("MisPacientes")}>
-            <View style={styles.box1}>
-              <Text style={styles.tituloMisPacientes}> Mis Pacientes</Text>
-              <View style={styles.miniBox1}>
-                <Text style={styles.subtext}>Ultimos Pacientes:</Text>
-              </View>
-            </View>
+        <View>
+        <TouchableOpacity style={styles.box1} onPress={() => navigation.navigate("MisPacientes")}>
+        <Text style={styles.tituloMisPacientes}> Mis Pacientes</Text>
+          <View style={styles.miniBox1}>
+            <Text style={styles.subtext}>Ultimos Pacientes:</Text>
+          </View>
           </TouchableOpacity>
+        </View>
           <TouchableOpacity onPress={() => navigation.navigate("RecetasSubidas")}>
             <View style={styles.box3}>
               <Text style={styles.tituloRecetasSubidas}> Recetas Subidas</Text>
@@ -75,41 +75,50 @@ const styles = StyleSheet.create({
     backgroundColor: "#79AD60",
     justifyContent: "center",
     alignItems: "center",
-    height: "30%", // Aumenta el valor de altura
+    height: "33%",
     width: "86.97%",
     borderRadius: 20,
-    top: "10%", // Ajusta la posición
-    left: "7.5%", // Ajusta la posición
+    top: "10%",
+    left: "7.5%",
+    borderColor: 'black',
+    borderWidth: 2,
   },
   box1: {
     backgroundColor: "#79AD60",
     justifyContent: "center",
     alignItems: "center",
-    height: "57%", // Aumenta el valor de altura
+    height: "57%",
     width: "86.97%",
     borderRadius: 20,
-    top: "35%", // Ajusta la posición
-    right: "7.5%", // Ajusta la posición
+    top: "35%",
+    right: "7.5%",
     marginBottom:0,
+    borderColor: 'black',
+    borderWidth: 2,
   },
   box2: {
     backgroundColor: "#79AD60",
     justifyContent: "center",
     alignItems: "center",
-    height: "60%", // Aumenta el valor de altura
+    height: "60%",
     width: "86.97%",
     borderRadius: 20,
-    top: "25%", // Ajusta la posición
-    left: "7.5%", // Ajusta la posición
+    top: "23.5%",
+    left: "7.5%",
+    borderColor: 'black',
+    borderWidth: 2,
   },
   box3: {
     backgroundColor: "#79AD60",
     justifyContent: "center",
     alignItems: "center",
-    height: "58%", // Aumenta el valor de altura
+    height: "58%",
     width: "86.97%",
     borderRadius: 20,
-    right: "7.5%", // Ajusta la posición
+    right: "7.5%",
+    bottom:"1.5%",
+    borderColor: 'black',
+    borderWidth: 2,
   },
   miniBox: {
     backgroundColor: "#668557",
@@ -163,7 +172,7 @@ const styles = StyleSheet.create({
     height: "10%",
   },
   tituloAgregarReceta:{
-    color: "#ffffff"
+    color: "#ffffff",
     /* fontFamily: "Jacques Francois-Regular", */
     /* fontSize: 14, */
     /* left: 0, */

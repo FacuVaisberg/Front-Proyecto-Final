@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, Image, TextInput, Form, onClick, Alert, TouchableOpacity} from "react-native";
+import { View, Text, StyleSheet, Image, TextInput, Form, onClick, Alert, TouchableOpacity, SafeAreaView} from "react-native";
 import DropDownPicker from "react-native-dropdown-picker";
 import axios from "axios";
 import { useNavigation } from "@react-navigation/native";
@@ -29,188 +29,134 @@ const AgregarRecetaScreen = () => {
         FechaVencimiento: fechaVencimiento,
         Dni: dni,
       }
-        console.log(objeto)
+      console.log(objeto)
       console.log(Api.ApiLogin)
       const response = await axios.post(Api.ApiLogin, objeto);
       console.log(response.data)
       Alert.alert("receta agregada con exito")
+    }
+    catch(error){
+      console.log(error)
+    }
   }
-  catch(error){
-    console.log(error)
-  }
-}
-
   return (
     <>
-      <TouchableOpacity style={styles.Back} onPress={() => navigation.navigate("Medico")}>
-        <View>
-          <Image style={styles.Back} source={require("../img/volver.png")} />
+      <SafeAreaView style={styles.container}>
+        <TouchableOpacity style={styles.Back} onPress={() => navigation.navigate("Medico")}>
+          <Image source={require("../img/volver.png")} />
+        </TouchableOpacity>
+        <Text style={styles.tituloAgregarReceta}>Agregar Receta</Text>
+        <View style={styles.box}>
+          <View style={styles.minibox}>
+            <View style={styles.formGroup}>
+              <Text style={styles.text}>Número de documento del paciente</Text>
+              <TextInput style={styles.input} placeholder={"Escribir..."} value={dni} onChangeText={setDni}></TextInput>
+            </View>
+            <View style={styles.formGroup}>
+              <Text style={styles.text1}>Medicamento</Text>
+              <TextInput style={styles.input} placeholder={"Escribir 1..."} value={NombreMedicamento} onChangeText={setMedicamento}></TextInput>
+            </View>
+            <View style={styles.formGroup}>
+              <Text style={styles.text2}>Fecha de vencimiento</Text>
+              <TextInput style={styles.input} placeholder={"Escribir 2..."} value={fechaVencimiento} onChangeText={setFechaVencimiento}></TextInput>
+            </View>
+            <View>
+              <TouchableOpacity style={styles.boton} onPress={handleAgregarReceta}>
+                <Text style={{ color: "white", fontSize: 20,}}>Subir Receta</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
         </View>
-      </TouchableOpacity>
-      <Text style={styles.tituloAgregarReceta}>Agregar Receta</Text>
-      <View style={styles.box}>
-        <View style={styles.minibox}>
-          <View style={"form-group"}>
-            <Text style={styles.text}>Numero de documento del paciente</Text>
-            <TextInput style={styles.input} placeholder={"Escribir..."} value={dni} onChangeText={setDni}></TextInput>
-          </View>
-          <View style={"form-group"}>
-            <Text style={styles.text1}>Medicamento</Text>
-            <TextInput style={styles.input1} placeholder={"Escribir..."} value={NombreMedicamento} onChangeText={setMedicamento}></TextInput>
-          </View>
-          <View style={"form-group"}>
-            <Text style={styles.text2}>Fecha de vencimiento</Text>
-            <TextInput style={styles.input2} placeholder={"Escribir..."} value={fechaVencimiento} onChangeText={setFechaVencimiento}></TextInput>
-          </View>
-          <View>
-            <TouchableOpacity style={styles.boton}></TouchableOpacity>
-          </View>
-          
-          
-           
-        </View>
-      </View>
+      </SafeAreaView>
     </>
   );
   
 };
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    height: '100%',
+    width: '100%',
+  },
   tituloAgregarReceta: {
     color: "#000000",
     /* fontFamily: "Jacques Francois-Regular", */
     fontSize: 25,
-    /* lineHeight: "normal", */
-    /* position: "fixed", */
-    textAlign: "center",
     top: "5.25%",
+    left: "4.65%",
   },
   Back: {
-    /* color: "#7CB164", */
+    color: "#7CB164",
     width: 30,
     height: 30,
     top: "2.57%",
     left: "4.65%",
   },
   text: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    border: 0,
-    height: "100%",
     color: "#d3d3d3",
-    /*fontFamily: "Jacques Francois-Regular",*
-        fontSize: 15,
-        /*lineHeight: "normal",*/
-    /* position: "fixed", */
-    top: "13.44%",
-    width: "100%",
-    left:"65.20%",
+    fontSize: 12,
+    marginLeft: "6.2%",
   },
-  
   text1: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    width: "100%",
-    border: 0,
-    height: "100%",
-    left:"25.20%",
-    top: "40%",
     color: "#d3d3d3",
-    /* fontFamily: "Jacques Francois-Regular", */
-        fontSize: 20,
-        /* center: 56, */
-        /*lineHeight: "normal",*/
-    /* position: "fixed", */
+    fontSize: 12,
+    marginLeft: "6.2%",
   },
   text2: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    width: "100%",
-    height: "100%",
-    left:"-31%",
     color: "#d3d3d3",
-    /* fontFamily: "Jacques Francois-Regular", */
-        fontSize: 20,
-        /*lineHeight: "normal",*/
-    /* position: "fixed", */
-    top: "80%",
+    fontSize: 12,
+    marginLeft: "6.2%",
   },
   box: {
     backgroundColor: "#79AD60",
-    display: "flex",
-    flexDirection: "row",
     justifyContent: "center",
-    width: "100%",
-    borderRadius: 20,
-    height: "68.87%",
+    alignItems:"center",
+    borderRadius: 15,
+    height: "70%",
     width: "89.7%",
-    left: 23,
-    top: "12.4%",
+    left: "5.34%",
+    top: "12.24%",
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: -2 },
+    shadowOpacity: 0.9,
+    shadowRadius: 5,
+    elevation:6,
   },
-  input: {
-    backgroundColor: "#79AD60",
-    flexDirection: "row",
-    justifyContent: "center",
-    width: "130%",
-    borderRadius: 7,
-    top: "-220%",
-    left:"65%",
-    height:40,
-    marginBottom: 24,
-  },
-  input1: {
-    backgroundColor: "#79AD60",
-    flexDirection: "row",
-    justifyContent: "center",
-    borderRadius: 7,
-    left: "25%",
-    width: 312,
-    height: 40,
-    /*  position: "fixed", */
-    top: "-120%",
-    marginBottom: 24,
-  },
-  input2: {
-    backgroundColor: "#79AD60",
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    width: "100%",
-    borderRadius: 7,
-    left: "-32%",
-    width: 312,
-    height: 42,
-    /* position: "fixed", */
-    top: "-85%",
-    marginBottom: 24,
-  },
-
   minibox: {
     backgroundColor: "#668557",
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    width: "83.87%",
-    height: "94.6%",
-    left: "1.70%",
-    top:"3.75%",
-    borderRadius: 20,
+    width: "90%",
+    height: "85%",
+    top:"6%",
+    borderRadius: 10,
+    marginBottom:20,
+  },
+  formGroup: {
+    top: 20,
+    marginBottom:20,
+  },
+
+  input: {
+    backgroundColor: "#79AD60",
+    width: "85.39%",
+    height: 40,
+    borderRadius: 7,
+    left:"6.2%",
   },
   boton: {
     backgroundColor: "#36C05D",
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    textAlign: "center",
-    borderRadius: 20,
-    width: 168.63,
-    height: 67,
-    left: 131,
+    alignSelf: "center",
     alignItems: "center",
-    /*  position: "fixed", */
-    top: 400,
-  },
+    justifyContent: "center",
+    borderRadius: 15,
+    width: "45%",
+    height: "35%",
+    top: "125%",
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.5,
+    shadowRadius: 3,
+    elevation: 10,
+  }
+  
 });
 export default AgregarRecetaScreen;

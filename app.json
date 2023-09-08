@@ -9,7 +9,7 @@
     "splash": {
       "image": "./src/img/LogoPharmaLife.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#668557"
     },
     "assetBundlePatterns": [
       "**/*"

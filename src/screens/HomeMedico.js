@@ -18,34 +18,26 @@ const HomeMedico = () => {
                 <Image source={masMedico} style={styles.imgMas}></Image>
             </TouchableOpacity>
           </View>
-          <TouchableOpacity onPress={() => navigation.navigate("DatosPersonales")}>
             <View style={styles.box2}>
               <Text style={styles.tituloDatosPersonales}> Datos personales</Text>
-              <View style={styles.miniBox2}>
-                {/* Contenido de miniBox2 */}
-              </View>
+              <TouchableOpacity style={styles.miniBox2} onPress={() => navigation.navigate("DatosPersonales")}></TouchableOpacity>
             </View>
-          </TouchableOpacity>
         </View>
       </View>
       <View style={styles.column}>
         <View style={styles.rightColumn}>
-        <View>
-        <TouchableOpacity style={styles.box1} onPress={() => navigation.navigate("MisPacientes")}>
-        <Text style={styles.tituloMisPacientes}> Mis Pacientes</Text>
-          <View style={styles.miniBox1}>
-            <Text style={styles.subtext}>Ultimos Pacientes:</Text>
-          </View>
-          </TouchableOpacity>
-        </View>
-          <TouchableOpacity onPress={() => navigation.navigate("RecetasSubidas")}>
-            <View style={styles.box3}>
-              <Text style={styles.tituloRecetasSubidas}> Recetas Subidas</Text>
-              <View style={styles.miniBox3}>
-                {/* Contenido de miniBox3 */}
-              </View>
+          <View>
+            <View style={styles.box1}>
+              <Text style={styles.tituloMisPacientes}> Mis Pacientes</Text>
+              <TouchableOpacity style={styles.miniBox1} onPress={() => navigation.navigate("MisPacientes")}>
+                <Text style={styles.subtext}>Ultimos Pacientes:</Text>
+              </TouchableOpacity>
             </View>
-          </TouchableOpacity>
+          </View>
+          <View style={styles.box3}>
+            <Text style={styles.tituloRecetasSubidas}> Recetas Subidas</Text>
+            <TouchableOpacity style={styles.miniBox3} onPress={() => navigation.navigate("RecetasSubidas")}></TouchableOpacity>
+          </View>
         </View>
       </View>
     </View>
@@ -80,8 +72,6 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     top: "10%",
     left: "7.5%",
-    borderColor: 'black',
-    borderWidth: 2,
   },
   box1: {
     backgroundColor: "#79AD60",
@@ -93,32 +83,26 @@ const styles = StyleSheet.create({
     top: "35%",
     right: "7.5%",
     marginBottom:0,
-    borderColor: 'black',
-    borderWidth: 2,
   },
   box2: {
     backgroundColor: "#79AD60",
     justifyContent: "center",
     alignItems: "center",
-    height: "60%",
+    height: "37%",
     width: "86.97%",
     borderRadius: 20,
-    top: "23.5%",
+    top: "13.5%",
     left: "7.5%",
-    borderColor: 'black',
-    borderWidth: 2,
   },
   box3: {
     backgroundColor: "#79AD60",
     justifyContent: "center",
     alignItems: "center",
-    height: "58%",
+    height: "37%",
     width: "86.97%",
     borderRadius: 20,
     right: "7.5%",
     bottom:"1.5%",
-    borderColor: 'black',
-    borderWidth: 2,
   },
   miniBox: {
     backgroundColor: "#668557",
@@ -131,45 +115,34 @@ const styles = StyleSheet.create({
   },
   miniBox1: {
     backgroundColor: "#668557",
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    border: 0,
+    alignContent:"center",
     height: "83.87%",
     width: "94.65%",
-    top: "2.5%",
-    /* position: "fixed", */
+    top: "2.5%", 
     borderRadius:20,
   },
   miniBox2: {
     backgroundColor: "#668557",
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    border: 0,
+    alignContent:"center",
     height: "83.87%",
     width: "94.65%",
-    marginLeft:"2%",
-    /* position: "fixed", */
+    top: "2.5%", 
     borderRadius:20,
   },
   miniBox3: {
     backgroundColor: "#668557",
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    border: 0,
+    alignContent:"center",
     height: "83.87%",
     width: "94.65%",
-    marginLeft:"2.67%",
-   /*  position: "fixed", */
+    top: "2.5%", 
     borderRadius:20,
   },
   imgMas:{
     backgroundColor: "#668557",
     justifyContent: "center",
-    top: "50%",
-    height: "10%",
+    alignItems:"center",
+    top:"60%",
+    height: "8.5%",
   },
   tituloAgregarReceta:{
     color: "#ffffff",

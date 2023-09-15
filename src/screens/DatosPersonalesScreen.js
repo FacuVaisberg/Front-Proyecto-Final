@@ -16,17 +16,27 @@ const DatosPersonalesScreen = () => {
         <Text style={styles.tituloDatosPersonales}>Tus datos personales</Text>
         <View style={styles.box}>
           <View style={styles.minibox}>
-            <View style={styles.formGroup}>
+            <View style={styles.formGroup1}>
               <Text style={styles.textChico}>Nombre</Text>
-              {/* Medico.Nombre */}<Text style={styles.text}></Text>
               <Text style={styles.textChico}>Apellido</Text>
-              {/* Medico.Apellido */}<Text style={styles.text}></Text>
             </View>
-            <View style={styles.formGroup}>
+            <View style={styles.miniContainer1}>
+              {/* Medico.Nombre */}<Text style={styles.text}>Federico</Text>
+              {/* Medico.Apellido */}<Text style={styles.text}>Winik</Text>
+            </View>
+            <View style={styles.formGroup2}>
               <Text style={styles.textChico}>Fecha de nacimiento</Text>
               {/* Medico.FechaNacimiento */}<Text style={styles.text}></Text>
               <Text style={styles.textChico}>Numero de documento</Text>
               {/* Medico.Dni */}<Text style={styles.text}></Text>
+            </View>
+            <View style={styles.formGroup3}>
+              <Text style={styles.textChico}>Email</Text>
+              {/* Medico.Email */}<Text style={styles.text}></Text>
+              <Text style={styles.textChico}>Telefono Movil</Text>
+              {/* Medico.Celular */}<Text style={styles.text}></Text>
+              <Text style={styles.textChico}>Telefono Fijo</Text>
+              {/* Medico.Telefono */}<Text style={styles.text}></Text>
             </View>
           </View>
         </View>
@@ -40,6 +50,7 @@ const styles = StyleSheet.create({
     flex: 1,
     height: '100%',
     width: '100%',
+    backgroundColor: '#EFEFEF',
   },
   tituloDatosPersonales: {
     color: "#000000",
@@ -58,7 +69,7 @@ const styles = StyleSheet.create({
   text: {
     maxWidth:"50%",
     color: "#FFFFFF",
-    fontSize: 12,
+    fontSize: 20,
     marginLeft: "6.2%",
   },
   textChico: {
@@ -90,12 +101,36 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginBottom:20,
   },
-  formGroup: {
-    flexDirection: "column",
-    width: "50%",
-    maxWidth: "50%",
+  formGroup1: {
+    flex: 1,
+    flexDirection: 'row',
+    width: "100%",
+    height:"10%",
     top: 20,
     marginBottom:20,
+  },
+  miniContainer1: {
+    flex: 1,
+    flexDirection: 'row',
+    width: "100%",
+    height:"10%",
+  },
+  formGroup2: {
+    flexDirection: 'row',
+    width: "100%",
+    height:"10%",
+  },
+  miniContainer2: {
+    flexDirection: 'row',
+    width: "100%",
+    height:"10%",
+  },
+  formGroup3: {
+    flexDirection: "column",
+    width: "100%",
+    height:"60%",
+    top: 30,
+    marginBottom:30,
   },
 
   input: {

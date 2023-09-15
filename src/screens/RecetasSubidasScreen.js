@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native'
 import { useState } from 'react'
 import React from 'react'
 import Medicamento from "../components/Medicamento"
@@ -14,7 +14,10 @@ const RecetasSubidasScreen = () => {
 
   return (
     <>
-      <View>
+      <View style = {styles.container}>
+      <TouchableOpacity style={styles.Back} onPress={() => navigation.navigate("Medico")}>
+          <Image source={require("../img/volver.png")} />
+        </TouchableOpacity>
         <Text style={styles.titulo}>Recetas Subidas</Text>
       </View>
       <View style={styles.box}>
@@ -29,26 +32,29 @@ const RecetasSubidasScreen = () => {
   );
 }
 
-const styles = StyleSheet.create({      
-  titulo: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    width: "auto%",
-    height: "auto",
-    width: "auto",
+const styles = StyleSheet.create({   
+  container: {
+    flex: 1,
+    height: "100%",
+    width: "100%",
+    backgroundColor: '#EFEFEF',
+  },  
+  titulo: {  
     color: "#000000",
     fontSize:25,
-    /*fontFamily: "Jacques Francois-Regular",*
+    /* fontFamily: "Jacques Francois-Regular", */
     fontSize: 25,
-    left: 121,
-    letterSpacing: 0,
-  /*   position: "fixed", */
     textAlign: "center",
     marginTop:"10%"
   },
+  Back: {
+    color: "#7CB164",
+    width: 30,
+    height: 30,
+    top: "2.57%",
+    left: "4.65%",
+  },
   textMiniBox: {
-
     justifyContent: "center",
     color: "#ffffff",
     height: "auto",

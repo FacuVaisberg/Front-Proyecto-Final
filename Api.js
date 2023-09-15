@@ -2,7 +2,7 @@
     import React from 'react'
     
     //const ROOT_DOMAIN = 'http://A-PHZ2-CIDI-010:3000/';
-    const ROOT_DOMAIN = 'http://10.152.2.106:3000/';
+    const ROOT_DOMAIN = 'http://localhost:3000/';
     //const ROOT_DOMAIN = 'http://9b-wzc.anonymous.front-proyecto-final.exp.direct:3000/'
     
     const Api = {

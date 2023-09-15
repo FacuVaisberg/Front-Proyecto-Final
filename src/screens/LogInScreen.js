@@ -17,18 +17,38 @@ const LogInScreen = () => {
   const validarUsuario =async () =>{
     try{
       let objeto = {
-        Mail: mail,
-        Contraseña: contraseña,
+        email: mail,
+        password: contraseña,
       }
+   
       /* console.log(objeto)
       console.log(Api.ApiLogin)
       const response = await axios.post(Api.ApiLogin, objeto);
       console.log(response.data)*/
-      if ((mail== "naiman@gmail.com" && contraseña=="melman123")|| (mail== "golonbek@gmail.com" && contraseña=="golo06")|| (mail== "vaisberg@gmail.com" && contraseña=="facu06")|| (mail== "lazzari@gmail.com" && contraseña=="uenche123")|| (mail== "avola@gmail.com" && contraseña=="tone06")|| (mail== "israel@gmail.com" && contraseña=="isra05")){
+
+
+      console.log(Api.ApiLogin)
+      const response = await axios.post(Api.ApiLogin, objeto);
+      console.log(response)
+      const Headers={
+        headers:{
+          authorization: `Bearer ${response.data}`
+        }
+      }
+      console.log(Headers)
+      if (Headers.data!="") {
+        navigation.navigate('Medico', { mail, contraseña })
+      }
+      else{
+        console.log('los datos son erroneos, intente de nuevo')
+      }
+
+
+      /*if (){
         navigation.navigate('Medico', { mail, contraseña });
       }else{
         Alert.alert('los datos son erroneos, intente de nuevo')
-      } 
+      }*/ 
       
 
     }

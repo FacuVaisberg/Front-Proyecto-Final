@@ -46,9 +46,11 @@ const HomeMedico = () => {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     flexDirection: 'row',
     height: '100%',
     width: '100%',
+    backgroundColor: '#EFEFEF',
   },
   column: {
     flex: 1,

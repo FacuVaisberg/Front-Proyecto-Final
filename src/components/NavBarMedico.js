@@ -51,6 +51,6 @@ export default function NavBarMedico({navigation}) {
 }
 
 const styles = StyleSheet.create({
-
+  
 });
 

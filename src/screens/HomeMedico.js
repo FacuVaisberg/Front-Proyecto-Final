@@ -4,6 +4,8 @@ import LogoSinSlogan from "../img/LogoSinSlogan.png";
 import masMedico from "../img/masMedico.png";
 import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native';
+import CardRegistro from '../components/CardRegistro';
+import CardPaciente from '../components/CardPaciente';
 
 const HomeMedico = () => {
   const navigation = useNavigation();
@@ -13,13 +15,13 @@ const HomeMedico = () => {
         <View style={styles.leftColumn}>
           <Text style={styles.titulo}> Hola, (nombre)</Text>
           <View style={styles.box}>
-            <Text style={styles.tituloAgregarReceta}> Agregar Receta</Text>
+            <Text style={styles.titulos}> Agregar Receta</Text>
             <TouchableOpacity style={styles.miniBox} onPress={() => navigation.navigate("AgregarReceta")}>
                 <Image source={masMedico} style={styles.imgMas}></Image>
             </TouchableOpacity>
           </View>
             <View style={styles.box2}>
-              <Text style={styles.tituloDatosPersonales}> Datos personales</Text>
+              <Text style={styles.titulos}> Datos personales</Text>
               <TouchableOpacity style={styles.miniBox2} onPress={() => navigation.navigate("DatosPersonales")}></TouchableOpacity>
             </View>
         </View>
@@ -28,14 +30,23 @@ const HomeMedico = () => {
         <View style={styles.rightColumn}>
           <View>
             <View style={styles.box1}>
-              <Text style={styles.tituloMisPacientes}> Mis Pacientes</Text>
+              <Text style={styles.titulos}> Mis Pacientes</Text>
               <TouchableOpacity style={styles.miniBox1} onPress={() => navigation.navigate("MisPacientes")}>
                 <Text style={styles.subtext}>Ultimos Pacientes:</Text>
+                <CardPaciente style={styles.card}>
+
+                </CardPaciente>
+                <CardPaciente style={styles.card}>
+
+                </CardPaciente>
+                <CardPaciente style={styles.card}>
+
+                </CardPaciente>
               </TouchableOpacity>
             </View>
           </View>
           <View style={styles.box3}>
-            <Text style={styles.tituloRecetasSubidas}> Recetas Subidas</Text>
+            <Text style={styles.titulos}> Recetas Subidas</Text>
             <TouchableOpacity style={styles.miniBox3} onPress={() => navigation.navigate("RecetasSubidas")}></TouchableOpacity>
           </View>
         </View>
@@ -118,6 +129,7 @@ const styles = StyleSheet.create({
   miniBox1: {
     backgroundColor: "#668557",
     alignContent:"center",
+    alignItems: "center",
     height: "83.87%",
     width: "94.65%",
     top: "2.5%", 
@@ -139,6 +151,11 @@ const styles = StyleSheet.create({
     top: "2.5%", 
     borderRadius:20,
   },
+  minicard: {
+    alignItems: "center",
+    height: "10%",
+    width: "80%",
+  },
   imgMas:{
     backgroundColor: "#668557",
     justifyContent: "center",
@@ -146,25 +163,8 @@ const styles = StyleSheet.create({
     top:"60%",
     height: "8.5%",
   },
-  tituloAgregarReceta:{
+  titulos:{
     color: "#ffffff",
-    /* fontFamily: "Jacques Francois-Regular", */
-    /* fontSize: 14, */
-    /* left: 0, */
-    /* letterSpacing: 0, */
-    /*lineHeight: "normal",*/
-    /* position: "fixed", */
-    height: "auto",
-    width: "auto",
-    },
-    tituloRecetasSubidas:{
-    color: "#FFFFFF",
-    /*fontFamily: "Jacques Francois-Regular",* 
-    fontSize: 14,
-    left: 180,
-    letterSpacing: 0,
-    /*lineHeight: "normal",*/
-    /* position: "fixed", */
     textAlign: "center",
     },
     titulo:{
@@ -177,26 +177,6 @@ const styles = StyleSheet.create({
       /*lineHeight: "normal",*/
       /* position: "fixed", */
     
-    },
-    tituloMisPacientes:{
-    color: "#ffffff",
-    /*fontFamily: "Jacques Francois-Regular",* 
-    fontSize: 14,
-    left: 0,
-    letterSpacing: 0,
-    /*lineHeight: "normal",*/
-    /* position: "fixed", */
-    textAlign: "auto",
-    },
-    tituloDatosPersonales:{
-    color: "#FFFFFF",
-    /*fontFamily: "Jacques Francois-Regular",* 
-    fontSize: 14,
-    left: 0,
-    letterSpacing: 0,
-    /*lineHeight: "normal",*/
-    /* position: "fixed", */
-    textAlign: "center",
     },
     subtext:{
       color: "#FFFFFF",

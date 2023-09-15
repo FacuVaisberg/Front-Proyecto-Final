@@ -3,13 +3,12 @@ import React, { useState } from 'react';
 import CardRegistro from '../components/CardRegistro'
 import Button from '../components/Button'
 import { useNavigation } from '@react-navigation/native';
-import HomeMedico from './HomeMedico';
+/* import HomeFarmacia from './HomeFarmacia'; */
 
 const RegistrarDatosScreenMedico = () => {
   const [nombre, setName] = useState('');
-  const [apellido, setApellido] = useState('');
   const [direccion, setDireccion] = useState('');
-  const [dni, setDni] = useState('');
+  const [nombreDuenio, setNombreDuenio] = useState('');
   const [telefono, setTelefono] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -17,19 +16,16 @@ const RegistrarDatosScreenMedico = () => {
   const navigation = useNavigation();
   return (
     <View style={styles.view}>
-      <Text style={styles.baseText}>Completa tus datos como Medico</Text>
-      <CardRegistro title={"Accede como medico para poder mejorar la experiencia en sus clientes."} />
+      <Text style={styles.baseText}>Completa los datos como Farmacia</Text>
+      <CardRegistro title={"Accede como farmacia para poder mejorar la experiencia en sus clientes."} />
       <View style={[styles.inputContainer, styles.button]}>
           <TextInput style={styles.input} placeholder="Nombre:" value={nombre} onChangeText={setName}/>
-        </View>
-        <View style={[styles.inputContainer, styles.buttonOscuro]}>
-          <TextInput style={styles.input} placeholder="Apellido:" value={apellido} onChangeText={setApellido }/>
         </View>
         <View style={[styles.inputContainer, styles.button]}>
             <TextInput style={styles.input} placeholder="Direccion:" value={direccion} onChangeText={setDireccion}/>
         </View>
         <View style={[styles.inputContainer, styles.buttonOscuro]}>
-            <TextInput style={styles.input} placeholder="Dni:" value={dni} onChangeText={setDni}/>
+          <TextInput style={styles.input} placeholder="Nombre del dueño:" value={nombreDuenio} onChangeText={setNombreDuenio }/>
         </View>
         <View style={[styles.inputContainer, styles.button]}>
             <TextInput style={styles.input} placeholder="Telefono:" value={telefono} onChangeText={setTelefono}/>
@@ -41,7 +37,7 @@ const RegistrarDatosScreenMedico = () => {
             <TextInput style={styles.input} placeholder="Contraseña:" value={password} onChangeText={setPassword}/>
         </View>
 
-        <TouchableOpacity style={styles.buttonChico} onPress={() => navigation.navigate("Medico")}>
+        <TouchableOpacity style={styles.buttonChico} onPress={() => navigation.navigate("Farmacia")}>
           <Text style={styles.buttonText}>Registrarse</Text>
         </TouchableOpacity>
     </View>

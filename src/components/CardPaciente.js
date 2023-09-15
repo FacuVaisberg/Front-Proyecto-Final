@@ -1,23 +1,33 @@
 import { DarkTheme } from '@react-navigation/native';
 import React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
+import Button from './Button';
 
-const CardRegistro = ({ title }) => {
+
+const CardPaciente = ({ title }) => {
   return (
     <View style={styles.card}>
       <Text style={styles.buttonText}>{title}</Text>
+      <TouchableOpacity>
+        <Button onPress={() => navigation.navigate("MisPacientes")} title ="Ver info"></Button>
+      </TouchableOpacity>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   card: {
-    width: '80%',
-    height: 125,
+    flexDirection: "row",
+    width: '95%',
+    height: "20%",
     backgroundColor: "#79AD60",
     borderRadius:15,
     alignContent: "center",
-    marginBottom: 25,
+    marginTop: "10%",
+    backgroundColor: "#D3D3D3"
+  },
+  botonInfo: { 
+
   },
   buttonText:{
     textAlign: 'center',
@@ -28,4 +38,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default CardRegistro;
+export default CardPaciente;

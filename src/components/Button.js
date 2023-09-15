@@ -14,8 +14,8 @@ const styles = StyleSheet.create({
         borderRadius: 15,
         backgroundColor: '#99D87D',
         marginTop: 10,
-        paddingHorizontal: 30, // Cambia el tamaño del botón de forma horizontal
-        paddingVertical: 10, // Cambia el tamaño del botón de forma vertical
+        paddingHorizontal: 30,
+        paddingVertical: 10,
         margin:80,
         shadowRadius: 15,
         marginBottom:10,
@@ -24,9 +24,8 @@ const styles = StyleSheet.create({
         elevation: 5,
     },
     buttonText: {
-        color: '#2C4521',
-        fontSize: 16,
-        fontStyle: "normal",
+        color: '#000000',
+        fontSize: 10,
         /* lineHeight: 18, */
     },
   });

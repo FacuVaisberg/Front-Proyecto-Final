@@ -15,5 +15,5 @@
     npm i react-redux
 
     npm install react-native-vector-icons --save 
-
     npm install @react-navigation/bottom-tabs react-native-vector-icons
+    npm install --save react-native-ico-material-design react-native-svg

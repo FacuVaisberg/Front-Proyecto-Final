@@ -4,8 +4,8 @@ import LogoSinSlogan from "../img/LogoSinSlogan.png";
 import masMedico from "../img/masMedico.png";
 import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native';
-import CardRegistro from '../components/CardRegistro';
 import CardPaciente from '../components/CardPaciente';
+import NavBarMedico from '../components/NavBarMedico';
 
 const HomeMedico = () => {
   const navigation = useNavigation();
@@ -51,6 +51,7 @@ const HomeMedico = () => {
           </View>
         </View>
       </View>
+      {/* <NavBarMedico></NavBarMedico> */}
     </View>
   );
 };
@@ -151,7 +152,7 @@ const styles = StyleSheet.create({
     top: "2.5%", 
     borderRadius:20,
   },
-  minicard: {
+  card: {
     alignItems: "center",
     height: "10%",
     width: "80%",

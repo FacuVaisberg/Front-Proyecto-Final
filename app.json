@@ -7,7 +7,7 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./src/img/LogoPharmaLife.png",
+      "image": "./src/img/LogoSolo.png",
       "resizeMode": "contain",
       "backgroundColor": "#668557"
     },

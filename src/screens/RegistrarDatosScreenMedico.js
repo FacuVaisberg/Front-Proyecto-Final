@@ -126,6 +126,7 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   buttonText: {
+    textAlign:"center",
     color: '#2C4521',
 /*     fontFamily: 'assets/fonts/UberMoveMedium.otf', */
     fontSize: 16,

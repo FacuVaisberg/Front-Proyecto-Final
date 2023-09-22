@@ -1,11 +1,11 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
-import LogoSinSlogan from "../img/LogoSinSlogan.png";
-import masMedico from "../img/masMedico.png";
+import LogoSinSlogan from "../../img/LogoSinSlogan.png";
+import masMedico from "../../img/masMedico.png";
 import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native';
-import CardPaciente from '../components/CardPaciente';
-import NavBarMedico from '../components/NavBarMedico';
+import CardPaciente from '../../components/CardPaciente';
+import NavBarMedico from '../../components/NavBarMedico';
 
 const HomeMedico = () => {
   const navigation = useNavigation();
@@ -20,9 +20,9 @@ const HomeMedico = () => {
                 <Image source={masMedico} style={styles.imgMas}></Image>
             </TouchableOpacity>
           </View>
-            <View style={styles.box2}>
+            <View style={styles.box1}>
               <Text style={styles.titulos}> Datos personales</Text>
-              <TouchableOpacity style={styles.miniBox2} onPress={() => navigation.navigate("DatosPersonales")}></TouchableOpacity>
+              <TouchableOpacity style={styles.miniBox1} onPress={() => navigation.navigate("DatosPersonales")}></TouchableOpacity>
             </View>
         </View>
       </View>
@@ -30,13 +30,12 @@ const HomeMedico = () => {
         <View style={styles.rightColumn}>
           <View>
           </View>
-          <View style={styles.box3}>
+          <View style={styles.box2}>
             <Text style={styles.titulos}> Recetas Subidas</Text>
-            <TouchableOpacity style={styles.miniBox3} onPress={() => navigation.navigate("RecetasSubidas")}></TouchableOpacity>
+            <TouchableOpacity style={styles.miniBox2} onPress={() => navigation.navigate("RecetasSubidas")}></TouchableOpacity>
           </View>
         </View>
       </View>
-      {/* <NavBarMedico></NavBarMedico> */}
     </View>
   );
 };
@@ -76,12 +75,11 @@ const styles = StyleSheet.create({
     backgroundColor: "#79AD60",
     justifyContent: "center",
     alignItems: "center",
-    height: "57%",
+    height: "37%",
     width: "86.97%",
     borderRadius: 20,
-    top: "35%",
-    right: "7.5%",
-    marginBottom:0,
+    top: "13.5%",
+    left: "7.5%",
   },
   box2: {
     backgroundColor: "#79AD60",
@@ -90,18 +88,9 @@ const styles = StyleSheet.create({
     height: "37%",
     width: "86.97%",
     borderRadius: 20,
-    top: "13.5%",
-    left: "7.5%",
-  },
-  box3: {
-    backgroundColor: "#79AD60",
-    justifyContent: "center",
-    alignItems: "center",
-    height: "37%",
-    width: "86.97%",
-    borderRadius: 20,
     right: "7.5%",
     bottom:"1.5%",
+    top: "30%",
   },
   miniBox: {
     backgroundColor: "#668557",
@@ -115,21 +104,12 @@ const styles = StyleSheet.create({
   miniBox1: {
     backgroundColor: "#668557",
     alignContent:"center",
-    alignItems: "center",
     height: "83.87%",
     width: "94.65%",
     top: "2.5%", 
     borderRadius:20,
   },
   miniBox2: {
-    backgroundColor: "#668557",
-    alignContent:"center",
-    height: "83.87%",
-    width: "94.65%",
-    top: "2.5%", 
-    borderRadius:20,
-  },
-  miniBox3: {
     backgroundColor: "#668557",
     alignContent:"center",
     height: "83.87%",

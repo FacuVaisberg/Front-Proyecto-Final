@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import SemiCircle from "../components/SemiCircle";
-import ValidarLogin from "../../ValidarLogin"
-import Api from '../../Api';
+import ValidarLogin from "../../../ValidarLogin"
+import Api from '../../../Api';
 import axios from 'axios';
 import { Alert } from 'react-native';
 

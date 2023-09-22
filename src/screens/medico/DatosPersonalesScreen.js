@@ -3,15 +3,15 @@ import { View, Text, StyleSheet, Image, TextInput, Form, onClick, Alert, Touchab
 import DropDownPicker from "react-native-dropdown-picker";
 import axios from "axios";
 import { useNavigation } from "@react-navigation/native";
-import Api from "../../Api";
-import { Button } from "../components/Button";
+import Api from '../../../Api';
+import { Button } from "../../components/Button";
 
 const DatosPersonalesScreen = () => {
   return (
     <>
       <SafeAreaView style={styles.container}>
         <TouchableOpacity style={styles.Back} onPress={() => navigation.navigate("Medico")}>
-          <Image source={require("../img/volver.png")} />
+          <Image source={require("../../img/volver.png")} />
         </TouchableOpacity>
         <Text style={styles.tituloDatosPersonales}>Tus datos personales</Text>
         <View style={styles.box}>

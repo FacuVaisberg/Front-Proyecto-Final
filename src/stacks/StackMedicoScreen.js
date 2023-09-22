@@ -1,11 +1,11 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
-import HomeMedico from '../screens/HomeMedico';
-import AgregarRecetaScreen  from '../screens/AgregarRecetaScreen';
-import RecetasSubidasScreen from '../screens/RecetasSubidasScreen';
-import DatosPersonalesScreen from '../screens/DatosPersonalesScreen';
-import MisPacientesScreen from '../screens/MisPacientesScreen';
+import HomeMedico from '../screens/medico/HomeMedico';
+import AgregarRecetaScreen  from '../screens/medico/AgregarRecetaScreen';
+import RecetasSubidasScreen from '../screens/medico/RecetasSubidasScreen';
+import DatosPersonalesScreen from '../screens/medico/DatosPersonalesScreen';
+import MisPacientesScreen from '../screens/medico/MisPacientesScreen';
 
 const StackMedicoScreen = () => {
     const StackMedico = createNativeStackNavigator();

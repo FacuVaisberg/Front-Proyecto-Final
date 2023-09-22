@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity, SafeAreaView } from 'react-native';
-import CardRegistro from '../components/CardRegistro';
+import CardRegistro from '../../components/CardRegistro';
 import { useNavigation } from '@react-navigation/native';
 
 

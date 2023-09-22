@@ -4,8 +4,8 @@ import DropDownPicker from "react-native-dropdown-picker";
 import axios from "axios";
 
 import { useNavigation } from "@react-navigation/native";
-import Api from "../../Api";
-import { Button } from "../components/Button";
+import Api from '../../../Api';
+import { Button } from "../../components/Button";
 
 const AgregarRecetaScreen = () => {
   const [idMedicamento, setIdMedicamento] = useState(0);
@@ -61,7 +61,7 @@ const AgregarRecetaScreen = () => {
     <>
       <SafeAreaView style={styles.container}>
         <TouchableOpacity style={styles.Back} onPress={() => navigation.navigate("Medico")}>
-          <Image source={require("../img/volver.png")} />
+          <Image source={require("../../img/volver.png")} />
         </TouchableOpacity>
         <Text style={styles.tituloAgregarReceta}>Agregar Receta</Text>
         <View style={styles.box}>

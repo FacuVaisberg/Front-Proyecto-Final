@@ -4,14 +4,15 @@ import { Image, StyleSheet, Platform } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 
-import HomeMedico from "../screens/HomeMedico";
-import AgregarRecetaScreen from "../screens/AgregarRecetaScreen";
-import DatosPersonalesScreen from "../screens/DatosPersonalesScreen";
-import RecetasSubidasScreen from "../screens/RecetasSubidasScreen";
-import Icon from "react-native-ico-material-design";
+import HomeMedico from "../screens/medico/HomeMedico";
+import AgregarRecetaScreen from "../screens/medico/AgregarRecetaScreen";
+import DatosPersonalesScreen from "../screens/medico/DatosPersonalesScreen";
+import RecetasSubidasScreen from "../screens/medico/RecetasSubidasScreen";
 import { FontAwesome5 } from "@expo/vector-icons";
-import { MaterialIcons } from '@expo/vector-icons'; 
-
+import { MaterialIcons } from "@expo/vector-icons";
+import { FontAwesome } from "@expo/vector-icons";
+import { Entypo } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
 
 const Tab = createBottomTabNavigator();
 const screenOptions = {
@@ -27,18 +28,20 @@ const screenOptions = {
     backgroundColor: "#7CB164",
   },
 };
-export default function App() {
+export default function NavBarMedico() {
   return (
     <NavigationContainer>
       <Tab.Navigator screenOptions={screenOptions}>
         <Tab.Screen
           name="Home"
           component={HomeMedico}
-          options={{tabBarIcon: ({ focused }) => {
+          options={{
+            tabBarIcon: ({ focused }) => {
               return (
                 <View
-                  style={{ alignItems: "center", justifyContent: "center" }}>
-                  <FontAwesome5 name="heartbeat" size={24} color={focused ? "#000000" : "#111"}/>
+                  style={{ alignItems: "center", justifyContent: "center" }}
+                >
+                  <Ionicons name="home" size={24} color="black" />
                   <Text style={{ fontSize: 12, color: "#000000" }}></Text>
                 </View>
               );
@@ -48,11 +51,44 @@ export default function App() {
         <Tab.Screen
           name="AgregarReceta"
           component={AgregarRecetaScreen}
-          options={{tabBarIcon: ({ focused }) => {
+          options={{
+            tabBarIcon: ({ focused }) => {
               return (
                 <View
-                  style={{ alignItems: "center", justifyContent: "center" }}>
-                  <MaterialIcons name="post-add" size={24} color="black" />                  <Text style={{ fontSize: 12, color: "#000000" }}></Text>
+                  style={{ alignItems: "center", justifyContent: "center" }}
+                >
+                  <MaterialIcons name="post-add" size={24} color="black" />
+                  <Text style={{ fontSize: 12, color: "#000000" }}>
+                    Agregar Receta
+                  </Text>
+                </View>
+              );
+            },
+          }}
+        />
+        <Tab.Screen
+          name="PharmaLife"
+          component={HomeMedico}
+          options={{
+            tabBarIcon: ({ focused }) => {
+              return (
+                <View
+                  style={{
+                    top: Platform.OS == "ios" ? -10 : -20,
+                    width: Platform.OS == "ios" ? 50 : 60,
+                    heigth: Platform.OS == "ios" ? 50 : 60,
+                    borderRadius: Platform.OS == "ios" ? 25 : 30,
+                    alignItems: "center",
+                    justifyContent: "center",
+                    backgroundColor: "#7CB164",
+                  }}
+                >
+                  <FontAwesome5
+                    name="heartbeat"
+                    size={24}
+                    color={focused ? "#000000" : "#111"}
+                  />
+                  <Text style={{ fontSize: 12, color: "#000000" }}></Text>
                 </View>
               );
             },
@@ -61,30 +97,42 @@ export default function App() {
         <Tab.Screen
           name="DatosPersonales"
           component={DatosPersonalesScreen}
-          options={{tabBarIcon: ({ focused }) => {
-            return (
-              <View
-                style={{ alignItems: "center", justifyContent: "center" }}>
-                <FontAwesome5 name="heartbeat" size={24} color={focused ? "#000000" : "#111"}/>
-                <Text style={{ fontSize: 12, color: "#000000" }}></Text>
-              </View>
-            );
-          },
-        }}
+          options={{
+            tabBarIcon: ({ focused }) => {
+              return (
+                <View
+                  style={{ alignItems: "center", justifyContent: "center" }}
+                >
+                  <FontAwesome name="user-md" size={24} color="black" />
+                  <Text style={{ fontSize: 12, color: "#000000" }}>
+                    Datos Personales
+                  </Text>
+                </View>
+              );
+            },
+          }}
         />
         <Tab.Screen
           name="RecetasSubidas"
           component={RecetasSubidasScreen}
-          options={{tabBarIcon: ({ focused }) => {
-            return (
-              <View
-                style={{ alignItems: "center", justifyContent: "center" }}>
-                <FontAwesome5 name="heartbeat" size={24} color={focused ? "#000000" : "#111"}/>
-                <Text style={{ fontSize: 12, color: "#000000" }}></Text>
-              </View>
-            );
-          },
-        }}
+          options={{
+            tabBarIcon: ({ focused }) => {
+              return (
+                <View
+                  style={{ alignItems: "center", justifyContent: "center" }}
+                >
+                  <Entypo
+                    name="text-document-inverted"
+                    size={24}
+                    color="black"
+                  />
+                  <Text style={{ fontSize: 12, color: "#000000" }}>
+                    Recetas Subidas
+                  </Text>
+                </View>
+              );
+            },
+          }}
         />
       </Tab.Navigator>
     </NavigationContainer>

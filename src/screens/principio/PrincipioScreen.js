@@ -1,10 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
-import Button from "../components/Button.js";
+import { StyleSheet, Text, View, Image } from 'react-native';
+import Button from "../../components/Button.js";
 import { useNavigation } from '@react-navigation/native';
-import RegistrarseScreen from '../screens/RegistrarseScreen.js';
-import Index from '../../Index'
-
 
 const PrincipioScreen = () => {
     const navigation =useNavigation();
@@ -18,7 +15,7 @@ const PrincipioScreen = () => {
           <View style={styles.container2}>
             <Image
               style={styles.PharmaLifeLogo}
-              source={require('../img/LogoPharmaLife.png')}
+              source={require('../../img/LogoPharmaLife.png')}
             />
           </View>
           <Button title="Iniciar sesion" onPress={() => navigation.navigate("LogIn")} />

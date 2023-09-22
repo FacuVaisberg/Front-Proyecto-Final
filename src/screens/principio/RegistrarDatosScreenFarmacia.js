@@ -1,9 +1,7 @@
 import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react';
-import CardRegistro from '../components/CardRegistro'
-import Button from '../components/Button'
+import CardRegistro from '../../components/CardRegistro'
 import { useNavigation } from '@react-navigation/native';
-/* import HomeFarmacia from './HomeFarmacia'; */
 
 const RegistrarDatosScreenMedico = () => {
   const [nombre, setName] = useState('');

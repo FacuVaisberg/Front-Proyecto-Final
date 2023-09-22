@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native'
 import { useState } from 'react'
 import React from 'react'
-import Medicamento from "../components/Medicamento"
+import Medicamento from "../../components/Medicamento"
 
 const RecetasSubidasScreen = () => {
   const [medicamentos, setMedicamentos] = useState([]);
@@ -16,7 +16,7 @@ const RecetasSubidasScreen = () => {
     <>
       <View style = {styles.container}>
       <TouchableOpacity style={styles.Back} onPress={() => navigation.navigate("Medico")}>
-          <Image source={require("../img/volver.png")} />
+          <Image source={require("../../img/volver.png")} />
         </TouchableOpacity>
         <Text style={styles.titulo}>Recetas Subidas</Text>
       </View>

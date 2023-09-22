@@ -5,7 +5,7 @@ const MisPacientesScreen = () => {
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.Back} onPress={() => navigation.navigate("Medico")}>
-        <Image source={require("../img/volver.png")} />
+        <Image source={require("../../img/volver.png")} />
       </TouchableOpacity>
       <Text>MisPacientesScreen</Text>
     </View>

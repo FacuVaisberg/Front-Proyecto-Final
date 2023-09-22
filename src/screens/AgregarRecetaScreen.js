@@ -2,13 +2,15 @@ import React, { useState } from "react";
 import { View, Text, StyleSheet, Image, TextInput, Form, onClick, Alert, TouchableOpacity, SafeAreaView} from "react-native";
 import DropDownPicker from "react-native-dropdown-picker";
 import axios from "axios";
+
 import { useNavigation } from "@react-navigation/native";
 import Api from "../../Api";
 import { Button } from "../components/Button";
 
 const AgregarRecetaScreen = () => {
-  const [dni, setDni] = useState("");
-  const [NombreMedicamento, setMedicamento] = useState("");
+  const [idMedicamento, setIdMedicamento] = useState(0);
+  const [idPaciente, setIdPaciente] = useState(0);
+
   const [fechaVencimiento, setFechaVencimiento] = useState("");
   const navigation = useNavigation();
 
@@ -28,14 +30,10 @@ const AgregarRecetaScreen = () => {
     console.log('AgregarReceta')
     try{
       let objeto = {
-              "IdMedicamento": 2,
-              "IdMedico": 2,
-              "IdPaciente": 2,
-              "IdFarmacia": 2,
-              "FechaCreacion": "2018-10-10T00:00:00.000Z",
-              "FechaVencimiento": "2013-07-07T00:00:00.000Z",
-              "Estado": false,
-              "Observaciones": "probando"
+              IdMedicamento: idMedicamento,
+              IdPaciente: idPaciente,
+              FechaVencimiento:fechaVencimiento,
+
       }
       console.log(objeto)
       const response = await axios.post(Api.ApiAgregarReceta, objeto);
@@ -47,31 +45,12 @@ const AgregarRecetaScreen = () => {
       }
       console.log(Headers)
       if (Headers.data!="") {
-        Alert.alert("receta agregada con exito");
+        alert("receta agregada con exito");
       }
       else{
         console.log('los datos son erroneos, intente de nuevo')
       }
 
-      
-    /*
-      axios.post(Api.ApiAgregarReceta, objeto).
-        then((response) => {
-            ;
-          console.log(response);
-          console.log(response.data)
-        })
-        .catch((error) => {
-          if (error.response) {
-            console.error('Server Error:', error.response.status);
-          } else if (error.request) {
-            console.error('Network Error:', error.request);
-          } else {
-            console.error('Error:', error.message);
-          }
-      });
-      */
-      
       
     }
     catch(error){
@@ -89,11 +68,11 @@ const AgregarRecetaScreen = () => {
           <View style={styles.minibox}>
             <View style={styles.formGroup}>
               <Text style={styles.text}>Número de documento del paciente</Text>
-              <TextInput style={styles.input} placeholder={"Escribir..."} value={dni} onChangeText={setDni}></TextInput>
+              <TextInput style={styles.input} placeholder={"Escribir..."} value={idPaciente} onChangeText={setIdPaciente}></TextInput>
             </View>
             <View style={styles.formGroup}>
               <Text style={styles.text1}>Medicamento</Text>
-              <TextInput style={styles.input} placeholder={"Escribir 1..."} value={NombreMedicamento} onChangeText={setMedicamento}></TextInput>
+              <TextInput style={styles.input} placeholder={"Escribir 1..."} value={idMedicamento} onChangeText={setIdMedicamento}></TextInput>
             </View>
             <View style={styles.formGroup}>
               <Text style={styles.text2}>Fecha de vencimiento</Text>

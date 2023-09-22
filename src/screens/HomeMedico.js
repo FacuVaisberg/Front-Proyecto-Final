@@ -29,21 +29,6 @@ const HomeMedico = () => {
       <View style={styles.column}>
         <View style={styles.rightColumn}>
           <View>
-            <View style={styles.box1}>
-              <Text style={styles.titulos}> Mis Pacientes</Text>
-              <TouchableOpacity style={styles.miniBox1} onPress={() => navigation.navigate("MisPacientes")}>
-                <Text style={styles.subtext}>Ultimos Pacientes:</Text>
-                <CardPaciente style={styles.card}>
-
-                </CardPaciente>
-                <CardPaciente style={styles.card}>
-
-                </CardPaciente>
-                <CardPaciente style={styles.card}>
-
-                </CardPaciente>
-              </TouchableOpacity>
-            </View>
           </View>
           <View style={styles.box3}>
             <Text style={styles.titulos}> Recetas Subidas</Text>

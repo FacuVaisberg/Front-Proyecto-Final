@@ -35,12 +35,25 @@ const AgregarRecetaScreen = () => {
               "FechaCreacion": "2018-10-10T00:00:00.000Z",
               "FechaVencimiento": "2013-07-07T00:00:00.000Z",
               "Estado": false,
-              "Observaciones": "hola"
+              "Observaciones": "probando"
       }
       console.log(objeto)
       const response = await axios.post(Api.ApiAgregarReceta, objeto);
       console.log(response);
-      Alert.alert("receta agregada con exito");
+      const Headers={
+        headers:{
+          authorization: `Bearer ${response.data}`
+        }
+      }
+      console.log(Headers)
+      if (Headers.data!="") {
+        Alert.alert("receta agregada con exito");
+      }
+      else{
+        console.log('los datos son erroneos, intente de nuevo')
+      }
+
+      
     /*
       axios.post(Api.ApiAgregarReceta, objeto).
         then((response) => {

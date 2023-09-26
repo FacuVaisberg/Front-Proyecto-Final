@@ -5,6 +5,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import ValidarLogin from "../../../ValidarLogin"
 import Api from '../../../Api';
 import axios from 'axios';
+import SemiCircle from '../../components/SemiCircle';
 import { Alert } from 'react-native';
 
 const LogInScreen = () => {

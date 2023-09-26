@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import Button from "../../components/Button.js";
 import { useNavigation } from '@react-navigation/native';
+import LogoPharmaLife from '../../img/LogoPharmaLife.png';
 
 const PrincipioScreen = () => {
     const navigation =useNavigation();
@@ -15,7 +16,7 @@ const PrincipioScreen = () => {
           <View style={styles.container2}>
             <Image
               style={styles.PharmaLifeLogo}
-              source={require('../../img/LogoPharmaLife.png')}
+              source={LogoPharmaLife}
             />
           </View>
           <Button title="Iniciar sesion" onPress={() => navigation.navigate("LogIn")} />

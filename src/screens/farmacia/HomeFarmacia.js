@@ -12,13 +12,13 @@ const HomeFarmacia = () => {
   return (
     <View style={styles.container}>
       <Image style={styles.PharmaLifeLogo} source={LogoSinSloganNegro}></Image>
-      <TouchableOpacity>
-        <ButtonConImage style={styles.boton} source={RecetasImage}>
+      <TouchableOpacity style={styles.boton}>
+        <ButtonConImage source={RecetasImage}>
           Recetas Pendientes
         </ButtonConImage>
       </TouchableOpacity>
-      <TouchableOpacity>
-        <ButtonConImage style={styles.boton} source={VentasImage}>
+      <TouchableOpacity style={styles.boton}>
+        <ButtonConImage source={VentasImage}>
           Historial de ventas
         </ButtonConImage>
       </TouchableOpacity>
@@ -42,12 +42,13 @@ const styles = StyleSheet.create({
     marginBottom: 30,
     width: 136,
     height: 140,
+    maxWidth:"80%",
+    maxHeight:"20%",
     shadowRadius: 15,
   },
-  CardFarmacia: {
+  boton: {
     width: "90%",
     height: "30%",
-    marginBottom: 20,
   },
   titulos: {
     color: "#ffffff",

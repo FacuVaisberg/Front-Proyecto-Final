@@ -8,6 +8,7 @@ const ButtonConImage = ({ onPress, source, children }) => {
         <ImageBackground
           source={source}
           style={styles.botonConImagen}
+          
         >
           <Text style={styles.textoBoton}>{children}</Text>
         </ImageBackground>

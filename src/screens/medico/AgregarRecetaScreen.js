@@ -10,6 +10,7 @@ import { Button } from "../../components/Button";
 const AgregarRecetaScreen = () => {
   const [idMedicamento, setIdMedicamento] = useState(0);
   const [idPaciente, setIdPaciente] = useState(0);
+  const [observaciones, setObservaciones] = useState("")
 
   const [fechaVencimiento, setFechaVencimiento] = useState("");
   const navigation = useNavigation();
@@ -32,7 +33,7 @@ const AgregarRecetaScreen = () => {
       let objeto = {
               IdMedicamento: idMedicamento,
               IdPaciente: idPaciente,
-              FechaVencimiento:fechaVencimiento,
+              Observaciones:observaciones,
 
       }
       console.log(objeto)
@@ -75,8 +76,8 @@ const AgregarRecetaScreen = () => {
               <TextInput style={styles.input} placeholder={"Escribir 1..."} value={idMedicamento} onChangeText={setIdMedicamento}></TextInput>
             </View>
             <View style={styles.formGroup}>
-              <Text style={styles.text2}>Fecha de vencimiento</Text>
-              <TextInput style={styles.input} placeholder={"Escribir 2..."} value={fechaVencimiento} onChangeText={setFechaVencimiento}></TextInput>
+              <Text style={styles.text2}>Observaciones</Text>
+              <TextInput style={styles.input} placeholder={"Escribir 2..."} value={observaciones} onChangeText={setObservaciones}></TextInput>
             </View>
             <View>
               <TouchableOpacity style={styles.boton} onPress={AgregarReceta}>

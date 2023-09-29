@@ -12,8 +12,8 @@ const HomeFarmacia = () => {
   return (
     <View style={styles.container}>
       <Image style={styles.PharmaLifeLogo} source={LogoSinSloganNegro}></Image>
-      <TouchableOpacity style={styles.boton}>
-        <ButtonConImage source={RecetasImage}>
+      <TouchableOpacity style={styles.boton} onPress={() => navigation.navigate("RecetasPendientes")}>
+        <ButtonConImage source={RecetasImage} >
           Recetas Pendientes
         </ButtonConImage>
       </TouchableOpacity>

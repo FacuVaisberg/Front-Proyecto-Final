@@ -17,7 +17,7 @@ const HomeFarmacia = () => {
           Recetas Pendientes
         </ButtonConImage>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.boton}>
+      <TouchableOpacity style={styles.boton} onPress={() => navigation.navigate("RegistroVentas")}>
         <ButtonConImage source={VentasImage}>
           Historial de ventas
         </ButtonConImage>
@@ -25,7 +25,7 @@ const HomeFarmacia = () => {
     </View>
   );
 };
-
+//PAWA GORDO
 const styles = StyleSheet.create({
   container: {
     flex: 1,

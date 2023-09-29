@@ -1,29 +1,31 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image, SafeAreaView } from 'react-native';
 import LogoSinSloganNegro from "../../img/LogoSinSlogan.png";
 import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native';
 import CardFarmacia from '../../components/CardPaciente';
+import RecetaNube from '../../components/RecetaNube';
 
 const RecetasPendientes = () => {
   const navigation = useNavigation();
   return (
-    <View style={styles.container}>
-      <Image 
-      style={styles.PharmaLifeLogo}
-      source={LogoSinSloganNegro}></Image>
-    </View>
+    <SafeAreaView style={styles.container}>
+        <TouchableOpacity style={styles.Back} onPress={() => navigation.navigate("HomeFarmacia")}>
+          <Image source={require("../../img/volver.png")} />
+        </TouchableOpacity>
+        <Text style={styles.titulos}>Recetas</Text>
+        <View style={styles.box}>
+          <RecetaNube/>
+        </View>
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems:'center',
-    flexDirection: 'column',
     height: '100%',
     width: '100%',
-    top: 40,
     backgroundColor: '#EFEFEF',
   },
   PharmaLifeLogo: {
@@ -34,9 +36,15 @@ const styles = StyleSheet.create({
     height: 140,
     shadowRadius: 15
   },
+  box: {
+    height: '100%',
+    width: '100%',
+  },
   titulos:{
-    color: "#ffffff",
-    textAlign: "center",
+      color: "#000000",
+      fontSize: 25,
+      top: "5.25%",
+      left: "4.65%",
     },
     titulo:{
       width:"100%",

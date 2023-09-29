@@ -12,6 +12,7 @@ const RegistroVentas = () => {
       <Image 
       style={styles.PharmaLifeLogo}
       source={LogoSinSloganNegro}></Image>
+      <Text>ventas</Text>
     </View>
   );
 };

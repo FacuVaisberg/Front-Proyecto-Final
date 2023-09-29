@@ -1,11 +1,11 @@
-import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native'
-import { useState } from 'react'
-import React from 'react'
-import Medicamento from "../../components/Medicamento"
+import { View, Text, StyleSheet, TouchableOpacity, Image, SafeAreaView } from "react-native";
+import { useState } from "react";
+import React from "react";
+import Medicamento from "../../components/Medicamento";
 
 const RecetasSubidasScreen = () => {
   const [medicamentos, setMedicamentos] = useState([]);
-  
+
   const handleClick = () => {
     const medicamentos = CargarTodo();
     console.log(medicamentos);
@@ -14,38 +14,40 @@ const RecetasSubidasScreen = () => {
 
   return (
     <>
-      <View style = {styles.container}>
-      <TouchableOpacity style={styles.Back} onPress={() => navigation.navigate("Medico")}>
+      <SafeAreaView style={styles.container}>
+        <TouchableOpacity 
+        style={styles.Back}
+        onPress={() => navigation.navigate("Medico")}>
           <Image source={require("../../img/volver.png")} />
         </TouchableOpacity>
         <Text style={styles.titulo}>Recetas Subidas</Text>
-      </View>
-      <View style={styles.box}>
-        <View style={styles.minibox}>
-          <Text style={styles.textMiniBox}>Remedio: Ibuprofeno.
-        
-          Nombre del paciente: Carlos</Text>
-          
+
+        <View style={styles.box}>
+          <View style={styles.minibox}>
+            <Text style={styles.textMiniBox}>
+              Remedio: Ibuprofeno. Nombre del paciente: Carlos
+            </Text>
+          </View>
         </View>
-      </View>
+      </SafeAreaView>
     </>
   );
-}
+};
 
-const styles = StyleSheet.create({   
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     height: "100%",
     width: "100%",
-    backgroundColor: '#EFEFEF',
-  },  
-  titulo: {  
+    backgroundColor: "#EFEFEF",
+  },
+  titulo: {
     color: "#000000",
-    fontSize:25,
+    fontSize: 25,
     /* fontFamily: "Jacques Francois-Regular", */
     fontSize: 25,
     textAlign: "center",
-    marginTop:"10%"
+    marginTop: "10%",
   },
   Back: {
     color: "#7CB164",
@@ -66,14 +68,12 @@ const styles = StyleSheet.create({
     /*lineHeight: "normal",*/
   },
   textMiniBox2: {
-    justifyContent:"center",
+    justifyContent: "center",
     color: "#ffffff",
     shadowColor: "#FFFFFF",
-/*     fontFamily: "Jacques Francois", */
+    /*     fontFamily: "Jacques Francois", */
     fontStyle: "normal",
-    marginTop:"10%"    /*lineHeight: "normal",*/
-    
-
+    marginTop: "10%" /*lineHeight: "normal",*/,
   },
   box: {
     backgroundColor: "#79AD60",
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     width: 358,
     height: 613,
     left: 36,
-/*     position: "fixed" */
+    /*     position: "fixed" */
     top: "20%",
     borderRadius: 20,
   },
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "15%",
     width: 312,
-   /*  position: "fixed", */
+    /*  position: "fixed", */
     marginTop: "5%",
 
     borderRadius: 10,

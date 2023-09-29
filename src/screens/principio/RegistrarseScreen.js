@@ -10,9 +10,9 @@ const RegistrarseScreen = () => {
     <SafeAreaView style={styles.view}>
       <View style={styles.container}>
         <Text style={styles.titulo}>¿Cual es tu rol en la aplicación?</Text>
-        <TouchableOpacity onPress={() => navigation.navigate("RegistrarDatosMedico")}><CardRegistro style={styles.card} title={"Accede como medico para poder mejorar la experiencia ed sus clientes."} /></TouchableOpacity>
-        <TouchableOpacity  onPress={() => navigation.navigate("RegistrarDatos")}><CardRegistro style={styles.card} title={"Accede como usuario para poder disfrutar de las funcionalidades."}/></TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate("RegistrarDatosFarmacia")}><CardRegistro style={styles.card} title={"Accede como farmacia para poder agilizar y potenciar las ventas."}  /></TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("RegistrarDatosMedico")}><CardRegistro style={styles.card} title={"Accede como Medico para poder mejorar la experiencia ed sus clientes."} /></TouchableOpacity>
+        <TouchableOpacity  onPress={() => navigation.navigate("RegistrarDatos")}><CardRegistro style={styles.card} title={"Accede como Usuario para poder disfrutar de las funcionalidades."}/></TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("RegistrarDatosFarmacia")}><CardRegistro style={styles.card} title={"Accede como Farmacia para poder agilizar y potenciar las ventas."}  /></TouchableOpacity>
         </View>
         <View style={styles.miniContainer}>
           <Text style={styles.text}> ¿Ya tenes una cuenta?</Text>

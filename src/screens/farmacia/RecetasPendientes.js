@@ -14,11 +14,7 @@ const RecetasPendientes = () => {
         </TouchableOpacity>
         <Text style={styles.titulos}>Recetas</Text>
         <View style={styles.box}>
-          <ScrollView style={{height: "100%"}}>
             <RecetaNube/>
-            <RecetaNube/>
-            <RecetaNube/>
-          </ScrollView>
         </View>
     </SafeAreaView>
   );

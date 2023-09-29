@@ -1,12 +1,59 @@
 import { View, Text, StyleSheet, Image, TouchableOpacity, SafeAreaView} from "react-native";
 import React from "react";
+import FotoPerfil from "./FotoPerfil";
+
 
 const RecetaNube = () => {
   return (
     <>
       <View style={styles.container}>
         <View style={styles.box}>
+          <Text style={styles.text}>Medicamento</Text>
           <View style={styles.minibox}>
+            <View style={styles.formgroup}>
+              <View style={{flexDirection:"column", alignItems: "center", flex: 1}}>
+                <Text style={styles.miniText}>Fecha de Subida</Text>
+                <Text style={styles.subtitulo}>01/01/2023</Text>
+              </View>
+              <View style={{flexDirection:"column", alignItems: "center", flex: 1}}>
+                <Text style={styles.miniText}>Fecha de Vencimiento</Text>
+                <Text style={styles.subtitulo}>12/12/2023</Text>
+              </View>
+            </View>
+            <View style={styles.formgroup}>
+              <View style={{flexDirection:"column", alignItems: "center", flex: 1}}>
+                <Text style={styles.miniText}>Nombre del Medico</Text>
+                <Text style={styles.subtitulo}>Nombre</Text>
+              </View>
+              <View style={{flexDirection:"column", alignItems: "center", flex: 1}}>
+                <Text style={styles.miniText}>Firma</Text>
+                <Text style={styles.subtitulo}>-</Text>
+              </View>
+            </View>
+            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', marginTop: "15%", marginBottom: "15%"}}>
+              <FotoPerfil source={require('../img/ibupirac.jpg')}/>
+            </View>
+            <View style={styles.formgroup}>
+              <View style={{flexDirection:"column", alignItems: "center", flex: 1}}>
+                <Text style={styles.miniText}>Fecha de Subida</Text>
+                <Text style={styles.subtitulo}>01/01/2023</Text>
+              </View>
+              <View style={{flexDirection:"column", alignItems: "center", flex: 1}}>
+                <Text style={styles.miniText}>Fecha de Vencimiento</Text>
+                <Text style={styles.subtitulo}>12/12/2023</Text>
+              </View>
+            </View>
+            <View style={styles.formgroup}>
+              <View style={{flexDirection:"column", alignItems: "center", flex: 1}}>
+                <Text style={styles.miniText}>Nombre del Medico</Text>
+                <Text style={styles.subtitulo}>Nombre</Text>
+              </View>
+              <View style={{flexDirection:"column", alignItems: "center", flex: 1}}>
+                <Text style={styles.miniText}>Firma</Text>
+                <Text style={styles.subtitulo}>-</Text>
+              </View>
+            </View>
+
               <TouchableOpacity style={styles.boton}>
                 <Text style={{ color: "white", fontSize: 20 }}>
                   ¡La Quiero!
@@ -27,7 +74,6 @@ const styles = StyleSheet.create({
   },
   box: {
     backgroundColor: "#79AD60",
-    justifyContent: "center",
     alignItems: "center",
     borderRadius: 15,
     height: "70%",
@@ -48,15 +94,37 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginBottom: 20,
   },
+  formgroup:{
+    flexDirection: "row",
+    top: "5%",
+    marginBottom: "10%",
+
+  },
+  text: {
+    fontSize: 30,
+    color: "#ffffff",
+    textAlign: 'center',
+  },
+
+  subtitulo:{
+    color: "#FFFFFF",
+    fontSize: 15,
+  },
+
+  miniText:{
+    color: "#D3D3D3",
+    fontSize: 10,
+  },
+
   boton: {
     backgroundColor: "#36C05D",
     alignSelf: "center",
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 15,
-    width: "45%",
-    height: "35%",
-    top: "125%",
+    width: "50%",
+    height: 50,
+    top:"1.5%",
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.5,

@@ -1,9 +1,8 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, SafeAreaView } from 'react-native';
+import { View, Text, StyleSheet, Image, SafeAreaView, ScrollView } from 'react-native';
 import LogoSinSloganNegro from "../../img/LogoSinSlogan.png";
 import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native';
-import CardFarmacia from '../../components/CardPaciente';
 import RecetaNube from '../../components/RecetaNube';
 
 const RecetasPendientes = () => {
@@ -15,7 +14,11 @@ const RecetasPendientes = () => {
         </TouchableOpacity>
         <Text style={styles.titulos}>Recetas</Text>
         <View style={styles.box}>
-          <RecetaNube/>
+          <ScrollView style={{height: "100%"}}>
+            <RecetaNube/>
+            <RecetaNube/>
+            <RecetaNube/>
+          </ScrollView>
         </View>
     </SafeAreaView>
   );

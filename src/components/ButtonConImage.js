@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ImageBackground,
-  StyleSheet,
+import { View, Text, TouchableOpacity, ImageBackground, StyleSheet,
 } from "react-native";
 import { Children } from "react";
 
@@ -25,6 +20,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    overflow: 'hidden',
   },
   botonConImagen: {
     width: 380, // Ancho de la imagen de fondo

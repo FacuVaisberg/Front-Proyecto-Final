@@ -108,6 +108,7 @@ const styles = StyleSheet.create({
   buttonChico: {
     justifyContent: 'center',
     alignContent: 'center',
+    alignItems: 'center',
     width: '50%',
     borderRadius: 15,
     backgroundColor: '#99D87D',

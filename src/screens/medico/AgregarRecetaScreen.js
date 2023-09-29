@@ -59,7 +59,6 @@ const AgregarRecetaScreen = () => {
     }
   }
   return (
-    <>
       <SafeAreaView style={styles.container}>
         <TouchableOpacity style={styles.Back} onPress={() => navigation.navigate("Medico")}>
           <Image source={require("../../img/volver.png")} />
@@ -87,7 +86,6 @@ const AgregarRecetaScreen = () => {
           </View>
         </View>
       </SafeAreaView>
-    </>
   );
   
 };

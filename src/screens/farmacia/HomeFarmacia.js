@@ -12,11 +12,9 @@ const HomeFarmacia = () => {
   return (
     <View style={styles.container}>
       <Image style={styles.PharmaLifeLogo} source={LogoSinSloganNegro}></Image>
-      <TouchableOpacity style={styles.boton} onPress={() => navigation.navigate("RecetasPendientes")}>
-        <ButtonConImage source={RecetasImage} >
+      <ButtonConImage source={RecetasImage} estilo={styles.boton} onPress={() => navigation.navigate("RecetasPendientes")}>
           Recetas Pendientes
         </ButtonConImage>
-      </TouchableOpacity>
       <TouchableOpacity style={styles.boton} onPress={() => navigation.navigate("RegistroVentas")}>
         <ButtonConImage source={VentasImage}>
           Historial de ventas
@@ -25,7 +23,6 @@ const HomeFarmacia = () => {
     </View>
   );
 };
-//PAWA GORDO
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -35,6 +32,7 @@ const styles = StyleSheet.create({
     width: "100%",
     top: 40,
     backgroundColor: "#EFEFEF",
+    gap: 50,
   },
   PharmaLifeLogo: {
     justifyContent: "center",
@@ -47,8 +45,8 @@ const styles = StyleSheet.create({
     shadowRadius: 15,
   },
   boton: {
-    width: "90%",
-    height: "30%",
+    borderRadius: '15px',
+    overflow: "hidden"
   },
   titulos: {
     color: "#ffffff",

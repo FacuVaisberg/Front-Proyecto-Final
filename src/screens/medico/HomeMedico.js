@@ -4,7 +4,6 @@ import LogoSinSlogan from "../../img/LogoSinSlogan.png";
 import masMedico from "../../img/masMedico.png";
 import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native';
-import CardPaciente from '../../components/CardPaciente';
 import NavBarMedico from '../../components/NavBarMedico';
 
 const HomeMedico = () => {

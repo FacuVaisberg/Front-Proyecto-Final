@@ -19,7 +19,16 @@ const AgregarRecetaScreen = () => {
   const handleAgregarReceta = () => {
     setFechaCreacion(Date.now())
     setFechaVencimiento(fechaCreacion)
-    console.log("Receta agregada:", dni, NombreMedicamento, fechaVencimiento, fechaCreacion, estado, fechaVencimiento);
+    var dias = parseInt(30);
+  
+  //nueva fecha sumada
+  setFechaVencimiento.setDate(fechaCreacion.getDate() + dias);
+  //formato de salida para la fecha
+  resultado.innerText = fechaVencimiento.getDate() + '/' +
+    (setFechaVencimiento.getMonth() + 1) + '/' + fechaVencimiento.getFullYear();
+
+    console.log("Receta agregada:", dni, NombreMedicamento, fechaCreacion, estado, fechaVencimiento);
+    
 
     // Ejemplo de alerta
     alert("Receta Agregada con exito!!", "Contenido del alerta", [

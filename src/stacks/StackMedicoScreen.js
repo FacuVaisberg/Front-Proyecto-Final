@@ -15,7 +15,6 @@ const StackMedicoScreen = () => {
         <StackMedico.Screen name="RecetasSubidas" component={RecetasSubidasScreen}/>
         <StackMedico.Screen name="AgregarReceta" component={AgregarRecetaScreen}/>
         <StackMedico.Screen name="DatosPersonales" component={DatosPersonalesScreen}/>
-        <StackMedico.Screen name="MisPacientes" component={MisPacientesScreen}/>
     </StackMedico.Navigator>
   )
 }

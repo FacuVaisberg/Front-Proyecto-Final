@@ -6,6 +6,7 @@ import PrincipioScreen from '../screens/principio/PrincipioScreen';
 import LogInScreen from '../screens/principio/LogInScreen';
 import RegistrarDatosScreenMedico from '../screens/principio/RegistrarDatosScreenMedico';
 import RegistrarDatosScreenFarmacia from '../screens/principio/RegistrarDatosScreenFarmacia';
+import RegistrarDatosScreenUsuario from '../screens/principio/RegistrarDatosScreenUsuario';
 
 
 const StackMainScreen = () => {  
@@ -17,6 +18,7 @@ const StackMainScreen = () => {
         <StackMain.Screen name="Registrarse" component={RegistrarseScreen}/>
         <StackMain.Screen name="RegistrarDatosMedico" component={RegistrarDatosScreenMedico}/>
         <StackMain.Screen name="RegistrarDatosFarmacia" component={RegistrarDatosScreenFarmacia}/>
+        <StackMain.Screen name="RegistrarDatosUsuario" component={RegistrarDatosScreenUsuario}/>
     </StackMain.Navigator>
   )
 }

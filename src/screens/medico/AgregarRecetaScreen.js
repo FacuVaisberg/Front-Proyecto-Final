@@ -11,13 +11,15 @@ const AgregarRecetaScreen = () => {
   const [idMedicamento, setIdMedicamento] = useState(0);
   const [idPaciente, setIdPaciente] = useState(0);
   const [observaciones, setObservaciones] = useState("")
-
-  const [fechaVencimiento, setFechaVencimiento] = useState("");
+  const [fechaCreacion, setFechaCreacion] = useState(new Date())
+  const [fechaVencimiento, setFechaVencimiento] = useState(new Date())
+  const [estado, setEstado] = useState(true)
   const navigation = useNavigation();
 
   const handleAgregarReceta = () => {
-    // Aquí puedes hacer lo que necesites al agregar la receta
-    console.log("Receta agregada:", dni, NombreMedicamento, fechaVencimiento);
+    setFechaCreacion(Date.now())
+    setFechaVencimiento(fechaCreacion)
+    console.log("Receta agregada:", dni, NombreMedicamento, fechaVencimiento, fechaCreacion, estado, fechaVencimiento);
 
     // Ejemplo de alerta
     alert("Receta Agregada con exito!!", "Contenido del alerta", [
@@ -34,6 +36,9 @@ const AgregarRecetaScreen = () => {
               IdMedicamento: idMedicamento,
               IdPaciente: idPaciente,
               Observaciones:observaciones,
+              FechaCreacion: fechaCreacion,
+              Estado: estado,
+              FechaVencimiento: fechaVencimiento,
 
       }
       console.log(objeto)

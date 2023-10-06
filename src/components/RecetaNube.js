@@ -1,9 +1,33 @@
 import { View, Text, StyleSheet, Image, TouchableOpacity, SafeAreaView} from "react-native";
 import React from "react";
 import FotoPerfil from "./FotoPerfil";
+import Api from '../../Api'
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 
 const RecetaNube = () => {
+    const [receta, setReceta] = useState({});
+    const [listaReceta, setListaReceta] = useState([]);
+    const getAllReceta = async() =>{
+      let datos = await axios.get(Api.ApiGetAllReceta);
+      console.log(datos.data[4].FechaCreacion)
+      setListaReceta(datos.data[4])
+      console.log(listaReceta);
+      setReceta(listaReceta[4])
+      console.log("receta", listaReceta,{receta}.FechaCreacion)
+
+
+
+    }
+    useEffect(() => {
+      getAllReceta()
+     },[]);
+
+   
+
+  
+  
   return (
     <>
       <View style={styles.container}>
@@ -13,7 +37,7 @@ const RecetaNube = () => {
             <View style={styles.formgroup}>
               <View style={{flexDirection:"column", alignItems: "center", flex: 1}}>
                 <Text style={styles.miniText}>Fecha de Subida</Text>
-                <Text style={styles.subtitulo}>01/01/2023</Text>
+                <Text style={styles.subtitulo}>{listaReceta.FechaCreacion}</Text>
               </View>
               <View style={{flexDirection:"column", alignItems: "center", flex: 1}}>
                 <Text style={styles.miniText}>Fecha de Vencimiento</Text>
@@ -23,7 +47,7 @@ const RecetaNube = () => {
             <View style={styles.formgroup}>
               <View style={{flexDirection:"column", alignItems: "center", flex: 1}}>
                 <Text style={styles.miniText}>Nombre del Medico</Text>
-                <Text style={styles.subtitulo}>Nombre</Text>
+                <Text style={styles.subtitulo}>{listaReceta.IdMedico}</Text>
               </View>
               <View style={{flexDirection:"column", alignItems: "center", flex: 1}}>
                 <Text style={styles.miniText}>Firma</Text>
@@ -35,22 +59,22 @@ const RecetaNube = () => {
             </View>
             <View style={styles.formgroup}>
               <View style={{flexDirection:"column", alignItems: "center", flex: 1}}>
-                <Text style={styles.miniText}>Fecha de Subida</Text>
-                <Text style={styles.subtitulo}>01/01/2023</Text>
+                <Text style={styles.miniText}>Nombre paciente</Text>
+                <Text style={styles.subtitulo}>nombre paciente</Text>
               </View>
               <View style={{flexDirection:"column", alignItems: "center", flex: 1}}>
-                <Text style={styles.miniText}>Fecha de Vencimiento</Text>
-                <Text style={styles.subtitulo}>12/12/2023</Text>
+                <Text style={styles.miniText}>Direccion</Text>
+                <Text style={styles.subtitulo}>Direccion usuario en bd</Text>
               </View>
             </View>
             <View style={styles.formgroup}>
               <View style={{flexDirection:"column", alignItems: "center", flex: 1}}>
-                <Text style={styles.miniText}>Nombre del Medico</Text>
-                <Text style={styles.subtitulo}>Nombre</Text>
+                <Text style={styles.miniText}>Telofono</Text>
+                <Text style={styles.subtitulo}>bd telefono usuario</Text>
               </View>
               <View style={{flexDirection:"column", alignItems: "center", flex: 1}}>
-                <Text style={styles.miniText}>Firma</Text>
-                <Text style={styles.subtitulo}>-</Text>
+                <Text style={styles.miniText}>Numero de documento</Text>
+                <Text style={styles.subtitulo}>Dni usuario</Text>
               </View>
             </View>
 
@@ -64,7 +88,7 @@ const RecetaNube = () => {
       </View>
     </>
   );
-};
+  }
 const styles = StyleSheet.create({
   container: {
     flex: 1,

@@ -37,7 +37,7 @@ const LogInScreen = () => {
       }
       console.log(Headers)
       if (Headers.data!="") {
-        navigation.navigate('Medico', { mail, contraseña })
+        navigation.navigate('Farmacia', { mail, contraseña })
       }
       else{
         console.log('los datos son erroneos, intente de nuevo')

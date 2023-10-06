@@ -10,7 +10,7 @@
         ApiUsuarioGetAll:   ROOT_DOMAIN + 'api/usuario/',
         /* ApiAgregarReceta:   ROOT_DOMAIN + 'api/receta/', */
         ApiAgregarReceta: 'http://localhost:3000/api/receta/',
-        ApiGetAllReceta:    ROOT_DOMAIN + 'api/receta/',
+        ApiGetAllReceta:    'http://localhost:3000/api/receta/',
     }
     export default Api
    

@@ -15,11 +15,9 @@ const HomeFarmacia = () => {
       <ButtonConImage source={RecetasImage} estilo={styles.boton} onPress={() => navigation.navigate("RecetasPendientes")}>
           Recetas Pendientes
         </ButtonConImage>
-      <TouchableOpacity style={styles.boton} onPress={() => navigation.navigate("RegistroVentas")}>
-        <ButtonConImage source={VentasImage}>
+      <ButtonConImage source={VentasImage} estilo={styles.boton} onPress={() => navigation.navigate("RegistroVentas")}>
           Historial de ventas
         </ButtonConImage>
-      </TouchableOpacity>
     </View>
   );
 };

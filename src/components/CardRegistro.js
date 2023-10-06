@@ -2,7 +2,7 @@ import { DarkTheme } from '@react-navigation/native';
 import React from 'react';
 import { View, StyleSheet, Text, TouchableOpacity, ImageBackground} from 'react-native';
 
-const CardRegistro = ({ onPress, source, children, estilo }) => {
+const CardRegistro = ({ onPress, source, estilo, children }) => {
   return (
     <TouchableOpacity onPress={onPress} style={estilo}>
       <ImageBackground source={source} style={styles.image}>
@@ -14,7 +14,7 @@ const CardRegistro = ({ onPress, source, children, estilo }) => {
 
 const styles = StyleSheet.create({
   card: {
-    width: '80%',
+    width: 300,
     height: 125,
     flexDirection: "row",
     backgroundColor: "#79AD60",
@@ -32,6 +32,7 @@ const styles = StyleSheet.create({
     shadowRadius: 2,
     elevation: 2,
     marginVertical: 8,
+    /* position: "absolute" */
   },
   image: {
     width: "30%",

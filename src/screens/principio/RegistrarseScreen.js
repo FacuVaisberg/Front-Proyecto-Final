@@ -3,7 +3,9 @@ import { StyleSheet, Text, View, Image, TouchableOpacity, SafeAreaView } from 'r
 import CardRegistro from '../../components/CardRegistro';
 import { useNavigation } from '@react-navigation/native';
 import farmaciaVector from '../../img/farmaciaVector.jpg';
-
+import ButtonConImage from '../../components/ButtonConImage';
+import medico from '../../img/medico.jpg';
+import abuelos from '../../img/abuelos.jpg';
 
 const RegistrarseScreen = () => {
   const navigation =useNavigation();
@@ -11,10 +13,10 @@ const RegistrarseScreen = () => {
     <SafeAreaView style={styles.view}>
       <View style={styles.container}>
         <Text style={styles.titulo}>¿Cual es tu rol en la aplicación?</Text>
-        <CardRegistro onPress={() => navigation.navigate("RegistrarDatosMedico")} source={farmaciaVector} style={styles.card}>Accede como Medico para poder mejorar la experiencia ed sus clientes.</CardRegistro>
-        <CardRegistro onPress={() => navigation.navigate("RegistrarDatos")} source={farmaciaVector} style={styles.card}>Accede como Usuario para poder disfrutar de las funcionalidades.</CardRegistro>
-        <CardRegistro onPress={() => navigation.navigate("RegistrarDatosFarmacia")} source={farmaciaVector} style={styles.card}>Accede como Farmacia para poder agilizar y potenciar las ventas.</CardRegistro>
-        </View>
+        <ButtonConImage onPress={() => navigation.navigate("RegistrarDatosMedico")} source={medico} estilo={styles.card}>Accede como Medico para poder mejorar la experiencia en sus clientes.</ButtonConImage>
+        <ButtonConImage onPress={() => navigation.navigate("RegistrarDatos")} source={abuelos} estilo={styles.card}>Accede como Usuario para poder disfrutar de las funcionalidades.</ButtonConImage>
+        <ButtonConImage onPress={() => navigation.navigate("RegistrarDatosFarmacia")} source={farmaciaVector} estilo={styles.card}>Accede como Farmacia para poder agilizar y potenciar las ventas.</ButtonConImage>
+      </View>
         <View style={styles.miniContainer}>
           <Text style={styles.text}> ¿Ya tenes una cuenta?</Text>
             <TouchableOpacity>
@@ -28,16 +30,17 @@ const styles = StyleSheet.create({
   view: {
     flex: 1,
     flexDirection: "column",
-    backgroundColor: "#EFEFEF",
     height: "100%",
     width: "100%",
+    top: 40,
+    backgroundColor: "#EFEFEF",
     gap: 50,
-
   },
   container: {
     top: "3%",
     alignContent: "center",
     alignItems: "center",
+    gap: 50,
   },
   titulo: {
     textAlign: 'center',
@@ -47,24 +50,11 @@ const styles = StyleSheet.create({
     marginBottom: 30
   },
   card: {
-    width: '80%',
-    height: 125,
-    flexDirection: "row",
-    backgroundColor: "#79AD60",
-    borderRadius:15,
-    alignContent: "center",
-    marginBottom: 25,
-    alignItems: "center",
-    padding: 16,
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.2,
-    shadowRadius: 2,
-    elevation: 2,
-    marginVertical: 8,
+    width:"80%",
+    alignItems:"center",
+    borderRadius: 15,
+    overflow: "hidden",
+    resizeMode: "contain",
   },
   miniContainer: {
     flexDirection: "row",

@@ -4,7 +4,7 @@
 // Función para enviar la solicitud de inicio de sesión
 function iniciarSesion(email, contraseña) {
     // URL de tu servidor de inicio de sesión
-    const urlInicioSesion = 'http://localhost:3000/login/';
+    const urlInicioSesion = 'https://pharmalife.onrender.com/login/';
   
     // Datos del usuario para enviar al servidor
     const datosUsuario = {

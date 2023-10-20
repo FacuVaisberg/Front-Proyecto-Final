@@ -5,14 +5,14 @@ import { useNavigation } from "@react-navigation/native";
 import { TouchableOpacity } from "react-native";
 import ButtonConImage from "../../components/ButtonConImage";
 import VentasImage from "../../img/ventas.jpg";
-import RecetasImage from "../../img/RecetasImage.jpg";
+import RecetasPendientesImage from "../../img/recetasPendientes.jpg";
 
 const HomeFarmacia = () => {
   const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <Image style={styles.PharmaLifeLogo} source={LogoSinSloganNegro}></Image>
-        <ButtonConImage source={/* RecetasImage */ FarmaciasCercanasImage} estilo={styles.boton} onPress={() => navigation.navigate("RecetasPendientes")}>
+        <ButtonConImage source={RecetasPendientesImage} estilo={styles.boton} onPress={() => navigation.navigate("RecetasPendientes")}>
           Recetas Pendientes
         </ButtonConImage>
       <ButtonConImage source={VentasImage} estilo={styles.boton} onPress={() => navigation.navigate("RegistroVentas")}>
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     shadowRadius: 15,
   },
   boton: {
-    borderRadius: '15px',
+    borderRadius: 15,
     overflow: "hidden"
   },
   titulos: {

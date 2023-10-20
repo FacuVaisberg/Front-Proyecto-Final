@@ -17,7 +17,7 @@ const HomeUsuario = () => {
         <ButtonConImage source={SolicitudesImage} estilo={styles.boton} onPress={() => navigation.navigate("MisSolicitudes")}>
           Solicitudes
         </ButtonConImage>
-        <ButtonConImage source={/* RecetasImage */ FarmaciasCercanasImage} estilo={styles.boton} onPress={() => navigation.navigate("MisRecetas")}>
+        <ButtonConImage source={RecetasImage} estilo={styles.boton} onPress={() => navigation.navigate("MisRecetas")}>
           Mis Recetas
         </ButtonConImage>
         <ButtonConImage source={FarmaciasCercanasImage} estilo={styles.boton} onPress={() => navigation.navigate("FarmaciasCercanas")}>
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     shadowRadius: 15,
   },
   boton: {
-    borderRadius: '15px',
+    borderRadius: 15,
     overflow: "hidden"
     
   },

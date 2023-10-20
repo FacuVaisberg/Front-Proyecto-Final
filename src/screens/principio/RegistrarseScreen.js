@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 import farmaciaVector from '../../img/farmaciaVector.jpg';
 import ButtonConImage from '../../components/ButtonConImage';
 import medico from '../../img/medico.jpg';
-import abuelos from '../../img/abuelos.jpg';
+/* import abuelos from '../../img/abuelos.jpg'; */
 
 const RegistrarseScreen = () => {
   const navigation =useNavigation();
@@ -14,7 +14,7 @@ const RegistrarseScreen = () => {
       <View style={styles.container}>
         <Text style={styles.titulo}>¿Cual es tu rol en la aplicación?</Text>
         <ButtonConImage onPress={() => navigation.navigate("RegistrarDatosMedico")} source={medico} estilo={styles.card}>Accede como Medico para poder mejorar la experiencia en sus clientes.</ButtonConImage>
-        <ButtonConImage onPress={() => navigation.navigate("RegistrarDatosUsuario")} source={abuelos} estilo={styles.card}>Accede como Usuario para poder disfrutar de las funcionalidades.</ButtonConImage>
+        <ButtonConImage onPress={() => navigation.navigate("RegistrarDatosUsuario")} source={medico} estilo={styles.card}>Accede como Usuario para poder disfrutar de las funcionalidades.</ButtonConImage>
         <ButtonConImage onPress={() => navigation.navigate("RegistrarDatosFarmacia")} source={farmaciaVector} estilo={styles.card}>Accede como Farmacia para poder agilizar y potenciar las ventas.</ButtonConImage>
       </View>
         <View style={styles.miniContainer}>

@@ -13,6 +13,7 @@ const RecetasPendientes = () => {
           <Image source={require("../../img/volver.png")} />
         </TouchableOpacity>
         <Text style={styles.titulos}>Recetas</Text>
+
         <View style={styles.box}>
             <RecetaNube/>
         </View>

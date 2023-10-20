@@ -5,7 +5,7 @@ import {createNativeStackNavigator} from "@react-navigation/native-stack";
 
 import FarmaciasCercanas from '../screens/usuario/FarmaciasCercanas';
 import HomeUsuario from '../screens/usuario/HomeUsuario';
-import MisRecetas from '../screens/usuario/misRecetas';
+import MisRecetas from '../screens/usuario/MisRecetas';
 import MisSolicitudes from '../screens/usuario/MisSolicitudes';
 
 const TabUsuario = () => {

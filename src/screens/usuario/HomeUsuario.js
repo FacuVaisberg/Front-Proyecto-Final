@@ -4,7 +4,7 @@ import LogoSinSloganNegro from "../../img/LogoSinSlogan.png";
 import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native';
 import ButtonConImage from '../../components/ButtonConImage';
-import SolicitudesImage from "../../img/solicitudesImage.jpg";
+import SolicitudesImage from "../../img/SolicitudesImage.jpg";
 import FarmaciasCercanasImage from "../../img/FarmaCercanasImage.jpg";
 import RecetasImage from "../../img/RecetasImage.jpg";
 
@@ -17,7 +17,7 @@ const HomeUsuario = () => {
         <ButtonConImage source={SolicitudesImage} estilo={styles.boton} onPress={() => navigation.navigate("MisSolicitudes")}>
           Solicitudes
         </ButtonConImage>
-        <ButtonConImage source={RecetasImage} estilo={styles.boton} onPress={() => navigation.navigate("MisRecetas")}>
+        <ButtonConImage source={/* RecetasImage */ FarmaciasCercanasImage} estilo={styles.boton} onPress={() => navigation.navigate("MisRecetas")}>
           Mis Recetas
         </ButtonConImage>
         <ButtonConImage source={FarmaciasCercanasImage} estilo={styles.boton} onPress={() => navigation.navigate("FarmaciasCercanas")}>

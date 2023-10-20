@@ -13,9 +13,12 @@ const RecetasPendientes = () => {
           <Image source={require("../../img/volver.png")} />
         </TouchableOpacity>
         <Text style={styles.titulos}>Recetas</Text>
-        <ScrollView>
-          <RecetaNube/>
-        </ScrollView>
+          <View style={styles.box}>
+            <ScrollView>
+                <RecetaNube/>
+            </ScrollView>
+          </View>
+        
     </SafeAreaView>
   );
 };
@@ -36,27 +39,30 @@ const styles = StyleSheet.create({
     shadowRadius: 15
   },
   box: {
-    height: '100%',
+    height: '85%',
     width: '100%',
+    position: "absolute",
+    bottom: 0,
   },
   titulos:{
       color: "#000000",
       fontSize: 25,
       top: "5.25%",
       left: "4.65%",
-    },
-    titulo:{
-      width:"100%",
-      top:"5.25%",
-      color: "#000000",
-      left:"4.18%",
-      fontSize: 25,
-    
-    },
-    subtext:{
-      color: "#FFFFFF",
-    textAlign: "center",
-    }
+  },
+  titulo:{
+    width:"100%",
+    top:"5.25%",
+    color: "#000000",
+    left:"4.18%",
+    fontSize: 25,
+  
+  },
+  subtext:{
+    color: "#FFFFFF",
+  textAlign: "center",
+  },
+
 });
 
 export default RecetasPendientes;

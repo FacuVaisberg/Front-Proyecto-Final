@@ -1,10 +1,13 @@
 import { View, Text, StyleSheet, TouchableOpacity, Image, SafeAreaView } from "react-native";
 import { useState } from "react";
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
+
 import Medicamento from "../../components/Medicamento";
 
 const RecetasSubidasScreen = () => {
   const [medicamentos, setMedicamentos] = useState([]);
+  const navigation = useNavigation();
 
   const handleClick = () => {
     const medicamentos = CargarTodo();
@@ -15,9 +18,7 @@ const RecetasSubidasScreen = () => {
   return (
     <>
       <SafeAreaView style={styles.container}>
-        <TouchableOpacity 
-        style={styles.Back}
-        onPress={() => navigation.navigate("Medico")}>
+      <TouchableOpacity style={styles.Back} onPress={() => navigation.navigate("Medico")}>
           <Image source={require("../../img/volver.png")} />
         </TouchableOpacity>
         <Text style={styles.titulo}>Recetas Subidas</Text>

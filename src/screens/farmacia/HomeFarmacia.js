@@ -5,14 +5,14 @@ import { useNavigation } from "@react-navigation/native";
 import { TouchableOpacity } from "react-native";
 import ButtonConImage from "../../components/ButtonConImage";
 import VentasImage from "../../img/ventas.jpg";
-import RecetasImage from "../../img/recetasPendientes.jpg";
+import RecetasImage from "../../img/RecetasImage.jpg";
 
 const HomeFarmacia = () => {
   const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <Image style={styles.PharmaLifeLogo} source={LogoSinSloganNegro}></Image>
-        <ButtonConImage source={RecetasImage} estilo={styles.boton} onPress={() => navigation.navigate("RecetasPendientes")}>
+        <ButtonConImage source={/* RecetasImage */ FarmaciasCercanasImage} estilo={styles.boton} onPress={() => navigation.navigate("RecetasPendientes")}>
           Recetas Pendientes
         </ButtonConImage>
       <ButtonConImage source={VentasImage} estilo={styles.boton} onPress={() => navigation.navigate("RegistroVentas")}>

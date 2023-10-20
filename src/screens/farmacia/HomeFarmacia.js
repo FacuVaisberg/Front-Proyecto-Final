@@ -12,7 +12,7 @@ const HomeFarmacia = () => {
   return (
     <View style={styles.container}>
       <Image style={styles.PharmaLifeLogo} source={LogoSinSloganNegro}></Image>
-      <ButtonConImage source={RecetasImage} estilo={styles.boton} onPress={() => navigation.navigate("RecetasPendientes")}>
+        <ButtonConImage source={RecetasImage} estilo={styles.boton} onPress={() => navigation.navigate("RecetasPendientes")}>
           Recetas Pendientes
         </ButtonConImage>
       <ButtonConImage source={VentasImage} estilo={styles.boton} onPress={() => navigation.navigate("RegistroVentas")}>
@@ -49,18 +49,18 @@ const styles = StyleSheet.create({
   titulos: {
     color: "#ffffff",
     textAlign: "center",
-  },
-  titulo: {
-    width: "100%",
-    top: "5.25%",
-    color: "#000000",
-    left: "4.18%",
-    fontSize: 25,
-  },
-  subtext: {
-    color: "#FFFFFF",
+    },
+    titulo: {
+      width: "100%",
+      top: "5.25%",
+      color: "#000000",
+      left: "4.18%",
+      fontSize: 25,
+        },
+    subtext: {
+      color: "#FFFFFF",
     textAlign: "center",
-  },
+    },
 });
 
 export default HomeFarmacia;

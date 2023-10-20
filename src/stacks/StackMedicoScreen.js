@@ -5,7 +5,6 @@ import HomeMedico from '../screens/medico/HomeMedico';
 import AgregarRecetaScreen  from '../screens/medico/AgregarRecetaScreen';
 import RecetasSubidasScreen from '../screens/medico/RecetasSubidasScreen';
 import DatosPersonalesScreen from '../screens/medico/DatosPersonalesScreen';
-import MisPacientesScreen from '../screens/medico/MisPacientesScreen';
 
 const StackMedicoScreen = () => {
     const StackMedico = createNativeStackNavigator();

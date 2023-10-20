@@ -95,7 +95,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#668557",
     flexDirection: "row",
     justifyContent: "center",
-    height: "83.87%",
+    alignItems:"center",
+    alignContent:"center",
+    height: "84%",
     width: "94.65%",
     top: "3.33%", 
     borderRadius:20,
@@ -116,17 +118,10 @@ const styles = StyleSheet.create({
     top: "2.5%", 
     borderRadius:20,
   },
-  card: {
-    alignItems: "center",
-    height: "10%",
-    width: "80%",
-  },
   imgMas:{
     backgroundColor: "#668557",
     justifyContent: "center",
     alignItems:"center",
-    top:"60%",
-    height: "8.5%",
   },
   titulos:{
     color: "#ffffff",

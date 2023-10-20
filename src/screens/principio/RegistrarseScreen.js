@@ -18,7 +18,7 @@ const RegistrarseScreen = () => {
         <ButtonConImage onPress={() => navigation.navigate("RegistrarDatosFarmacia")} source={farmaciaVector} estilo={styles.card}>Accede como Farmacia para poder agilizar y potenciar las ventas.</ButtonConImage>
       </View>
         <View style={styles.miniContainer}>
-          <Text style={styles.text}> ¿Ya tenes una cuenta?</Text>
+          <Text style={styles.text}> ¿Ya tenes una cuenta? </Text>
             <TouchableOpacity>
               <Text style={styles.LetraDeColor} onPress={() => navigation.navigate("LogIn")}>Iniciar Sesion</Text>
             </TouchableOpacity>
@@ -57,7 +57,10 @@ const styles = StyleSheet.create({
     resizeMode: "contain",
   },
   miniContainer: {
+    width: "90%",
     flexDirection: "row",
+    justifyContent: "center"
+
   },
   text: {
     textAlign: 'right',

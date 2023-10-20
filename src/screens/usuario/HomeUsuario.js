@@ -1,13 +1,31 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import React from 'react';
+import { View, Text, StyleSheet, Image } from 'react-native';
+import LogoSinSloganNegro from "../../img/LogoSinSlogan.png";
+import { useNavigation } from '@react-navigation/native';
+import { TouchableOpacity } from 'react-native';
+import ButtonConImage from '../../components/ButtonConImage';
+import SolicitudesImage from "../../img/solicitudesImage.jpg";
+import FarmaciasCercanasImage from "../../img/FarmaCercanasImage.jpg";
+import RecetasImage from "../../img/RecetasImage.jpg";
+
 
 const HomeUsuario = () => {
+  const navigation = useNavigation();
   return (
-    <View>
-      <Text>HomeUsuario</Text>
+    <View style={styles.container}>
+      <Image style={styles.PharmaLifeLogo} source={LogoSinSloganNegro}></Image>
+        <ButtonConImage source={SolicitudesImage} estilo={styles.boton} onPress={() => navigation.navigate("MisSolicitudes")}>
+          Solicitudes
+        </ButtonConImage>
+        <ButtonConImage source={RecetasImage} estilo={styles.boton} onPress={() => navigation.navigate("MisRecetas")}>
+          Mis Recetas
+        </ButtonConImage>
+        <ButtonConImage source={FarmaciasCercanasImage} estilo={styles.boton} onPress={() => navigation.navigate("FarmaciasCercanas")}>
+          Farmacias Cercanas
+        </ButtonConImage>
     </View>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -37,17 +55,18 @@ const styles = StyleSheet.create({
   titulos: {
     color: "#ffffff",
     textAlign: "center",
-  },
-  titulo: {
-    width: "100%",
-    top: "5.25%",
-    color: "#000000",
-    left: "4.18%",
-    fontSize: 25,
-  },
-  subtext: {
-    color: "#FFFFFF",
+    },
+    titulo: {
+      width: "100%",
+      top: "5.25%",
+      color: "#000000",
+      left: "4.18%",
+      fontSize: 25,
+        },
+    subtext: {
+      color: "#FFFFFF",
     textAlign: "center",
-  },
+    },
 });
-export default HomeUsuario
+
+export default HomeUsuario;

@@ -5,9 +5,15 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 
 import HomeUsuario from "../screens/medico/HomeMedico";
-import AgregarRecetaScreen from "../screens/medico/AgregarRecetaScreen";
-import DatosPersonalesScreen from "../screens/medico/DatosPersonalesScreen";
-import RecetasSubidasScreen from "../screens/medico/RecetasSubidasScreen";
+import MisRecetas from "../screens/usuario/MisRecetas";
+import MisSolicitudes from "../screens/usuario/MisSolicitudes";
+import FarmaciasCercanas from "../screens/usuario/FarmaciasCercanas";
+import CuentaUsuario from "../screens/usuario/CuentaUsuario";
+
+import { Ionicons } from '@expo/vector-icons';
+import { Entypo } from "@expo/vector-icons"; //recetas
+import { FontAwesome5 } from "@expo/vector-icons"; //logo
+import { Feather } from '@expo/vector-icons'; //mas
 
 
 const Tab = createBottomTabNavigator();
@@ -28,34 +34,34 @@ export default function NavBarUsuario() {
   return (
     <NavigationContainer>
       <Tab.Navigator screenOptions={screenOptions}>
-        <Tab.Screen
-          name="Home"
-          component={HomeMedico}
+      <Tab.Screen
+          name="MisRecetas"
+          component={MisRecetas}
           options={{
             tabBarIcon: ({ focused }) => {
               return (
-                <View
-                  style={{ alignItems: "center", justifyContent: "center" }}
-                >
-                  <Ionicons name="home" size={24} color="black" />
-                  <Text style={{ fontSize: 12, color: "#000000" }}></Text>
+                <View style={{ alignItems: "center", justifyContent: "center" }}>
+                  <Entypo name="text-document-inverted" size={24} color="black"/>
+                  <Text style={{ fontSize: 12, color: "#000000" }}>
+                    Mis Recetas
+                  </Text>
                 </View>
               );
             },
           }}
         />
         <Tab.Screen
-          name="AgregarReceta"
-          component={AgregarRecetaScreen}
+          name="FarmaciasCercanas"
+          component={FarmaciasCercanas}
           options={{
             tabBarIcon: ({ focused }) => {
               return (
                 <View
                   style={{ alignItems: "center", justifyContent: "center" }}
                 >
-                  <MaterialIcons name="post-add" size={24} color="black" />
+                  <FontAwesome name="user-md" size={24} color="black" />
                   <Text style={{ fontSize: 12, color: "#000000" }}>
-                    Agregar Receta
+                    Farmacias Cercanas
                   </Text>
                 </View>
               );
@@ -91,17 +97,15 @@ export default function NavBarUsuario() {
           }}
         />
         <Tab.Screen
-          name="DatosPersonales"
-          component={DatosPersonalesScreen}
+          name="MisSolicitudes"
+          component={MisSolicitudes}
           options={{
             tabBarIcon: ({ focused }) => {
               return (
-                <View
-                  style={{ alignItems: "center", justifyContent: "center" }}
-                >
-                  <FontAwesome name="user-md" size={24} color="black" />
+                <View style={{ alignItems: "center", justifyContent: "center" }}>
+                  <Ionicons name="notifications-outline" size={24} color="black" />
                   <Text style={{ fontSize: 12, color: "#000000" }}>
-                    Datos Personales
+                    Mis Solicitudes
                   </Text>
                 </View>
               );
@@ -109,21 +113,15 @@ export default function NavBarUsuario() {
           }}
         />
         <Tab.Screen
-          name="RecetasSubidas"
-          component={RecetasSubidasScreen}
+          name="CuentaUsuario"
+          component={CuentaUsuario}
           options={{
             tabBarIcon: ({ focused }) => {
               return (
-                <View
-                  style={{ alignItems: "center", justifyContent: "center" }}
-                >
-                  <Entypo
-                    name="text-document-inverted"
-                    size={24}
-                    color="black"
-                  />
+                <View style={{ alignItems: "center", justifyContent: "center" }}>
+                  <Feather name="more-horizontal" size={24} color="black" />
                   <Text style={{ fontSize: 12, color: "#000000" }}>
-                    Recetas Subidas
+                    Mi Cuenta
                   </Text>
                 </View>
               );

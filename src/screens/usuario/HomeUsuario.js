@@ -51,6 +51,7 @@ const styles = StyleSheet.create({
   boton: {
     borderRadius: '15px',
     overflow: "hidden"
+    
   },
   titulos: {
     color: "#ffffff",

@@ -12,23 +12,34 @@ const RecetaNube = () => {
     const [listaReceta, setListaReceta] = useState();
     const [newDateString, setNewDateString] = useState('00/00/2000')
     const [newDateStringVencimiento, setNewDateStringVencimiento] = useState('00/00/2000')
+    const [date,setDate] =useState()
+    const [year,setYear] = useState()
+    const [month,setMonth] = useState()
+    const [day,setDay] = useState()
+    
     const getAllReceta = async () =>{
       let datos = await axios.get(Api.ApiGetAllReceta);
       setListaReceta(datos.data)
       console.log(datos.data[2].FechaCreacion)
       console.log( typeof new Date(datos.data[2].FechaCreacion))
-      const date = new Date(datos.data[2].FechaCreacion);
-      const year = date.getFullYear();
-      const month = date.getMonth() +1;
-      const day = date.getDate() + 1;
-       setNewDateString(`${day}/${month}/${year}`);
-      console.log(newDateString)
-      const date1 = new Date(datos.data[2].FechaCreacion);
-      const year1 = date1.getFullYear();
-      const month1 = date1.getMonth() +2;
-      const day1 = date1.getDate() + 1;
-      setNewDateStringVencimiento(`${day1}/${month1}/${year1}`);
- 
+
+      datos.data?.map((elemento)=>{
+          console.log(i)
+           setDate(new Date(elemento.FechaCreacion));
+           setYear(date.getFullYear());
+           setMonth(date.getMonth() +1);
+           setDay(date.getDate() + 1);
+           setNewDateString(`${day}/${month}/${year}`);
+          console.log(newDateString)
+           setDate1(new Date(elemento.FechaCreacion));
+           setYear1(date1.getFullYear())
+           setMonth1(date1.getMonth() +2)
+           setDay1(date1.getDate() + 1)
+          setNewDateStringVencimiento(`${day1}/${month1}/${year1}`);
+     
+        
+       } )
+    
 
      
     }
@@ -68,7 +79,7 @@ const tipoDeFecha = async()=>{
            <View style={styles.formgroup}>
              <View style={{flexDirection:"column", alignItems: "center", flex: 1}}>
                <Text style={styles.miniText}>Nombre del Medico</Text>
-               <Text style={styles.subtitulo}>{elemento.IdMedico}</Text>
+               <Text style={styles.subtitulo}>{elemento.NombreMedico}</Text>
              </View>
              <View style={{flexDirection:"column", alignItems: "center", flex: 1}}>
                <Text style={styles.miniText}>Firma</Text>
@@ -81,11 +92,11 @@ const tipoDeFecha = async()=>{
            <View style={styles.formgroup}>
              <View style={{flexDirection:"column", alignItems: "center", flex: 1}}>
                <Text style={styles.miniText}>Nombre paciente</Text>
-               <Text style={styles.subtitulo}>nombre paciente</Text>
+               <Text style={styles.subtitulo}>{elemento.NombrePaciente}</Text>
              </View>
              <View style={{flexDirection:"column", alignItems: "center", flex: 1}}>
                <Text style={styles.miniText}>Direccion</Text>
-               <Text style={styles.subtitulo}>Direccion usuario en bd</Text>
+               <Text style={styles.subtitulo}>{elemento.Direccion}</Text>
              </View>
            </View>
            <View style={styles.formgroup}>
@@ -95,7 +106,7 @@ const tipoDeFecha = async()=>{
              </View>
              <View style={{flexDirection:"column", alignItems: "center", flex: 1}}>
                <Text style={styles.miniText}>Numero de documento</Text>
-               <Text style={styles.subtitulo}>Dni usuario</Text>
+               <Text style={styles.subtitulo}>{elemento.Dni}</Text>
              </View>
            </View>
 

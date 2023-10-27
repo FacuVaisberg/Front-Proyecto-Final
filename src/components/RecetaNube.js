@@ -10,20 +10,42 @@ import { ScrollView } from "react-native-web";
 const RecetaNube = () => {
     //const [receta, setReceta] = useState();
     const [listaReceta, setListaReceta] = useState();
-    
+    const [newDateString, setNewDateString] = useState('00/00/2000')
+    const [newDateStringVencimiento, setNewDateStringVencimiento] = useState('00/00/2000')
     const getAllReceta = async () =>{
       let datos = await axios.get(Api.ApiGetAllReceta);
       setListaReceta(datos.data)
-      console.log( typeof new Date(datos.data[0].FechaCreacion))
-    }
+      console.log(datos.data[2].FechaCreacion)
+      console.log( typeof new Date(datos.data[2].FechaCreacion))
+      const date = new Date(datos.data[2].FechaCreacion);
+      const year = date.getFullYear();
+      const month = date.getMonth() +1;
+      const day = date.getDate() + 1;
+       setNewDateString(`${day}/${month}/${year}`);
+      console.log(newDateString)
+      const date1 = new Date(datos.data[2].FechaCreacion);
+      const year1 = date1.getFullYear();
+      const month1 = date1.getMonth() +2;
+      const day1 = date1.getDate() + 1;
+      setNewDateStringVencimiento(`${day1}/${month1}/${year1}`);
+ 
 
+     
+    }
+const tipoDeFecha = async()=>{
+  
+}
     useEffect(() => {
       getAllReceta()
+      tipoDeFecha()
      },[]);
 
      useEffect(() => {
       console.log(listaReceta);
      }, [listaReceta])
+     useEffect(() => {
+      console.log(newDateString);
+     }, [newDateString])
 
   return (
     <>
@@ -36,11 +58,11 @@ const RecetaNube = () => {
            <View style={styles.formgroup}>
              <View style={{flexDirection:"column", alignItems: "center", flex: 1}}>
                <Text style={styles.miniText}>Fecha de Subida</Text>
-               <Text style={styles.subtitulo}>{elemento.FechaCreacion}</Text>
+               <Text style={styles.subtitulo}>{newDateString}</Text>
              </View>
              <View style={{flexDirection:"column", alignItems: "center", flex: 1}}>
                <Text style={styles.miniText}>Fecha de Vencimiento</Text>
-               <Text style={styles.subtitulo}>12/12/2023</Text>
+               <Text style={styles.subtitulo}>{newDateStringVencimiento}</Text>
              </View>
            </View>
            <View style={styles.formgroup}>

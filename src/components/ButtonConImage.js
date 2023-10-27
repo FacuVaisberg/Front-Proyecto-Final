@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     width: '100%',
     paddingHorizontal: '20%',
     height: '100%',
-    backgroundColor: 'rgba(255,255,255, 0.15)'
+    backgroundColor: 'rgba(255,255,255, 0.4)'
   },
   textoBoton: {
     color: "black",

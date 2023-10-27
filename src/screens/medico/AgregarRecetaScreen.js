@@ -74,7 +74,7 @@ const AgregarRecetaScreen = () => {
   }
   return (
       <SafeAreaView style={styles.container}>
-        <TouchableOpacity style={styles.Back} onPress={() => navigation.navigate("Medico")}>
+        <TouchableOpacity style={styles.back} onPress={() => navigation.navigate("Medico")}>
           <Image source={require("../../img/volver.png")} />
         </TouchableOpacity>
         <Text style={styles.tituloAgregarReceta}>Agregar Receta</Text>
@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
     top: "5.25%",
     left: "4.65%",
   },
-  Back: {
+  back: {
     color: "#7CB164",
     width: 30,
     height: 30,

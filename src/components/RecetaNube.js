@@ -12,6 +12,7 @@ const RecetaNube = () => {
     const [listaReceta, setListaReceta] = useState();
     const [newDateString, setNewDateString] = useState('00/00/2000')
     const [newDateStringVencimiento, setNewDateStringVencimiento] = useState('00/00/2000')
+    const [arrayFechas, setArrayFechas] = useState([])
     const [date,setDate] =useState()
     const [year,setYear] = useState()
     const [month,setMonth] = useState()
@@ -20,35 +21,16 @@ const RecetaNube = () => {
     const getAllReceta = async () =>{
       let datos = await axios.get(Api.ApiGetAllReceta);
       setListaReceta(datos.data)
-      console.log(datos.data[2].FechaCreacion)
-      console.log( typeof new Date(datos.data[2].FechaCreacion))
-
-      datos.data?.map((elemento)=>{
-          console.log(i)
-           setDate(new Date(elemento.FechaCreacion));
-           setYear(date.getFullYear());
-           setMonth(date.getMonth() +1);
-           setDay(date.getDate() + 1);
-           setNewDateString(`${day}/${month}/${year}`);
-          console.log(newDateString)
-           setDate1(new Date(elemento.FechaCreacion));
-           setYear1(date1.getFullYear())
-           setMonth1(date1.getMonth() +2)
-           setDay1(date1.getDate() + 1)
-          setNewDateStringVencimiento(`${day1}/${month1}/${year1}`);
-     
-        
-       } )
     
-
-     
     }
-const tipoDeFecha = async()=>{
-  
-}
+
+    function addMonths(date, months) {
+      date.setMonth(date.getMonth() + months);    
+      return date;
+    }
+    
     useEffect(() => {
       getAllReceta()
-      tipoDeFecha()
      },[]);
 
      useEffect(() => {
@@ -69,11 +51,11 @@ const tipoDeFecha = async()=>{
            <View style={styles.formgroup}>
              <View style={{flexDirection:"column", alignItems: "center", flex: 1}}>
                <Text style={styles.miniText}>Fecha de Subida</Text>
-               <Text style={styles.subtitulo}>{newDateString}</Text>
+               <Text style={styles.subtitulo}>{new Date(elemento.FechaCreacion).toLocaleDateString()}</Text>
              </View>
              <View style={{flexDirection:"column", alignItems: "center", flex: 1}}>
                <Text style={styles.miniText}>Fecha de Vencimiento</Text>
-               <Text style={styles.subtitulo}>{newDateStringVencimiento}</Text>
+               <Text style={styles.subtitulo}>{addMonths(new Date(elemento.FechaCreacion), 1).toLocaleDateString()}</Text>
              </View>
            </View>
            <View style={styles.formgroup}>

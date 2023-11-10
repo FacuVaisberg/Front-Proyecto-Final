@@ -16,25 +16,30 @@ const MiniCardsRecetas = ({ medicamento, fechaVencimiento }) => {
       console.error('Error fetching data:', error);
     }
   };
+  function addMonths(date, months) {
+    date.setMonth(date.getMonth() + months);    
+    return date;
+  }
 
 useEffect(() => {
   getAllReceta()
  },[]);
  useEffect(() => {
-  console.log(listaReceta);
+  console.log("lista receta: ",listaReceta);
  }, [listaReceta])
 
   return (
     <>
     {listaReceta?.map((elemento)=> (
+      console.log("console log map",elemento),
     <View style={styles.card}>
       <View style={styles.formgroup}>
-        <MaterialCommunityIcons name="bottle-tonic-plus-outline" size={32} color="white" />
-        <Text style={styles.textMiniBox}>{medicamento}</Text>
+        <MaterialCommunityIcons name="bottle-tonic-plus-outline" size={30} color="white" />
+        <Text style={styles.textMiniBox}>{elemento.NombreMedicamento}</Text>
       </View>
       <View style={styles.formgroup}>
-        <MaterialCommunityIcons name="calendar-alert" size={32} color="white" />
-        <Text style={styles.textMiniBox}>{fechaVencimiento}</Text>
+        <MaterialCommunityIcons name="calendar-alert" size={26} color="white" />
+        <Text style={styles.textMiniBox}> {addMonths(new Date(elemento.FechaCreacion), 1).toLocaleDateString()}</Text>
       </View>
     </View>
     ))}
@@ -53,7 +58,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#668557",
     flexDirection: "column",
     justifyContent: "center",
-    height: "15%",
+    alignSelf: 'center',
+    height: "30%",
     width: 312,
     marginTop: "5%",
     borderRadius: 10,

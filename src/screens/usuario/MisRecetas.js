@@ -1,10 +1,10 @@
-import { View, Text, StyleSheet, TouchableOpacity, Image, SafeAreaView } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, Image, SafeAreaView, ScrollView } from "react-native";
 import { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { Feather } from '@expo/vector-icons';
 import Medicamento from "../../components/Medicamento";
-import MiniCardsRecetasList from "../../components/MiniCardsRecetasList";
+import MiniCardsRecetas from "../../components/MiniCardsRecetas";
 
 const MisRecetas = () => {
   const [medicamentos, setMedicamentos] = useState([]);
@@ -30,7 +30,9 @@ const MisRecetas = () => {
             la información de tus recetas se ve acotada!</Text>
           </View>
           <View style={styles.box}>
-            <MiniCardsRecetasList medicamentos={medicamentos} />
+            <ScrollView>
+              <MiniCardsRecetas medicamentos={medicamentos} />
+            </ScrollView>
           </View>
         </View>
       </SafeAreaView>
@@ -59,7 +61,6 @@ const styles = StyleSheet.create({
   titulo: {
     color: "#000000",
     fontSize: 25,
-    /* fontFamily: "Jacques Francois-Regular", */
     fontSize: 25,
     textAlign: "center",
     marginTop: "10%",
@@ -78,25 +79,13 @@ const styles = StyleSheet.create({
   },
   box: {
     alignSelf: 'center',
+    justifyContent: 'center',
     backgroundColor: "#79AD60",
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
     width: "100%",
     height: 650,
     maxHeight: "90%",
-    width: 350,
     maxWidth:"90%",
     borderRadius: 20,
-  },
-  minibox: {
-    backgroundColor: "#668557",
-    flexDirection: "column",
-    justifyContent: "center",
-    height: "15%",
-    width: 312,
-    marginTop: "5%",
-    borderRadius: 10,
   },
   formgroup:{
     flexDirection: "row",

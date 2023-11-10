@@ -1,8 +1,8 @@
-import { View, Text, StyleSheet, TouchableOpacity, Image, SafeAreaView } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, Image, SafeAreaView, ScrollView} from "react-native";
 import { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
-import CardsSolicitudesList from "../../components/CardsSolicitudesList";
+import CardsSolicitudes from "../../components/CardsSolicitudes";
 
 const MisSolicitudes = () => {
   const [medicamentos, setMedicamentos] = useState([]);
@@ -21,10 +21,10 @@ const MisSolicitudes = () => {
       </TouchableOpacity>
       <View style={styles.container}>
         <Text style={styles.titulo}>Mis Solicitudes</Text>
-        <View style={styles.minicontainer}>
           <View style={styles.box}>
-            <CardsSolicitudesList medicamentos={medicamentos} />
-          </View>
+            <ScrollView>
+              <CardsSolicitudes medicamentos={medicamentos} />
+            </ScrollView>
         </View>
       </View>
         
@@ -72,13 +72,13 @@ const styles = StyleSheet.create({
   },
   box: {
     backgroundColor: "#79AD60",
-    display: "flex",
-    flexDirection: "row",
+    alignSelf:'center',
+    alignItems: 'center',
     justifyContent: "center",
     width: "100%",
-    height: 650,
+    height: 600,
     maxHeight: "90%",
-    width: 350,
+    width: "95%",
     maxWidth:"90%",
     borderRadius: 20,
   },

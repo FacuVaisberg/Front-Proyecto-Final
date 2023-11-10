@@ -2,14 +2,9 @@ import React, { useState } from "react";
 import { View, Text, StyleSheet, Image, TextInput, Form, onClick, Alert, TouchableOpacity, SafeAreaView} from "react-native";
 import DropDownPicker from "react-native-dropdown-picker";
 import axios from "axios";
-import { Dropdown } from 'react-native-element-dropdown';
-import AntDesign from '@expo/vector-icons/AntDesign';
 import { useNavigation } from "@react-navigation/native";
 import Api from '../../../Api';
 import { Button } from "../../components/Button";
-//llamar en data a la url del inner join
-
-let data = await axios.get(Api.ApiGetAllNombreMedicamento);
 
 const AgregarRecetaScreen = () => {
   const [idMedicamento, setIdMedicamento] = useState(0);
@@ -19,7 +14,6 @@ const AgregarRecetaScreen = () => {
   const [fechaVencimiento, setFechaVencimiento] = useState(new Date())
   const [estado, setEstado] = useState(true)
   const navigation = useNavigation();
-
 
   const handleAgregarReceta = () => {
     setFechaCreacion(Date.now())
@@ -90,20 +84,8 @@ const AgregarRecetaScreen = () => {
               <TextInput style={styles.input} placeholder={"Escribir..."} value={idPaciente} onChangeText={setIdPaciente}></TextInput>
             </View>
             <View style={styles.formGroup}>
-            <Dropdown
-        style={styles.input}
-        selectedTextStyle={styles.selectedTextStyle}
-        inputSearchStyle={styles.inputSearchStyle}
-        data={data}
-        search
-        maxHeight={300}
-        labelField="label"
-        valueField="value"
-        placeholder={"Seleccionar medicamento"}
-        searchPlaceholder="Buscar medicamento"
-        value={idMedicamento}
-        onChangeText={setIdMedicamento}
-      />
+              <Text style={styles.text1}>Medicamento</Text>
+              <TextInput style={styles.input} placeholder={"Escribir 1..."} value={idMedicamento} onChangeText={setIdMedicamento}></TextInput>
             </View>
             <View style={styles.formGroup}>
               <Text style={styles.text2}>Observaciones</Text>
@@ -205,31 +187,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.5,
     shadowRadius: 3,
     elevation: 10,
-  },
-  dropdown: {
-    margin: 16,
-    height: 50,
-    borderBottomColor: 'gray',
-    borderBottomWidth: 0.5,
-  },
-  icon: {
-    marginRight: 5,
-  },
-  placeholderStyle: {
-    fontSize: 16,
-  },
-  selectedTextStyle: {
-    fontSize: 16,
-  },
-  iconStyle: {
-    width: 20,
-    height: 20,
-  },
-  inputSearchStyle: {
-    height: 40,
-    fontSize: 16,
-  },
-});
+  }
   
-;
+});
 export default AgregarRecetaScreen;

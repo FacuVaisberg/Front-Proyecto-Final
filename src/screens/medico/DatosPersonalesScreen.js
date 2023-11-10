@@ -7,6 +7,7 @@ import Api from '../../../Api';
 import { Button } from "../../components/Button";
 
 const DatosPersonalesScreen = () => {
+  const navigation = useNavigation();
   return (
     <>
       <SafeAreaView style={styles.container}>

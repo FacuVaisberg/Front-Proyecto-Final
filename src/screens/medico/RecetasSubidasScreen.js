@@ -38,17 +38,16 @@ const RecetasSubidasScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    height: "100%",
-    width: "100%",
-    backgroundColor: "#EFEFEF",
+    height: '100%',
+    width: '100%',
+    backgroundColor: '#EFEFEF',
   },
   titulo: {
     color: "#000000",
-    fontSize: 25,
     /* fontFamily: "Jacques Francois-Regular", */
     fontSize: 25,
-    textAlign: "center",
-    marginTop: "10%",
+    top: "5.25%",
+    left: "4.65%",
   },
   back: {
     color: "#7CB164",
@@ -81,11 +80,10 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
+    alignSelf: 'center',
     width: "100%",
     height: 613,
     width: 358,
-    height: 613,
-    left: 36,
     /*     position: "fixed" */
     top: "20%",
     borderRadius: 20,

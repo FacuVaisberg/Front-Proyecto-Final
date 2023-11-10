@@ -1,7 +1,8 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import {MaterialCommunityIcons} from '@expo/vector-icons';
 
-const miniCardsRecetas = (medicamento, fechaVencimiento) => {
+const MiniCardsRecetas = (medicamento, fechaVencimiento) => {
   return (
     <View style={styles.card}>
       <View style={styles.formgroup}>
@@ -38,4 +39,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default miniCardsRecetas
+export default MiniCardsRecetas

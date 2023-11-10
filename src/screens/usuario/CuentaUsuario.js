@@ -1,6 +1,7 @@
-import React from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { View, Text, StyleSheet, TouchableOpacity, Image, SafeAreaView } from "react-native";
+import { useState } from "react";
+import { useNavigation } from "@react-navigation/native";
+import React from "react";
 
 const CuentaUsuario = () => {
   const navigation = useNavigation();
@@ -14,15 +15,18 @@ const CuentaUsuario = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.view}>
+      <TouchableOpacity style={styles.back} onPress={() => navigation.navigate("HomeUsuario")}>
+          <Image source={require("../../img/volver.png")} />
+        </TouchableOpacity>
       <Text style={styles.text}>¿Desea cerrar sesión?</Text>
       <Button title="Cerrar Sesión" onPress={handleLogout} />
-    </View>
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
+  view: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',

@@ -3,9 +3,8 @@ import { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { Feather } from '@expo/vector-icons';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Medicamento from "../../components/Medicamento";
-import miniCardsRecetas from "../../components/miniCardsRecetas";
+import MiniCardsRecetasList from "../../components/MiniCardsRecetasList";
 
 const MisRecetas = () => {
   const [medicamentos, setMedicamentos] = useState([]);
@@ -20,7 +19,7 @@ const MisRecetas = () => {
   return (
     <>
       <SafeAreaView style={styles.view}>
-        <TouchableOpacity style={styles.back} onPress={() => navigation.navigate("Medico")}>
+        <TouchableOpacity style={styles.back} onPress={() => navigation.navigate("HomeUsuario")}>
           <Image source={require("../../img/volver.png")} />
         </TouchableOpacity>
         <View style={styles.container}>
@@ -31,9 +30,7 @@ const MisRecetas = () => {
             la información de tus recetas se ve acotada!</Text>
           </View>
           <View style={styles.box}>
-            <miniCardsRecetas>
-              
-            </miniCardsRecetas>
+            <MiniCardsRecetasList medicamentos={medicamentos} />
           </View>
         </View>
       </SafeAreaView>

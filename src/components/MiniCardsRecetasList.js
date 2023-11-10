@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import MiniCardsRecetas from './MiniCardsRecetas';
+import MiniCardsRecetas from './miniCardsRecetas'
 
 const MiniCardsRecetasList = ({ medicamentos }) => {
   return (

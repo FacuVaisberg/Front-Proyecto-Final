@@ -11,6 +11,7 @@
         /* ApiAgregarReceta:   ROOT_DOMAIN + 'api/receta/', */
         ApiAgregarReceta: ROOT_DOMAIN + 'api/receta/',
         ApiGetAllReceta:   ROOT_DOMAIN + 'api/receta/',
+        ApiGetAllNombreMedicamento:   ROOT_DOMAIN + 'api/medicamento/',
     }
     export default Api
    

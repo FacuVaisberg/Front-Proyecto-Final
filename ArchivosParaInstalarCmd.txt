@@ -13,3 +13,5 @@
     npm i axios
 
     npm i react-redux
+
+    npm i react-native-element-dropdown

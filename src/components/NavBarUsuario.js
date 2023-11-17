@@ -70,7 +70,7 @@ export default function NavBarUsuario() {
         />
         <Tab.Screen
           name="PharmaLife"
-          component={HomeMedico}
+          component={HomeUsuario}
           options={{
             tabBarIcon: ({ focused }) => {
               return (

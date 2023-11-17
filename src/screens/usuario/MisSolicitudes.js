@@ -54,7 +54,6 @@ const styles = StyleSheet.create({
   titulo: {
     color: "#000000",
     fontSize: 25,
-    fontSize: 25,
     textAlign: "center",
     marginTop: "10%",
   },

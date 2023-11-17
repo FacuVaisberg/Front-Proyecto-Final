@@ -1,11 +1,12 @@
-import { View, Text, StyleSheet, TouchableOpacity, Image, SafeAreaView } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, Image, SafeAreaView, ScrollView } from "react-native";
 import { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
-
+import { Feather } from '@expo/vector-icons';
 import Medicamento from "../../components/Medicamento";
+import MiniCardsRecetasMedico from "../../components/MiniCardsRecetasMedico";
 
-const RecetasSubidasScreen = () => {
+const MisRecetas = () => {
   const [medicamentos, setMedicamentos] = useState([]);
   const navigation = useNavigation();
 
@@ -17,17 +18,22 @@ const RecetasSubidasScreen = () => {
 
   return (
     <>
-      <SafeAreaView style={styles.container}>
-      <TouchableOpacity style={styles.back} onPress={() => navigation.navigate("Medico")}>
+      <SafeAreaView style={styles.view}>
+        <TouchableOpacity style={styles.back} onPress={() => navigation.navigate("HomeUsuario")}>
           <Image source={require("../../img/volver.png")} />
         </TouchableOpacity>
-        <Text style={styles.titulo}>Recetas Subidas</Text>
-
-        <View style={styles.box}>
-          <View style={styles.minibox}>
-            <Text style={styles.textMiniBox}>
-              Remedio: Ibuprofeno. Nombre del paciente: Carlos
-            </Text>
+        <View style={styles.container}>
+          <Text style={styles.titulo}>Recetas Subidas</Text>
+          <View style={styles.minicontainer}>
+            <Feather name="alert-triangle" size={24} color="#7CB164" style={{marginRight: 5}}/>
+            <Text>¡Por razones de seguridad, {'\n'} 
+            las recetas de los pacientes estan acotadas!</Text>
+          </View>
+          <View style={styles.box}>
+            <ScrollView>
+            {/* poner logica de if no hay recetas escribir "No tenes recetas recetadas aún" */}
+              <MiniCardsRecetasMedico medicamentos={medicamentos} />
+            </ScrollView>
           </View>
         </View>
       </SafeAreaView>
@@ -36,18 +42,29 @@ const RecetasSubidasScreen = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {
+  view: {
     flex: 1,
-    height: '100%',
-    width: '100%',
-    backgroundColor: '#EFEFEF',
+    height: "100%",
+    width: "100%",
+    backgroundColor: "#EFEFEF",
+  },
+  container: {
+    alignItems: 'center',
+    alignContent: 'center',
+  },
+  minicontainer:{
+    width: "85%",
+    flexDirection: 'row',
+    marginTop: "5%",
+    alignItems: "center",
+    left: 0
   },
   titulo: {
     color: "#000000",
-    /* fontFamily: "Jacques Francois-Regular", */
     fontSize: 25,
-    top: "5.25%",
-    left: "4.65%",
+    fontSize: 25,
+    textAlign: "center",
+    marginTop: "10%",
   },
   back: {
     color: "#7CB164",
@@ -57,50 +74,28 @@ const styles = StyleSheet.create({
     left: "4.65%",
   },
   textMiniBox: {
-    justifyContent: "center",
     color: "#ffffff",
-    height: "auto",
     marginLeft: "5%",
-    shadowColor: "#FFFFFF",
-    /* fontFamily: "Jacques Francois", */
     fontSize: 18,
-    fontStyle: "normal",
-    /*lineHeight: "normal",*/
-  },
-  textMiniBox2: {
-    justifyContent: "center",
-    color: "#ffffff",
-    shadowColor: "#FFFFFF",
-    /*     fontFamily: "Jacques Francois", */
-    fontStyle: "normal",
-    marginTop: "10%" /*lineHeight: "normal",*/,
   },
   box: {
-    backgroundColor: "#79AD60",
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
     alignSelf: 'center',
+    justifyContent: 'center',
+    backgroundColor: "#79AD60",
     width: "100%",
-    height: 613,
-    width: 358,
-    /*     position: "fixed" */
-    top: "20%",
+    height: 650,
+    maxHeight: "90%",
+    maxWidth:"90%",
     borderRadius: 20,
   },
-  minibox: {
-    backgroundColor: "#668557",
-    display: "flex",
+  formgroup:{
     flexDirection: "row",
-    justifyContent: "center",
-    width: "100%",
-    height: "15%",
-    width: 312,
-    /*  position: "fixed", */
-    marginTop: "5%",
-
-    borderRadius: 10,
+    alignItems: 'center',
+    marginLeft: 10,
+  },
+  texto:{
+    fontSize: 16
   },
 });
 
-export default RecetasSubidasScreen;
+export default MisRecetas;

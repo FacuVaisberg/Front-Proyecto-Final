@@ -22,7 +22,7 @@ const RegistrarseScreen = () => {
         <View style={styles.miniContainer}>
           <Text style={styles.text}> ¿Ya tenes una cuenta? </Text>
             <TouchableOpacity>
-              <Text style={styles.LetraDeColor} onPress={() => navigation.navigate("LogIn")}>Iniciar Sesion</Text>
+              <Text style={styles.LetraDeColor} onPress={() => navigation.navigate("LogIn")}> Iniciar Sesion</Text>
             </TouchableOpacity>
         </View>
     </SafeAreaView>

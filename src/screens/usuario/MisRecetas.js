@@ -31,6 +31,7 @@ const MisRecetas = () => {
           </View>
           <View style={styles.box}>
             <ScrollView>
+            {/* poner logica de if no hay recetas escribir "No tenes recetas recetadas aún" */}
               <MiniCardsRecetas medicamentos={medicamentos} />
             </ScrollView>
           </View>

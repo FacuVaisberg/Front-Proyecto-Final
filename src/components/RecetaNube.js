@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Image, TouchableOpacity, SafeAreaView} from "react-native";
+import { View, Text, StyleSheet, Image, TouchableOpacity, SafeAreaView, Alert} from "react-native";
 import React from "react";
 import FotoPerfil from "./FotoPerfil";
 import Api from '../../Api'
@@ -10,18 +10,55 @@ import { ScrollView } from "react-native-web";
 const RecetaNube = () => {
     //const [receta, setReceta] = useState();
     const [listaReceta, setListaReceta] = useState();
+    const [listaSolicitud, setListaSolicitud] = useState();
     const [newDateString, setNewDateString] = useState('00/00/2000')
-    const [newDateStringVencimiento, setNewDateStringVencimiento] = useState('00/00/2000')
-    const [arrayFechas, setArrayFechas] = useState([])
-    const [date,setDate] =useState()
-    const [year,setYear] = useState()
-    const [month,setMonth] = useState()
-    const [day,setDay] = useState()
+    const [idRemedio, setIdRemedio] = useState(0);
+    const [idPaciente, setIdPaciente] = useState(0);
+    const [idFarmacia, setIdFarmacia] = useState(0);
+    const [idReceta, setIdReceta] = useState(0);
+    const [precio, setPrecio] = useState(0);
     
     const getAllReceta = async () =>{
       let datos = await axios.get(Api.ApiGetAllReceta);
       setListaReceta(datos.data)
+      console.log("ahora ",listaReceta)
     
+    }
+
+    const AgregarSolicitud = async () =>{
+      console.log('AgregarSolicitud')
+      let datos = await axios.get(Api.ApiGetAllSolicitud);
+      setListaSolicitud(datos.data)
+      console.log("ahora ",listaSolicitud)
+      try{
+        let objeto = {
+                IdRemedio: idRemedio,
+                IdPaciente: idPaciente,
+                IdFarmacia: idFarmacia,
+                IdReceta:idReceta,
+                Precio: precio,
+        }
+        console.log("OBJETO SOLICITUD " , objeto)
+        const response = await axios.post(Api.ApiPostSolicitud, objeto);
+        console.log(response);
+        const Headers={
+          headers:{
+            authorization: `Bearer ${response.data}`
+          }
+        }
+        console.log(Headers)
+        if (Headers.data!="") {
+          Alert.alert("El cliente fue notificado");
+        }
+        else{
+          console.log('los datos son erroneos, intente de nuevo')
+        }
+  
+        
+      }
+      catch(error){
+        console.log(error)
+      }
     }
 
     function addMonths(date, months) {
@@ -34,8 +71,15 @@ const RecetaNube = () => {
      },[]);
 
      useEffect(() => {
-      console.log(listaReceta);
+      console.log("listareceta",listaReceta);
      }, [listaReceta])
+     useEffect(() => {
+      AgregarSolicitud()
+     },[]);
+
+     useEffect(() => {
+      console.log("listaSolicituf",listaSolicitud);
+     }, [listaSolicitud])
      useEffect(() => {
       console.log(newDateString);
      }, [newDateString])
@@ -44,6 +88,7 @@ const RecetaNube = () => {
     <>
    
       {listaReceta?.map((elemento)=> (
+        key=elemento.id,
        <View style={styles.container}>
        <View style={styles.box}>
          <Text style={styles.text}>Medicamento</Text>
@@ -84,7 +129,7 @@ const RecetaNube = () => {
            <View style={styles.formgroup}>
              <View style={{flexDirection:"column", alignItems: "center", flex: 1}}>
                <Text style={styles.miniText}>Telofono</Text>
-               <Text style={styles.subtitulo}>bd telefono usuario</Text>
+               <Text style={styles.subtitulo}>{elemento.Telefono}</Text>
              </View>
              <View style={{flexDirection:"column", alignItems: "center", flex: 1}}>
                <Text style={styles.miniText}>Numero de documento</Text>
@@ -92,7 +137,7 @@ const RecetaNube = () => {
              </View>
            </View>
 
-             <TouchableOpacity style={styles.boton}>
+             <TouchableOpacity style={styles.boton} onPress={AgregarSolicitud}>
                <Text style={{ color: "white", fontSize: 20 }}>
                  ¡La Quiero!
                </Text>

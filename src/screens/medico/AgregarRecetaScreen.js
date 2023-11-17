@@ -9,6 +9,7 @@ import { Button } from "../../components/Button";
 const AgregarRecetaScreen = () => {
   const [idMedicamento, setIdMedicamento] = useState(0);
   const [idPaciente, setIdPaciente] = useState(0);
+  const [idMedico, setIdMedico] = useState(0);
   const [observaciones, setObservaciones] = useState("")
   const [fechaCreacion, setFechaCreacion] = useState(new Date())
   const [fechaVencimiento, setFechaVencimiento] = useState(new Date())
@@ -43,6 +44,7 @@ const AgregarRecetaScreen = () => {
       let objeto = {
               IdMedicamento: idMedicamento,
               IdPaciente: idPaciente,
+              IdMedico: idMedico,
               Observaciones:observaciones,
               FechaCreacion: fechaCreacion,
               Estado: estado,
@@ -80,16 +82,16 @@ const AgregarRecetaScreen = () => {
         <View style={styles.box}>
           <View style={styles.minibox}>
             <View style={styles.formGroup}>
-              <Text style={styles.text}>Número de documento del paciente</Text>
-              <TextInput style={styles.input} placeholder={"Escribir..."} value={idPaciente} onChangeText={setIdPaciente}></TextInput>
+              <Text style={styles.text}>Numero Paciente</Text>
+              <TextInput style={styles.input} placeholder={"Escribir... 5 o 6"} value={idPaciente} onChangeText={setIdPaciente}></TextInput>
             </View>
             <View style={styles.formGroup}>
               <Text style={styles.text1}>Medicamento</Text>
-              <TextInput style={styles.input} placeholder={"Escribir 1..."} value={idMedicamento} onChangeText={setIdMedicamento}></TextInput>
+              <TextInput style={styles.input} placeholder={"Escribir 1 o 2"} value={idMedicamento} onChangeText={setIdMedicamento}></TextInput>
             </View>
             <View style={styles.formGroup}>
-              <Text style={styles.text2}>Observaciones</Text>
-              <TextInput style={styles.input} placeholder={"Escribir 2..."} value={observaciones} onChangeText={setObservaciones}></TextInput>
+              <Text style={styles.text2}>Numero Medico</Text>
+              <TextInput style={styles.input} placeholder={"Escribir 3 o 4"} value={idMedico} onChangeText={setIdMedico}></TextInput>
             </View>
             <View>
               <TouchableOpacity style={styles.boton} onPress={AgregarReceta}>

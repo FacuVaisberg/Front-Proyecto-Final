@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { Feather } from '@expo/vector-icons';
-import Medicamento from "../../components/Medicamento";
+
 import MiniCardsRecetas from "../../components/MiniCardsRecetas";
 
 const MisRecetas = () => {

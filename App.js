@@ -6,9 +6,16 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Index from './Index';
 import Button from './src/components/Button';
 import Tabs from './src/Tabs';
+import { UserProvider } from './UserContext';
+import { useUser } from './UserContext';
 
 export default function App() {
   return <Tabs/>;
+  /* return(
+    <UserProvider>
+      <Tabs/>;
+    </UserProvider>
+  ) */
 }
 
 

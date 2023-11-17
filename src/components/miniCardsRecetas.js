@@ -60,6 +60,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignSelf: 'center',
     height: "30%",
+    maxHeight: "13%",
+
     width: 312,
     marginTop: "5%",
     borderRadius: 10,
@@ -68,6 +70,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: 'center',
     marginLeft: 10,
+    marginTop: "2%",
   },
 });
 

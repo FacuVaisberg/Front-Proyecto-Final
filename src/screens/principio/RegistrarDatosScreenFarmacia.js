@@ -3,8 +3,9 @@ import React, { useState } from 'react';
 import CardRegistro from '../../components/CardRegistro'
 import { useNavigation } from '@react-navigation/native';
 import farmaciaFoto from '../../img/farmaciaRegistrarse.jpg'
+import { useUser } from '../../../UserContext';
 
-const RegistrarDatosScreenMedico = () => {
+const RegistrarDatosScreenFarmacia = () => {
   const [nombre, setName] = useState('');
   const [direccion, setDireccion] = useState('');
   const [nombreDuenio, setNombreDuenio] = useState('');
@@ -13,6 +14,26 @@ const RegistrarDatosScreenMedico = () => {
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const navigation = useNavigation();
+  /* const [rol, setRol] = useState(0);
+  const { login } = useUser(); */
+
+
+  /* const handleRegistro = () => {
+    // Lógica de registro...
+
+    // Supongamos que la lógica de registro es exitosa y obtenemos los datos del usuario
+    const userData = {
+      nombre,
+      // ... Otras propiedades del usuario
+    };
+
+    // Actualizar el contexto con los datos del usuario y el nuevo rol (1 para Farmacia)
+    login(userData, 1);
+
+    // Navegar a la pantalla correspondiente al nuevo rol
+    navigation.navigate("Farmacia");
+  }; */
+
   return (
     <View style={styles.view}>
       <TouchableOpacity style={styles.back} onPress={() => navigation.navigate("Medico")}>
@@ -41,7 +62,7 @@ const RegistrarDatosScreenMedico = () => {
           <View style={[styles.inputContainer, styles.button]}>
               <TextInput style={styles.input} placeholder="Contraseña:" value={password} onChangeText={setPassword}/>
           </View>
-          <TouchableOpacity style={styles.buttonChico} onPress={() => navigation.navigate("Farmacia")}>
+          <TouchableOpacity style={styles.buttonChico} onPress={/* handleRegistro */() => navigation.navigate("Farmacia")}>
             <Text style={styles.buttonText}>Registrarse</Text>
           </TouchableOpacity>
         </View>
@@ -141,4 +162,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default RegistrarDatosScreenMedico
+export default RegistrarDatosScreenFarmacia

@@ -8,7 +8,7 @@ const RegistroVentas = () => {
   const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.container}>
-      <TouchableOpacity style={styles.Back} onPress={() => navigation.navigate("Medico")}>
+      <TouchableOpacity style={styles.Back} onPress={() => navigation.navigate("HomeFarmacia")}>
         <Image source={require("../../img/volver.png")} />
       </TouchableOpacity>
       <Text style={styles.titulos}>Historial de ventas</Text>

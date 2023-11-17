@@ -3,17 +3,45 @@ import React, { useState } from 'react';
 import CardRegistro from '../../components/CardRegistro'
 import Button from '../../components/Button'
 import { useNavigation } from '@react-navigation/native';
+import { useUser } from '../../../UserContext';
 
 const RegistrarDatosScreenUsuario = () => {
   const [nombre, setName] = useState('');
   const [apellido, setApellido] = useState('');
   const [direccion, setDireccion] = useState('');
   const [dni, setDni] = useState('');
+  const [isValid, setIsValid] = useState(true);
   const [telefono, setTelefono] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const navigation = useNavigation();
+  /* const [rol, setRol] = useState(0);
+  const { login } = useUser(); */
+
+  /* const handleDniChange = (text) => {
+    // Verificar si el DNI tiene exactamente 8 dígitos
+    const isValidDni = /^\d{8}$/.test(text);
+    setIsValid(isValidDni);
+    setDni(text);
+  };
+
+  const handleRegistro = () => {
+    // Lógica de registro...
+
+    // Supongamos que la lógica de registro es exitosa y obtenemos los datos del usuario
+    const userData = {
+      nombre,
+      // ... Otras propiedades del usuario
+    };
+
+    // Actualizar el contexto con los datos del usuario y el nuevo rol (2 para Usuario)
+    login(userData, 2);
+
+    // Navegar a la pantalla correspondiente al nuevo rol
+    navigation.navigate("Usuario");
+  }; */
+
   return (
     <View style={styles.view}>
       <Text style={styles.baseText}>Completa tus datos como Usuario</Text>
@@ -28,7 +56,8 @@ const RegistrarDatosScreenUsuario = () => {
             <TextInput style={styles.input} placeholder="Direccion:" value={direccion} onChangeText={setDireccion}/>
         </View>
         <View style={[styles.inputContainer, styles.buttonOscuro]}>
-            <TextInput style={styles.input} placeholder="Dni:" value={dni} onChangeText={setDni}/>
+            <TextInput style={styles.input} placeholder="Dni:" value={dni} onChangeText={handleDniChange}/>
+            {!isValid && <Text style={{ color: 'red' }}>El DNI debe tener 8 dígitos.</Text>}
         </View>
         <View style={[styles.inputContainer, styles.button]}>
             <TextInput style={styles.input} placeholder="Telefono:" value={telefono} onChangeText={setTelefono}/>
@@ -40,7 +69,7 @@ const RegistrarDatosScreenUsuario = () => {
             <TextInput style={styles.input} placeholder="Contraseña:" value={password} onChangeText={setPassword}/>
         </View>
 
-        <TouchableOpacity style={styles.buttonChico} onPress={() => navigation.navigate("Usuario")}>
+        <TouchableOpacity style={styles.buttonChico} onPress={/* handleRegistro */() => navigation.navigate("Usuario")}>
           <Text style={styles.buttonText}>Registrarse</Text>
         </TouchableOpacity>
     </View>

@@ -33,6 +33,7 @@ useEffect(() => {
   return (
     <>
     {listaReceta?.map((elemento)=> (
+      console.log("elemento... ", elemento),
         <View style={styles.card}>
             <View style={styles.formgroup}>
                 <FontAwesome5 name="clinic-medical" size={24} color="white" />
@@ -74,8 +75,9 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     alignSelf: 'center',
     height: "25%",
+    maxHeight: "20%",
     width: 312,
-    marginTop: "5%",
+    marginTop: "7%",
     borderRadius: 10,
   },
   formgroup: {

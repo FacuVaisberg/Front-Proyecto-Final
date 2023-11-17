@@ -45,12 +45,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignContent: 'center',
   },
-  minicontainer:{
-    width: "85%",
-    flexDirection: 'row',
-    marginTop: "5%",
-    alignSelf:'center',
-  },
   titulo: {
     color: "#000000",
     fontSize: 25,

@@ -57,6 +57,7 @@ const styles = StyleSheet.create({
   textMiniBox: {
     color: "#ffffff",
     marginLeft: "5%",
+    marginTop: "3%",
     fontSize: 18,
   },
   card: {
@@ -64,7 +65,8 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "center",
     alignSelf: 'center',
-    height: "30%",
+    height: "20%",
+    maxHeight: "17%",
     width: 312,
     marginTop: "5%",
     borderRadius: 10,

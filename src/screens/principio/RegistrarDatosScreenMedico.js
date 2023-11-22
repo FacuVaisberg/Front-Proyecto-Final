@@ -16,32 +16,33 @@ const RegistrarDatosScreenMedico = () => {
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const navigation = useNavigation();
-  /* const [rol, setRol] = useState(0);
-  const { login } = useUser(); */
+  const [rol, setRol] = useState(0);
+  const { login } = useUser();
 
-/*   const handleDniChange = (text) => {
+  const handleDniChange = (text) => {
     // Verificar si el DNI tiene exactamente 8 dígitos
     const isValidDni = /^\d{8}$/.test(text);
     setIsValid(isValidDni);
     setDni(text);
-  }; */
+  };
 
-  /* const handleRegistro = () => {
+  const handleRegistro = () => {
     // Lógica de registro...
 
-    // Supongamos que la lógica de registro es exitosa y obtenemos los datos del usuario
-    const userData = {
+    const userData = { //datos del usuario
       nombre,
-      // ... Otras propiedades del usuario
+      apellido,
+      direccion,
+      dni,
+      telefono,
+      email,
+      password,
     };
 
-    // Actualizar el contexto con los datos del usuario y el nuevo rol (3 para Medico)
     login(userData, 3);
-
-    // Navegar a la pantalla correspondiente al nuevo rol
     navigation.navigate("Medico");
   };
- */
+
   return (
     <View style={styles.view}>
       <Text style={styles.baseText}>Completa tus datos como Medico</Text>
@@ -69,7 +70,7 @@ const RegistrarDatosScreenMedico = () => {
             <TextInput style={styles.input} placeholder="Contraseña:" value={password} onChangeText={setPassword}/>
         </View>
 
-        <TouchableOpacity style={styles.buttonChico} onPress={/* handleRegistro */() => navigation.navigate("Medico")}>
+        <TouchableOpacity style={styles.buttonChico} onPress={handleRegistro()}>
           <Text style={styles.buttonText}>Registrarse</Text>
         </TouchableOpacity>
     </View>

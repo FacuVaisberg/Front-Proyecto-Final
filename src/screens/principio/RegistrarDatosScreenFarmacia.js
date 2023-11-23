@@ -4,7 +4,7 @@ import CardRegistro from '../../components/CardRegistro'
 import { useNavigation } from '@react-navigation/native';
 import farmaciaFoto from '../../img/farmaciaRegistrarse.jpg'
 import { useUser } from '../../../UserContext';
-import { registerUser } from '../../../Api';
+//import { registerUser } from '../../../Api';
 
 
 const RegistrarDatosScreenFarmacia = () => {
@@ -16,8 +16,8 @@ const RegistrarDatosScreenFarmacia = () => {
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const navigation = useNavigation();
-  const [rol, setRol] = useState(0);
-  const { login } = useUser();
+/*const [rol, setRol] = useState(0);
+  const { login } = useUser(); */
 
 
   const handleRegistro = async () => {
@@ -67,7 +67,7 @@ const RegistrarDatosScreenFarmacia = () => {
           <View style={[styles.inputContainer, styles.button]}>
               <TextInput style={styles.input} placeholder="Contraseña:" value={password} onChangeText={setPassword}/>
           </View>
-          <TouchableOpacity style={styles.buttonChico} onPress={handleRegistro()}>
+          <TouchableOpacity style={styles.buttonChico} onPress={/* handleRegistro */() => navigation.navigate("Farmacia")}>
             <Text style={styles.buttonText}>Registrarse</Text>
           </TouchableOpacity>
         </View>

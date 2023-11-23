@@ -69,7 +69,7 @@ const RegistrarDatosScreenUsuario = () => {
             <TextInput style={styles.input} placeholder="Contraseña:" value={password} onChangeText={setPassword}/>
         </View>
 
-        <TouchableOpacity style={styles.buttonChico} onPress={handleRegistro() }>
+        <TouchableOpacity style={styles.buttonChico} onPress={/* handleRegistro */() => navigation.navigate("Usuario")}>
           <Text style={styles.buttonText}>Registrarse</Text>
         </TouchableOpacity>
     </View>

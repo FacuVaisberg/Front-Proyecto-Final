@@ -7,9 +7,10 @@ import { useUser } from './UserContext';
 export default function App() {
   return (
     <>
-      <UserProvider>
+      {/* <UserProvider>
         <Tabs />
-      </UserProvider>
+      </UserProvider> */}
+      <Tabs/>
     </>
   )
 }

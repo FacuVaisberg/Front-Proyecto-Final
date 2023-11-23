@@ -19,7 +19,7 @@ const MisRecetas = () => {
   return (
     <>
       <SafeAreaView style={styles.view}>
-        <TouchableOpacity style={styles.back} onPress={() => navigation.navigate("HomeUsuario")}>
+        <TouchableOpacity style={styles.back} onPress={() => navigation.navigate("Medico")}>
           <Image source={require("../../img/volver.png")} />
         </TouchableOpacity>
         <View style={styles.container}>

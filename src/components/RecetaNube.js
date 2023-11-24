@@ -25,40 +25,36 @@ const RecetaNube = () => {
     
     }
 
-    const AgregarSolicitud = async () =>{
+    const AgregarSolicitud = async (receta) =>{
       console.log('AgregarSolicitud')
-      let datos = await axios.get(Api.ApiGetAllSolicitud);
-      setListaSolicitud(datos.data)
-      console.log("ahora ",listaSolicitud)
-      try{
+      let solicitudDatos =  await axios.get(Api.ApiGetAllSolicitud)
+      console.log(solicitudDatos)
+      console.log('RECETA:', receta)
         let objeto = {
-                IdRemedio: idRemedio,
-                IdPaciente: idPaciente,
-                IdFarmacia: idFarmacia,
-                IdReceta:idReceta,
-                Precio: precio,
+                IdRemedio: 2,
+                IdPaciente: 2,
+                IdFarmacia: 2,
+                IdReceta: 2,
+                Precio: 69,
         }
         console.log("OBJETO SOLICITUD " , objeto)
-        const response = await axios.post(Api.ApiPostSolicitud, objeto);
-        console.log(response);
-        const Headers={
-          headers:{
-            authorization: `Bearer ${response.data}`
+        axios
+        .post(Api.ApiPostSolicitud, objeto)
+        .then((response) => {
+          console.log(response.data);
+          const Headers={
+            headers:{
+              authorization: `Bearer ${response.data}`
+            }
           }
-        }
-        console.log(Headers)
-        if (Headers.data!="") {
-          Alert.alert("El cliente fue notificado");
-        }
-        else{
-          console.log('los datos son erroneos, intente de nuevo')
-        }
-  
-        
-      }
-      catch(error){
-        console.log(error)
-      }
+          console.log(Headers)
+          if (Headers.data!="") {
+            Alert.alert("El cliente fue notificado");
+          }
+          else{
+            console.log('los datos son erroneos, intente de nuevo')
+          }
+        });      
     }
 
     function addMonths(date, months) {
@@ -128,7 +124,7 @@ const RecetaNube = () => {
            </View>
            <View style={styles.formgroup}>
              <View style={{flexDirection:"column", alignItems: "center", flex: 1}}>
-               <Text style={styles.miniText}>Telofono</Text>
+               <Text style={styles.miniText}>Telefono</Text>
                <Text style={styles.subtitulo}>{elemento.Telefono}</Text>
              </View>
              <View style={{flexDirection:"column", alignItems: "center", flex: 1}}>
@@ -137,7 +133,7 @@ const RecetaNube = () => {
              </View>
            </View>
 
-             <TouchableOpacity style={styles.boton} onPress={AgregarSolicitud}>
+             <TouchableOpacity style={styles.boton} onPress={() => AgregarSolicitud(elemento)}>
                <Text style={{ color: "white", fontSize: 20 }}>
                  ¡La Quiero!
                </Text>

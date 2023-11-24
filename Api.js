@@ -14,6 +14,7 @@ const Api = {
   ApiGetAllNombreMedicamento: ROOT_DOMAIN + "api/medicamento/",
   ApiGetAllSolicitud: ROOT_DOMAIN + "api/solicitud/",
   ApiPostSolicitud: ROOT_DOMAIN + "api/solicitud/",
+  ApiDeleteSolicitud: ROOT_DOMAIN + 'api/solicitud/'
 };
 export default Api;
 

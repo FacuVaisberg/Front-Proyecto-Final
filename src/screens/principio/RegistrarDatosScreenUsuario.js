@@ -16,8 +16,8 @@ const RegistrarDatosScreenUsuario = () => {
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const navigation = useNavigation();
-  const [rol, setRol] = useState(0);
-  const { login } = useUser();
+  /* const [rol, setRol] = useState(0);
+  const { login } = useUser(); */
 
   const handleDniChange = (text) => {
     // Verificar si el DNI tiene exactamente 8 dígitos

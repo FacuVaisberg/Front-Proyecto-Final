@@ -26,16 +26,22 @@ const RecetaNube = () => {
     }
 
     const AgregarSolicitud = async (receta) =>{
-      console.log('AgregarSolicitud')
-      let solicitudDatos =  await axios.get(Api.ApiGetAllSolicitud)
-      console.log(solicitudDatos)
       console.log('RECETA:', receta)
-        let objeto = {
-                IdRemedio: 2,
-                IdPaciente: 2,
-                IdFarmacia: 2,
-                IdReceta: 2,
-                Precio: 69,
+      console.log('AgregarSolicitud')
+      let recetaId = Api.GetSolicitudByIdReceta
+      let Url = Api.GetSolicitudByIdReceta + receta.IdReceta;
+      console.log('Url', Url);
+      
+      
+      let respuesta =  await axios.get(Url);
+      let solicitudDatos = respuesta.data;
+      console.log("Solicitud datos", solicitudDatos)
+      let objeto = {
+                IdRemedio: solicitudDatos.IdRemedio,
+                IdPaciente: solicitudDatos.IdPaciente,
+                IdFarmacia: solicitudDatos.IdFarmacia,
+                IdReceta: solicitudDatos.IdReceta,
+                Precio: solicitudDatos.Precio,
         }
         console.log("OBJETO SOLICITUD " , objeto)
         axios
@@ -55,6 +61,7 @@ const RecetaNube = () => {
             console.log('los datos son erroneos, intente de nuevo')
           }
         });      
+      
     }
 
     function addMonths(date, months) {

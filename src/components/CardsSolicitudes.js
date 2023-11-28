@@ -16,6 +16,7 @@ const CardsSolicitudes = (farmacia, medicamento, precio) => {
   const getAllReceta = async () => {
     try {
       let datos = await axios.get(Api.ApiGetAllSolicitud);
+      console.log("datos.data ", datos.data)
       setListaReceta(datos.data);
     } catch (error) {
       console.error('Error fetching data:', error);

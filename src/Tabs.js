@@ -8,11 +8,11 @@ import TabUsuario from './stacks/TabUsuario';
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from '@react-navigation/stack';
 
-/* import { rol } from './UserContext'; */
+/* import { rol } from './UserContext';
 import NavBarMedico from './components/NavBarMedico';
 import NavBarUsuario from './components/NavBarUsuario';
 import NavBarFarmacia from './components/NavBarFarmacia';
-
+ */
   const Tabs = () => {
     const Tab = createBottomTabNavigator();
     /* let navBar;
@@ -30,7 +30,7 @@ import NavBarFarmacia from './components/NavBarFarmacia';
   } */
   
     return (
-
+      /* navbar, */
       <NavigationContainer>
           <Tab.Navigator screenOptions={{headerShown: false}}>
               <Tab.Screen name="Principal" component={StackMainScreen} options={{tabBarStyle:{ display: "none"},}}/>

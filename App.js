@@ -2,7 +2,6 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Tabs from './src/Tabs';
 import { UserProvider } from './UserContext';
-import { useUser } from './UserContext';
 
 export default function App() {
   return (

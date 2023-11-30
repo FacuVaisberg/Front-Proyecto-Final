@@ -10,7 +10,7 @@ const StackMedicoScreen = () => {
     const StackMedico = createNativeStackNavigator();
   return (
     <StackMedico.Navigator screenOptions={{headerShown: false}}>
-        <StackMedico.Screen name="Medico" component={HomeMedico}/>
+        <StackMedico.Screen name="HomeMedico" component={HomeMedico}/>
         <StackMedico.Screen name="RecetasSubidas" component={RecetasSubidasScreen}/>
         <StackMedico.Screen name="AgregarReceta" component={AgregarRecetaScreen}/>
         <StackMedico.Screen name="DatosPersonales" component={DatosPersonalesScreen}/>

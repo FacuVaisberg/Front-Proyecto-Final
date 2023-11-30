@@ -65,8 +65,8 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "center",
     alignSelf: 'center',
-    height: "20%",
-    maxHeight: "17%",
+    height: "45%",
+    maxHeight: "45%",
     width: 312,
     marginTop: "5%",
     borderRadius: 10,
@@ -75,6 +75,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: 'center',
     marginLeft: 10,
+    marginBottom: 0,
   },
 });
 

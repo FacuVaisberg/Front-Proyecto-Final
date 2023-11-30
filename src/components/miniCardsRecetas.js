@@ -59,8 +59,8 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "center",
     alignSelf: 'center',
-    height: "30%",
-    maxHeight: "13%",
+    height: "35%",
+    maxHeight: "40%",
 
     width: 312,
     marginTop: "5%",
@@ -71,6 +71,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginLeft: 10,
     marginTop: "2%",
+    marginBottom: 5,
   },
 });
 

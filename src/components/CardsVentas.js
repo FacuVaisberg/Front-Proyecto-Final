@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "center",
     alignSelf: "center",
-    height: "20%",
+    height: 200,
     maxHeight: "17%",
     width: 312,
     marginTop: "5%",

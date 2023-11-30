@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
-import { Image, StyleSheet, Platform } from "react-native";
+import { Image, StyleSheet, Platform, View,Text } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 
 import HomeFarmacia from "../screens/farmacia/HomeFarmacia";
 import RecetasPendientes from "../screens/farmacia/RecetasPendientes";
 import RegistroVentas from "../screens/farmacia/RegistroVentas";
+import CuentaFarmacia from "../screens/farmacia/CuentaFarmacia";
 
 import { FontAwesome5 } from "@expo/vector-icons"; //logo
 import { Ionicons } from '@expo/vector-icons'; // recetasPendientes
@@ -49,7 +50,7 @@ export default function NavBarFarmacia() {
           }}
         />
         <Tab.Screen
-          name="PharmaLife"
+          name="HomeFarmacia"
           component={HomeFarmacia}
           options={{
             tabBarIcon: ({ focused }) => {

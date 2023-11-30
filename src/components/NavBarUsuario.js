@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
-import { Image, StyleSheet, Platform } from "react-native";
+import { Image, StyleSheet, Platform, View, Text } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 
-import HomeUsuario from "../screens/medico/HomeMedico";
+import HomeUsuario from "../screens/usuario/HomeUsuario";
 import MisRecetas from "../screens/usuario/MisRecetas";
 import MisSolicitudes from "../screens/usuario/MisSolicitudes";
 import FarmaciasCercanas from "../screens/usuario/FarmaciasCercanas";
@@ -14,6 +14,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { Entypo } from "@expo/vector-icons"; //recetas
 import { FontAwesome5 } from "@expo/vector-icons"; //logo
 import { Feather } from '@expo/vector-icons'; //mas
+import { FontAwesome } from "@expo/vector-icons"; //farmacias
 
 
 const Tab = createBottomTabNavigator();
@@ -40,7 +41,7 @@ export default function NavBarUsuario() {
           options={{
             tabBarIcon: ({ focused }) => {
               return (
-                <View style={{ alignItems: "center", justifyContent: "center" }}>
+                <View style={{ alignItems: "center", justifyContent: "center", alignContent: 'center' }}>
                   <Entypo name="text-document-inverted" size={24} color="black"/>
                   <Text style={{ fontSize: 12, color: "#000000" }}>
                     Mis Recetas
@@ -57,7 +58,7 @@ export default function NavBarUsuario() {
             tabBarIcon: ({ focused }) => {
               return (
                 <View
-                  style={{ alignItems: "center", justifyContent: "center" }}
+                  style={{ alignItems: "center", justifyContent: "center", alignContent: 'center' }}
                 >
                   <FontAwesome name="user-md" size={24} color="black" />
                   <Text style={{ fontSize: 12, color: "#000000" }}>
@@ -69,7 +70,7 @@ export default function NavBarUsuario() {
           }}
         />
         <Tab.Screen
-          name="PharmaLife"
+          name="HomeUsuario"
           component={HomeUsuario}
           options={{
             tabBarIcon: ({ focused }) => {
@@ -102,9 +103,9 @@ export default function NavBarUsuario() {
           options={{
             tabBarIcon: ({ focused }) => {
               return (
-                <View style={{ alignItems: "center", justifyContent: "center" }}>
+                <View style={{ alignItems: "center", justifyContent: "center", alignContent: 'center' }}>
                   <Ionicons name="notifications-outline" size={24} color="black" />
-                  <Text style={{ fontSize: 12, color: "#000000" }}>
+                  <Text style={{ fontSize: 12, color: "#000000", textAlign: 'center' }}>
                     Mis Solicitudes
                   </Text>
                 </View>
@@ -118,7 +119,7 @@ export default function NavBarUsuario() {
           options={{
             tabBarIcon: ({ focused }) => {
               return (
-                <View style={{ alignItems: "center", justifyContent: "center" }}>
+                <View style={{ alignItems: "center", justifyContent: "center", alignContent: 'center' }}>
                   <Feather name="more-horizontal" size={24} color="black" />
                   <Text style={{ fontSize: 12, color: "#000000" }}>
                     Mi Cuenta

@@ -4,13 +4,20 @@ import { useNavigation } from '@react-navigation/native';
 
 const CuentaFarmacia = () => {
   const navigation = useNavigation();
-
+  const [rol, setRol] = useState(1);
+  const { login } = useUser();
+  
+  const userData = { //datos del usuario
+    nombre,
+    direccion,
+    nombreDuenio,
+    telefono,
+    email,
+    password,
+    };
   const handleLogout = () => {
-    // Aquí debes agregar la lógica para cerrar la sesión del usuario.
-    // Esto podría implicar eliminar el token de autenticación, limpiar el estado, etc.
-    // Una vez que se haya realizado la acción de cierre de sesión, puedes navegar a la pantalla de inicio de sesión u otra pantalla adecuada.
-    // Ejemplo de navegación:
-    // navigation.navigate('Login'); // Asegúrate de que 'Login' sea el nombre correcto de tu pantalla de inicio de sesión.
+    login(userData, 0);
+    navigation.navigate("Principio");
   };
 
   return (

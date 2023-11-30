@@ -1,7 +1,6 @@
 import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react';
 import CardRegistro from '../../components/CardRegistro'
-import Button from '../../components/Button'
 import { useNavigation } from '@react-navigation/native';
 import { useUser } from '../../../UserContext';
 
@@ -16,8 +15,8 @@ const RegistrarDatosScreenUsuario = () => {
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const navigation = useNavigation();
-  /* const [rol, setRol] = useState(0);
-  const { login } = useUser(); */
+  const [rol, setRol] = useState(0);
+  const { login } = useUser();
 
   const handleDniChange = (text) => {
     // Verificar si el DNI tiene exactamente 8 dígitos
@@ -39,7 +38,7 @@ const RegistrarDatosScreenUsuario = () => {
     };
 
     login(userData, 2);
-    navigation.navigate("Usuario");
+    navigation.navigate("HomeUsuario");
   };
 
   return (
@@ -69,7 +68,7 @@ const RegistrarDatosScreenUsuario = () => {
             <TextInput style={styles.input} placeholder="Contraseña:" value={password} onChangeText={setPassword}/>
         </View>
 
-        <TouchableOpacity style={styles.buttonChico} onPress={/* handleRegistro */() => navigation.navigate("Usuario")}>
+        <TouchableOpacity style={styles.buttonChico} onPress={handleRegistro/* () => navigation.navigate("Usuario") */}>
           <Text style={styles.buttonText}>Registrarse</Text>
         </TouchableOpacity>
     </View>

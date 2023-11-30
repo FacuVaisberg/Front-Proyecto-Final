@@ -16,8 +16,8 @@ const RegistrarDatosScreenMedico = () => {
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const navigation = useNavigation();
-/*   const [rol, setRol] = useState(0);
-  const { login } = useUser(); */
+  const [rol, setRol] = useState(0);
+  const { login } = useUser();
 
   const handleDniChange = (text) => {
     // Verificar si el DNI tiene exactamente 8 dígitos
@@ -40,7 +40,7 @@ const RegistrarDatosScreenMedico = () => {
     };
 
     login(userData, 3);
-    navigation.navigate("Medico");
+    navigation.navigate("HomeMedico");
   };
 
   return (
@@ -70,7 +70,7 @@ const RegistrarDatosScreenMedico = () => {
             <TextInput style={styles.input} placeholder="Contraseña:" value={password} onChangeText={setPassword}/>
         </View>
 
-        <TouchableOpacity style={styles.buttonChico} onPress={/* handleRegistro */() => navigation.navigate("Medico")}>
+        <TouchableOpacity style={styles.buttonChico} onPress={handleRegistro/* () => navigation.navigate("Medico") */}>
           <Text style={styles.buttonText}>Registrarse</Text>
         </TouchableOpacity>
     </View>

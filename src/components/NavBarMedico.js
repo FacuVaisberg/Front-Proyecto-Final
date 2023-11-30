@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
-import { Image, StyleSheet, Platform } from "react-native";
+import { Image, StyleSheet, Platform, View, Text } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 
@@ -67,7 +67,7 @@ export default function NavBarMedico() {
         }}
       />
       <Tab.Screen
-        name="PharmaLife"
+        name="HomeMedico"
         component={HomeMedico}
         options={{
           tabBarIcon: ({ focused }) => {

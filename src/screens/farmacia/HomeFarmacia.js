@@ -6,9 +6,11 @@ import { TouchableOpacity } from "react-native";
 import ButtonConImage from "../../components/ButtonConImage";
 import VentasImage from "../../img/ventas.jpg";
 import RecetasPendientesImage from "../../img/recetasPendientes.jpg";
+import CuentaFarmacia from "./CuentaFarmacia";
 
 const HomeFarmacia = () => {
   const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
       <Image style={styles.PharmaLifeLogo} source={LogoSinSloganNegro}></Image>
@@ -18,6 +20,7 @@ const HomeFarmacia = () => {
       <ButtonConImage source={VentasImage} estilo={styles.boton} onPress={() => navigation.navigate("RegistroVentas")}>
           Historial de ventas
         </ButtonConImage>
+        <Text onPress={() => navigation.navigate("CuentaFarmacia")}>Cerrar sesion</Text>
     </View>
   );
 };

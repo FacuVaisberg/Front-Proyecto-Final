@@ -6,10 +6,10 @@ import { UserProvider } from './UserContext';
 export default function App() {
   return (
     <>
-      {/* <UserProvider>
+      <UserProvider>
         <Tabs />
-      </UserProvider> */}
-      <Tabs/>
+      </UserProvider>
+      {/* <Tabs/> */}
     </>
   )
 }

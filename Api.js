@@ -13,7 +13,7 @@ const Api = {
   ApiGetAllReceta: ROOT_DOMAIN + "api/receta/",
   ApiGetAllNombreMedicamento: ROOT_DOMAIN + "api/medicamento/",
   ApiGetAllSolicitud: ROOT_DOMAIN + "api/solicitud/",
-  GetSolicitudByIdReceta: ROOT_DOMAIN + "api/solicitud/",
+  GetRecetaByIdReceta: ROOT_DOMAIN + "api/receta/",
   ApiPostSolicitud: ROOT_DOMAIN + "api/solicitud/",
   ApiDeleteSolicitud: ROOT_DOMAIN + 'api/solicitud/',
   ApiAceptarSolicitud: ROOT_DOMAIN +'api/solicitud/aceptada/'

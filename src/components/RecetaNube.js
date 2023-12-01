@@ -4,7 +4,7 @@ import FotoPerfil from "./FotoPerfil";
 import Api from '../../Api'
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { ScrollView } from "react-native-web";
+import Button from "./Button";
 
 
 const RecetaNube = () => {
@@ -28,8 +28,8 @@ const RecetaNube = () => {
     const AgregarSolicitud = async (receta) =>{
       console.log('RECETA:', receta)
       console.log('AgregarSolicitud')
-      let recetaId = Api.GetSolicitudByIdReceta
-      let Url = Api.GetSolicitudByIdReceta + receta.IdReceta;
+      let recetaId = Api.GetRecetaByIdReceta
+      let Url = Api.GetRecetaByIdReceta + receta.IdReceta;
       console.log('Url', Url);
       
       //el id lo toma bien, pero respuesta.data, devuelve unfedined, por eso no toma los valores y se agrega null.
@@ -37,7 +37,7 @@ const RecetaNube = () => {
       let solicitudDatos = respuesta.data;
       console.log("Solicitud datos", solicitudDatos)
       let objeto = {
-                IdRemedio: solicitudDatos.IdRemedio,
+                IdRemedio: solicitudDatos.IdMedicamento,
                 IdPaciente: solicitudDatos.IdPaciente,
                 IdFarmacia: 2,
                 IdReceta: solicitudDatos.IdReceta,
@@ -89,7 +89,7 @@ const RecetaNube = () => {
 
   return (
     <>
-   
+      <Button onPress={() => getAllReceta()} title={"Refrescar Recetas"}></Button>
       {listaReceta?.map((elemento)=> (
         key=elemento.id,
        <View style={styles.container}>

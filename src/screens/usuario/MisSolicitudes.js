@@ -3,10 +3,24 @@ import { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import CardsSolicitudes from "../../components/CardsSolicitudes";
+import axios from "axios";
+import Api from "../../../Api";
 
 const MisSolicitudes = () => {
   const [medicamentos, setMedicamentos] = useState([]);
   const navigation = useNavigation();
+  const [listaReceta, setListaReceta] = useState([]);
+
+
+  const getAllReceta = async () => {
+    try {
+      let datos = await axios.get(Api.ApiGetAllSolicitud);
+      console.log("datos.data ", datos.data)
+      setMedicamentos(datos.data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
 
   const handleClick = () => {
     const medicamentos = CargarTodo();
@@ -68,9 +82,8 @@ const styles = StyleSheet.create({
     alignSelf:'center',
     alignItems: 'center',
     justifyContent: "center",
-    width: "100%",
-    height: 600,
-    maxHeight: "90%",
+    height: 700,
+    maxHeight: "85%",
     width: "95%",
     maxWidth:"90%",
     borderRadius: 20,

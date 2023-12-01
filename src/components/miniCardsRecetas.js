@@ -6,11 +6,12 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 const MiniCardsRecetas = ({ medicamento, fechaVencimiento }) => {
-  const [listaReceta, setListaReceta] = useState([]);
+  const [listaReceta, setListaReceta] = useState();
 
   const getAllReceta = async () => {
     try {
       let datos = await axios.get(Api.ApiGetAllReceta);
+      console.log(datos)
       setListaReceta(datos.data);
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -23,10 +24,9 @@ const MiniCardsRecetas = ({ medicamento, fechaVencimiento }) => {
 
 useEffect(() => {
   getAllReceta()
- },[]);
- useEffect(() => {
   console.log("lista receta: ",listaReceta);
- }, [listaReceta])
+
+ },[]);
 
   return (
     <>

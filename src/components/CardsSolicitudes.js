@@ -1,13 +1,14 @@
 import { StyleSheet, Text, View, TouchableOpacity, Alert } from 'react-native'
 import React from 'react'
-import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { FontAwesome } from '@expo/vector-icons';
-import { FontAwesome5 } from '@expo/vector-icons';
 import Api from '../../Api'
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons';
+import { FontAwesome5 } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
+import Button from './Button';
 
 const CardsSolicitudes = (farmacia, medicamento, precio) => {
   const [listaReceta, setListaReceta] = useState([]);
@@ -56,6 +57,7 @@ const CardsSolicitudes = (farmacia, medicamento, precio) => {
 
   return (
     <>
+          <Button onPress={() => getAllReceta()} title={"Refrescar Solicitudes"}></Button>
       {listaReceta?.map((elemento, i) => (
 
         console.log("elemento... ", elemento.IdSolicitud),

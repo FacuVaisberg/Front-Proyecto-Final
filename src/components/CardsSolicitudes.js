@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity, Alert } from 'react-native'
 import React from 'react'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
@@ -11,7 +11,17 @@ import { Feather } from '@expo/vector-icons';
 
 const CardsSolicitudes = (farmacia, medicamento, precio) => {
   const [listaReceta, setListaReceta] = useState([]);
-
+  const aceptarSolicitud = async(IdSolicitud) =>{
+    axios.delete(Api.ApiDeleteSolicitud + IdSolicitud)
+    .then(response => {
+      Alert.alert("Aceptada con exito")
+    })
+    .catch(error => {
+      console.error('Error deleting resource:', error);
+    });
+    getAllReceta();
+    
+  }
 
   const getAllReceta = async () => {
     try {
@@ -33,6 +43,7 @@ const CardsSolicitudes = (farmacia, medicamento, precio) => {
       });
       getAllReceta();
   }
+
 
   useEffect(() => {
     getAllReceta()
@@ -58,7 +69,7 @@ const CardsSolicitudes = (farmacia, medicamento, precio) => {
             <Text style={styles.textMiniBox}>{elemento.NombreMedicamento}</Text>
           </View>
           <View style={styles.containerBotones}>
-            <TouchableOpacity style={styles.botonVerde} >
+            <TouchableOpacity style={styles.botonVerde} onPress={() => aceptarSolicitud(elemento.IdSolicitud)} >
               <Text style={{ color: "#fff", fontSize: 20, }}>Aceptar</Text>
               <AntDesign name="checkcircleo" size={24} color="white" style={{ margin: 5, }} />
             </TouchableOpacity>

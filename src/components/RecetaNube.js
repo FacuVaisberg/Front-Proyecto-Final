@@ -32,14 +32,14 @@ const RecetaNube = () => {
       let Url = Api.GetSolicitudByIdReceta + receta.IdReceta;
       console.log('Url', Url);
       
-      
+      //el id lo toma bien, pero respuesta.data, devuelve unfedined, por eso no toma los valores y se agrega null.
       let respuesta =  await axios.get(Url);
       let solicitudDatos = respuesta.data;
       console.log("Solicitud datos", solicitudDatos)
       let objeto = {
                 IdRemedio: solicitudDatos.IdRemedio,
                 IdPaciente: solicitudDatos.IdPaciente,
-                IdFarmacia: solicitudDatos.IdFarmacia,
+                IdFarmacia: 2,
                 IdReceta: solicitudDatos.IdReceta,
                 Precio: solicitudDatos.Precio,
         }

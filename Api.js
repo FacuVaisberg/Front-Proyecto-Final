@@ -15,7 +15,8 @@ const Api = {
   ApiGetAllSolicitud: ROOT_DOMAIN + "api/solicitud/",
   GetSolicitudByIdReceta: ROOT_DOMAIN + "api/solicitud/",
   ApiPostSolicitud: ROOT_DOMAIN + "api/solicitud/",
-  ApiDeleteSolicitud: ROOT_DOMAIN + 'api/solicitud/'
+  ApiDeleteSolicitud: ROOT_DOMAIN + 'api/solicitud/',
+  ApiAceptarSolicitud: ROOT_DOMAIN +'api/solicitud/aceptada/'
 };
 export default Api;
 
